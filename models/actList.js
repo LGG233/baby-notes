@@ -1,8 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
     var ActList = sequelize.define("ActList", {
-    
-        //   NEED TO FILL THIS OUT .. need activity(diaper,sleep,feed,journal)
-        
+        activity: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            len: [1]
+          },
     });
 
     // Associating ActList with multiple actList
@@ -22,4 +24,5 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
     }
+    return ActList;
 }
