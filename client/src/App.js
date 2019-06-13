@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <Container textAlign='center'><h1>Baby Notes</h1></Container>
+        <Container textAlign='center'><h1>BABY NOTES</h1></Container>
         <Container textAlign='center'><h3>An app for tracking baby's feeding, changing, and sleeping times</h3></Container>
       </div>
       <Divider hidden />
