@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var ActList = sequelize.define("ActList", {
+    var Actlist = sequelize.define("Actlist", {
         activity: {
             type: DataTypes.TEXT,
             allowNull: false,
@@ -24,5 +24,5 @@ module.exports = function (sequelize, DataTypes) {
     //         }
     //     });
     // }
-    return ActList;
+    return Actlist;
 }

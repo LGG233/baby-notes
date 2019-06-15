@@ -6,8 +6,8 @@ childRouter.route("/child")
   .post(childController.create)
   .put(childController.update);
 
-// childRouter.route("/child/:id")
-//   .get(childController.findOne)
-//   .delete(childController.delete);
+childRouter.route("/child/:id")
+  .get(childController.findOne)
+  .delete(childController.delete);
 
 module.exports = childRouter;

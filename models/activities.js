@@ -21,7 +21,7 @@ module.exports = function (sequelize, DataTypes) {
     // Associating Activities with multiple actList
     // When Activities is deleted, deleted any associated actList
     Activities.associate = function (models) {
-        Activities.hasMany(models.ActList, {
+        Activities.hasMany(models.Actlist, {
             onDelete: "cascade"
         });
     };
