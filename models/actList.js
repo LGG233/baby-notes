@@ -1,6 +1,11 @@
 module.exports = function (sequelize, DataTypes) {
     var ActList = sequelize.define("ActList", {
     
+       activity: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            len: [1]
+          },
         //   NEED TO FILL THIS OUT .. need activity(diaper,sleep,feed,journal)
         
     });
