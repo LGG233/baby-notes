@@ -1,5 +1,5 @@
 var childRouter = require("express").Router();
-var childController = require("../controllers/childController");
+var childController = require("../../controllers/childController");
 
 childRouter.route("/child")
   .get(childController.findAll)
