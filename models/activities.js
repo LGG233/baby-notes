@@ -8,14 +8,21 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             len: [1]
         },
-        date: {
+        startdate: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
-        }
-        // timestamp: 
-        //   NEED TO FILL THIS OUT .. need activity, time (default), 
-
+        },
+        enddate: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+        },
+        title: {
+            type: DataTypes.STRING,
+            len: [1],
+            max: 50
+        },
     });
 
     // Associating Activities with multiple actList
