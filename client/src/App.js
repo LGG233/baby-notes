@@ -1,6 +1,12 @@
 import React from 'react';
 import { Container, Divider, Card, Button, Segment } from 'semantic-ui-react';
 
+// class Journal extends React.Component {
+//   state = {
+
+//   }
+// }
+
 function App() {
   return (
     <div className="App">
