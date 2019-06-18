@@ -1,19 +1,27 @@
 module.exports = function (sequelize, DataTypes) {
     var Activities = sequelize.define("Activities", {
+        actList_Id: {
+            type: DataTypes.STRING,
+        },
         description: {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]
-          },
-          
+        },
+        date: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+        }
+        // timestamp: 
         //   NEED TO FILL THIS OUT .. need activity, time (default), 
-        
+
     });
 
     // Associating Activities with multiple actList
     // When Activities is deleted, deleted any associated actList
     Activities.associate = function (models) {
-        Activities.hasMany(models.ActList, {
+        Activities.hasMany(models.Actlist, {
             onDelete: "cascade"
         });
     };
@@ -27,4 +35,5 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
     }
+    return Activities;
 }

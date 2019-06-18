@@ -1,15 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
     var Child = sequelize.define("Child", {
-        name: DataTypes.STRING
-        //   dob: {
-        //   NEED TO FILL THIS OUT .. need date syntax
-        // type: DataTypes.STRING,
-        // unique: true,
-        // allowNull: false,
-        // validate: {
-        //   isEmail: true
-        // }
-        //   }
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            len: [1]
+        },
+        dob: {
+            type: DataTypes.DATE,
+            allowNull: false,
+        }
     });
 
     // Associating Child with multiple activities
@@ -29,4 +28,5 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
     }
+    return Child;
 }
