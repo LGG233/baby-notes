@@ -23,7 +23,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 // Static directory
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Routes
 // =============================================================
