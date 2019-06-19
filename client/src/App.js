@@ -15,7 +15,6 @@ function App() {
     <Router>
 
     <div className="App">
-      <div className="jumbotron"></div>
       <div className="navbar">
         <Navbar />
         <Switch>
@@ -26,8 +25,11 @@ function App() {
         <Route component={NotFound} />
         </Switch>
       </div>
+     
+      <div className="jumbotron">
+        <h1>Baby Notes</h1>
+      </div> 
     </div>
-    
     </Router>
   );
 }
