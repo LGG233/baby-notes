@@ -1,15 +1,14 @@
 import React from 'react';
-
-// class Journal extends React.Component {
-//   state = {
-
-//   }
-// }
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      
+      <div className="jumbotron"> 
+      <h1>HElloooo</h1>
+
+      </div>
     </div>
   );
 }
