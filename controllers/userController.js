@@ -11,7 +11,7 @@ module.exports = {
         db.User.findOne({
             where: {
                 id: req.params.id
-            },
+            }
         }).then(function (dbUser) {
             res.json(dbUser);
         });
