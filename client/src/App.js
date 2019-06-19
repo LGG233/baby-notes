@@ -10,12 +10,14 @@ import Navbar from './components/Navbar/Navbar';
 function App() {
   return (
     <div className="App">
-      <div className="jumbotron"></div>
       <div className="navbar">
         <Navbar />
       </div>
+      <div className="jumbotron">
+        <h1>Baby Notes</h1>
+      </div>
 
-    </div>
+    </div >
   );
 }
 
