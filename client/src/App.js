@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './components/Navbar/Navbar';
 
 // class Journal extends React.Component {
 //   state = {
@@ -9,12 +10,11 @@ import React from 'react';
 function App() {
   return (
     <div className="App">
-      <div className = "jumbotron"> Hello World </div>
-      <div>
-        <div>
-          
-        </div>
+      <div className="jumbotron"></div>
+      <div className="navbar">
+        <Navbar />
       </div>
+
     </div>
   );
 }
