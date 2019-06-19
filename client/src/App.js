@@ -1,11 +1,7 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 import Navbar from './components/Navbar/Navbar';
-
-// class Journal extends React.Component {
-//   state = {
-
-//   }
-// }
 
 function App() {
   return (
