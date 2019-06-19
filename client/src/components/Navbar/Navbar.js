@@ -1,5 +1,7 @@
 import React from "react";
 import './Navbar.css';
+import {Link} from 'react-router-dom';
+
 // import DrawerToggleButton from '../SideDrawer/Drawer/DrawerToggleButton';
 const navbar = props => (
     <header className="navbar">
@@ -8,12 +10,14 @@ const navbar = props => (
                 <DrawerToggleButton />
             </div> */}
             <div className="navbar-logo"><a href="/">Baby Notes</a></div>
-            <div class="spacer"></div>
+            <div className="spacer"></div>
             <div className="navbar-items">
                 <ul>
-                    <li><a href="/">Sign Up</a></li>
-                    <li><a href="/">Log In</a></li>
-                    <li><a href="/">Log Out</a></li>
+                    <li><Link to="/">Sign Up</Link></li>
+                    <li><Link to="/activiy">Activity</Link></li>
+                    <li><Link to="/child">Child</Link></li>
+                    <li><Link to="/journal">Journal</Link></li>
+                    <li><Link to="/">Log Out</Link></li>
                 </ul>
             </div>
         </nav>
