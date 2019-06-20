@@ -1,4 +1,9 @@
 .jumbotron {
     color:blue;
+}
+
+Table {
+    max-width: 80%;
+    margin: auto;
     height: 25rem;
 }
