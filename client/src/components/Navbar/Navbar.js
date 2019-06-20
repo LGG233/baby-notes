@@ -14,7 +14,7 @@ const navbar = props => (
             <div className="navbar-items">
                 <ul>
                     <li><Link to="/">Sign Up</Link></li>
-                    <li><Link to="/activiy">Activity</Link></li>
+                    <li><Link to="/activity">Activity</Link></li>
                     <li><Link to="/child">Child</Link></li>
                     <li><Link to="/journal">Journal</Link></li>
                     <li><Link to="/">Log Out</Link></li>

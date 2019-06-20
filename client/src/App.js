@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Activity from './pages/Activity';
 import Landing from './pages/Landing';
 import Journal from './pages/Journal';
@@ -14,22 +14,26 @@ function App() {
   return (
     <Router>
 
-    <div className="App">
-      <div className="navbar">
-        <Navbar />
-        <Switch>
-        <Route exact path ="/" component ={Landing} />
-        <Route exact path ="/activity" component ={Activity} />
-        <Route exact path ="/child" component ={Child} />
-        <Route exact path ="/journal" component ={Journal} />
-        <Route component={NotFound} />
-        </Switch>
+      <div className="App">
+        <div className="navbar">
+          <Navbar />
+        </div>
+        <div className="jumbotron">
+          <h1>Baby Notes</h1>
+        </div>
+        <div className="switch-paths">
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/activity" component={Activity} />
+            <Route exact path="/child" component={Child} />
+            <Route exact path="/journal" component={Journal} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+
+
+
       </div>
-     
-      <div className="jumbotron">
-        <h1>Baby Notes</h1>
-      </div> 
-    </div>
     </Router>
   );
 }
