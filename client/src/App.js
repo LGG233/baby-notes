@@ -17,6 +17,11 @@ function App() {
     <div className="App">
       <div className="navbar">
         <Navbar />
+      </div>
+     
+      <div className="jumbotron">
+        <h1>Baby Notes</h1>
+      </div> 
         <Switch>
         <Route exact path ="/" component ={Landing} />
         <Route exact path ="/activity" component ={Activity} />
@@ -24,11 +29,6 @@ function App() {
         <Route exact path ="/journal" component ={Journal} />
         <Route component={NotFound} />
         </Switch>
-      </div>
-     
-      <div className="jumbotron">
-        <h1>Baby Notes</h1>
-      </div> 
     </div>
     </Router>
   );

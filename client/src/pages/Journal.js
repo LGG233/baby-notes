@@ -2,7 +2,9 @@ import React from "react";
 
 function Journal() {
     return (
-        <div></div>
+        <div>
+            <h1>Journal Page</h1>
+        </div>
     );
 }
 
