@@ -1,0 +1,17 @@
+.footer {
+    background-color: blue;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    flex: 1;
+    justify-content: "flex-end";
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  /* .icon {
+      color: blue;
+      margin-left: 20px;
+  } */
+ 

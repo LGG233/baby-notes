@@ -1,3 +1,9 @@
 .jumbotron {
-    color:blue;
+    color:white;
+    background-image: url(./img/hands.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 22rem;
+    text-align: center;
 }
