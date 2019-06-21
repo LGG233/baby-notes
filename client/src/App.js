@@ -11,6 +11,7 @@ import Journal from './pages/Journal';
 import Child from './pages/Child';
 import NotFound from './pages/NotFound';
 // import Home from './pages/Home';
+import SignIn from './components/SignIn/SignIn';
 
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
           <h1>Baby Notes</h1>
         </div>
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Route path="/" component={Landing} />
           <Route exact path="/home" component={RegisterForm} />
+          <Route exact path="/" compenent={SignIn} />
           <Route exact path="/activity" component={Activity} />
           <Route exact path="/child" component={Child} />
           <Route exact path="/journal" component={Journal} />
