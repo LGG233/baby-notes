@@ -7,6 +7,7 @@ class RegisterForm extends Component {
     this.state = {
       firstName: "",
       lastName: "",
+      userName: "",
       email: "",
       password: ""
     };
@@ -46,6 +47,15 @@ class RegisterForm extends Component {
                   type="text"
                   placeholder="Last Name"
                   name="lastName"
+                  onChange={this.handleInputChange}
+                />
+              </h3>
+              <h2>Username </h2>
+              <h3>
+                <input
+                  type="text"
+                  placeholder="UserName"
+                  name="userName"
                   onChange={this.handleInputChange}
                 />
               </h3>
