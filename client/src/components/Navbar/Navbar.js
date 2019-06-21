@@ -1,6 +1,6 @@
 import React from "react";
 import './Navbar.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // import DrawerToggleButton from '../SideDrawer/Drawer/DrawerToggleButton';
 const navbar = props => (
@@ -9,7 +9,7 @@ const navbar = props => (
             {/* <div>
                 <DrawerToggleButton />
             </div> */}
-            <div className="navbar-logo"><Link to="/">Baby Notes</Link></div>
+            <div className="navbar-logo"><Link to="/">Home</Link></div>
             <div className="spacer"></div>
             <div className="navbar-items">
                 <ul>

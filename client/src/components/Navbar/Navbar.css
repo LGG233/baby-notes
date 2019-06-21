@@ -1,25 +1,26 @@
 .navbar {
-    width:100%;
+   width:100%;
+   align-items: center;
     top: 0;
     left: 0;
     position: fixed;
-    background: #008000;
+    background: blue;
     height:56px;
- }
- 
- .navigation{
- display: flex;
- align-items: center;
- height: 100%;
- padding: 0 1rem;
- }
- 
- .navbar-items ul {
- list-style: none;
- margin: 0;
- padding: 0;
- display: flex;
- }
+   }
+   
+   .navigation{
+      display: flex;
+      height: 100%;
+      padding: 0 1rem;
+   }
+   
+   .navbar-items ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      text-align: center;
+   }
  
  .navbar-logo {
     margin-left: 1rem;
