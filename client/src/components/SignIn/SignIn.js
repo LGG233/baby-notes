@@ -19,7 +19,7 @@ class SignIn extends Component {
     let name = target.name;
 
     this.setState({
-      [event.target.name]: event.target.value
+      [name]: event.target.value
     });
   }
 
