@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import RegisterForm from './components/RegisterForm/RegisterForm';
+import RegisterForm from './components/RegisterFrom/RegisterForm';
 import Activity from './pages/Activity';
 import Landing from './pages/Landing';
 import Journal from './pages/Journal';
@@ -27,15 +27,9 @@ function App() {
           <h1>Baby Notes</h1>
         </div>
         <Switch>
-<<<<<<< HEAD
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/register" component={RegisterForm} />
-=======
           <Route path="/" component={Landing} />
           <Route exact path="/home" component={RegisterForm} />
           <Route exact path="/" compenent={SignIn} />
->>>>>>> b2a781aa603d4dd078c601470e1aa755c66d21ab
           <Route exact path="/activity" component={Activity} />
           <Route exact path="/child" component={Child} />
           <Route exact path="/journal" component={Journal} />
