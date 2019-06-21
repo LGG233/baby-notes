@@ -10,7 +10,8 @@ import Landing from './pages/Landing';
 import Journal from './pages/Journal';
 import Child from './pages/Child';
 import NotFound from './pages/NotFound';
-import Home from './pages/Home';
+// import Home from './pages/Home';
+import SignIn from './components/SignIn/SignIn';
 
 
 function App() {
@@ -26,9 +27,15 @@ function App() {
           <h1>Baby Notes</h1>
         </div>
         <Switch>
+<<<<<<< HEAD
           <Route exact path="/" component={Landing} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/register" component={RegisterForm} />
+=======
+          <Route path="/" component={Landing} />
+          <Route exact path="/home" component={RegisterForm} />
+          <Route exact path="/" compenent={SignIn} />
+>>>>>>> b2a781aa603d4dd078c601470e1aa755c66d21ab
           <Route exact path="/activity" component={Activity} />
           <Route exact path="/child" component={Child} />
           <Route exact path="/journal" component={Journal} />
