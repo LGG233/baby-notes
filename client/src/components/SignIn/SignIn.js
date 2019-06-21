@@ -33,9 +33,9 @@ class SignIn extends Component {
   render() {
     return (
       <div className="FormCenter">
-        <form onSubmit={this.handleSubmit} className="FormFields" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="FormFields">
           <div className="FormField">
-            <label className="FormField__Label" htmlFor="email">User Name</label>
+            <label className="FormField__Label" htmlFor="userName">User Name</label>
             <input type="username" id="username" className="FormField__Input" placeholder="Enter your username" name="username" value={this.state.userName} onChange={this.handleChange} />
           </div>
 
