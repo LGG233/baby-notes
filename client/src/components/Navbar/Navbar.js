@@ -9,7 +9,7 @@ const navbar = props => (
             {/* <div>
                 <DrawerToggleButton />
             </div> */}
-            <div className="navbar-logo"><Link to="/">Home</Link></div>
+            {/* <div className="navbar-logo"><Link to="/">Home</Link></div> */}
             <div className="spacer"></div>
             <div className="navbar-items">
                 <ul>
