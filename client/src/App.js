@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import RegisterForm from './components/RegisterFrom/RegisterForm';
+import RegisterForm from './components/RegisterForm/RegisterForm';
 import Activity from './pages/Activity';
 import Landing from './pages/Landing';
 import Journal from './pages/Journal';
