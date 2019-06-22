@@ -8,7 +8,7 @@ import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Activity from "./pages/Activity";
 import Landing from "./pages/Landing";
 // import Journal from "./pages/Journal";
-import Child from "./pages/Child";
+// import Child from "./pages/Child";
 import NotFound from "./pages/NotFound";
 import Home from './pages/Home';
 import SignIn from "./components/SignIn/SignIn";
@@ -44,8 +44,8 @@ class App extends Component {
               <Route exact path="/home" component={Home} />
               <Route exact path="/signin" component={SignIn} />
               <Route exact path="/activity" component={Activity} />
-              <Route exact path="/child" component={Child} />
-            {/* <Route exact path="/journal" component={Journal} /> */}
+              {/* <Route exact path="/child" component={Child} />
+            <Route exact path="/journal" component={Journal} /> */}
               <Route component={NotFound} />
             </div>
           </Switch>
@@ -53,26 +53,8 @@ class App extends Component {
         <div className="footer">
           <Footer />
         </div>
-<<<<<<< HEAD
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/home" component={RegisterForm} />
-          <Route exact path="/signin" component={SignIn} />
-          <Route exact path="/activity" component={Activity} />
-          <Route exact path="/child" component={Child} />
-          <Route exact path="/journal" component={Journal} />
-          <Route component={NotFound} />
-        </Switch>
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
     </Router>
   );
-=======
-      </Router>
-    );
-  }
->>>>>>> d977664f94d7819fcbb3f1b46755ec66a39760f7
+}
 }
 export default App;
