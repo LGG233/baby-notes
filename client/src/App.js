@@ -25,10 +25,10 @@ class App extends Component {
           <div className="jumbotron">
             <h1>Baby Notes</h1>
           </div>
-          {/* 
+
           <br></br>
           <br></br>
-          <br></br> */}
+          <br></br>
           <div className="loginSwitch">
             <div className="container ">
               <NavLink exact to="/register" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Register</NavLink>

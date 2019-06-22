@@ -33,11 +33,11 @@ const columns = [{
 
 
 
-function TableRend() {
+function Table() {
     return <ReactTable
         data={data}
         columns={columns}
     />
 }
 
-export default TableRend;
+export default Table;

@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import CardDeck from 'react-bootstrap/CardDeck';
-import TableRend from "../components/Table/Table";
+import Table from "../components/Table/Table";
 
 function Child() {
   return (
@@ -12,9 +12,13 @@ function Child() {
                   <button className="btn btn-primary">Edit</button>
           </div>
         </div>
-        <div className="tableElement">
-          Inject activities table component here X 4
-            </div>
+        <div className="container">
+
+          <div className="tableElement">
+            Inject activities table component here X 4
+          <Table />
+          </div>
+        </div>
       </div>
     </div>
   );
