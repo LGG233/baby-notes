@@ -28,7 +28,7 @@ class App extends Component {
       <div className="loginSwitch">
         <div className="container ">
 
-        <NavLink to="/register" activeClassName="loginSwitcher_item-Active"  className="pageSwitcher_item"> Register</NavLink>
+        <NavLink exact to="/register" activeClassName="loginSwitcher_item-Active"  className="pageSwitcher_item"> Register</NavLink>
         <NavLink exact to="/signIn" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Log In</NavLink>
       </div>
       </div>
@@ -40,7 +40,7 @@ class App extends Component {
             <div className= "container">
             <Route exact path="/register" component={RegisterForm} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/signIn" compenent={SignIn} />
+            <Route exact path="/signIn" component={SignIn} />
             <Route exact path="/activity" component={Activity} />
             {/* <Route exact path="/child" component={Child} />
             <Route exact path="/journal" component={Journal} /> */}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
 class SignIn extends Component {
@@ -6,8 +6,8 @@ class SignIn extends Component {
     super();
 
     this.state = {
-      userName: '',
-      password: ''
+      userName: "",
+      password: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -26,28 +26,53 @@ class SignIn extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    console.log('The form was submitted with the following data:');
+    console.log("The form was submitted with the following data:");
     console.log(this.state);
   }
 
   render() {
     return (
-      <div className="FormCenter">
-        <form onSubmit={this.handleSubmit} className="FormFields">
-          <div className="FormField">
-            <label className="FormField__Label" htmlFor="userName">User Name</label>
-            <input type="username" id="username" className="FormField__Input" placeholder="Enter your username" name="username" value={this.state.userName} onChange={this.handleChange} />
-          </div>
+      <div className="container">
+        <div className="FormCenter">
+          <form onSubmit={this.handleSubmit} className="FormFields">
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="userName">
+                User Name
+              </label>
+              <input
+                type="username"
+                id="username"
+                className="FormField__Input"
+                placeholder="Enter your username"
+                name="username"
+                value={this.state.userName}
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <div className="FormField">
-            <label className="FormField__Label" htmlFor="password">Password</label>
-            <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
-          </div>
+            <div className="FormField">
+              <label className="FormField__Label" htmlFor="password">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="FormField__Input"
+                placeholder="Enter your password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <div className="FormField">
-            <button className="FormField__Button mr-20">Sign In</button> <Link to="/signIn" className="FormField__Link">Sign In</Link>
-          </div>
-        </form>
+            <div className="FormField">
+              <button className="FormField__Button mr-20">Sign In</button>{" "}
+              <Link to="/signIn" className="FormField__Link">
+                Sign In
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
