@@ -49,6 +49,13 @@ class App extends Component {
               <Route component={NotFound} />
             </div>
           </Switch>
+          <div className="loginSwitch">
+            <div className="container ">
+
+              <NavLink exact to="/register" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Register</NavLink>
+              <NavLink exact to="/signin" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Log In</NavLink>
+            </div>
+          </div>
         </div>
         <div className="footer">
           <Footer />
