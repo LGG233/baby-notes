@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./SignIn.css";
 
 class SignIn extends Component {
@@ -27,7 +27,7 @@ class SignIn extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    console.log('The form was submitted with the following data:');
+    console.log("The form was submitted with the following data:");
     console.log(this.state);
   }
 
