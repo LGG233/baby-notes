@@ -45,7 +45,7 @@ class SignIn extends Component {
           </div>
 
           <div className="FormField">
-            <button className="FormField__Button mr-20">Sign In</button> <Link to="/" className="FormField__Link">Sign In</Link>
+            <button className="FormField__Button mr-20">Sign In</button> <Link to="/signIn" className="FormField__Link">Sign In</Link>
           </div>
         </form>
       </div>
@@ -53,4 +53,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn
+export default SignIn;

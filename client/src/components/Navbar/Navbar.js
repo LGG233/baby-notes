@@ -9,15 +9,20 @@ const navbar = props => (
             {/* <div>
                 <DrawerToggleButton />
             </div> */}
-            {/* <div className="navbar-logo"><Link to="/">Home</Link></div> */}
-            <div className="spacer"></div>
+            <div className="navbar-logo"><Link to="/">Home</Link></div>
+            {/* <div className="spacer"></div> */}
+            {/* <div className="loginSwitch"> */}
+
+            {/* </div> */}
+
             <div className="navbar-items">
                 <ul>
-                    <li><Link to="/home">Sign Up</Link></li>
+                    <li><Link to="/home">Parent Page</Link></li>
                     <li><Link to="/activity">Activity</Link></li>
-                    <li><Link to="/child">Child</Link></li>
-                    <li><Link to="/journal">Journal</Link></li>
+                    {/* <li><Link to="/child">Child</Link></li>
+                    <li><Link to="/journal">Journal</Link></li> */}
                     <li><Link to="/">Log Out</Link></li>
+
                 </ul>
             </div>
         </nav>

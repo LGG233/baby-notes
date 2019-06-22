@@ -3,7 +3,8 @@ import Card from "react-bootstrap/Card";
 import CardDeck from 'react-bootstrap/CardDeck';
 import TableRend from "../components/Table/Table";
 
-function Child() {
+class Child extends Component {
+  render() {
     return (
 
         <div>
@@ -38,6 +39,7 @@ function Child() {
         </div>
 
     );
+  }
 }
 
 export default Child;
