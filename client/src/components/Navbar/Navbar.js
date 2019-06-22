@@ -1,6 +1,6 @@
 import React from "react";
 import './Navbar.css';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // import DrawerToggleButton from '../SideDrawer/Drawer/DrawerToggleButton';
 const navbar = props => (
@@ -12,8 +12,8 @@ const navbar = props => (
             <div className="navbar-logo"><Link to="/">Home</Link></div>
             {/* <div className="spacer"></div> */}
             {/* <div className="loginSwitch"> */}
-        
-      {/* </div> */}
+
+            {/* </div> */}
 
             <div className="navbar-items">
                 <ul>
@@ -22,7 +22,7 @@ const navbar = props => (
                     {/* <li><Link to="/child">Child</Link></li>
                     <li><Link to="/journal">Journal</Link></li> */}
                     <li><Link to="/">Log Out</Link></li>
-       
+
                 </ul>
             </div>
         </nav>
