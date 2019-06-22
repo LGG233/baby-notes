@@ -4,6 +4,7 @@ import Table from "react-bootstrap/Table";
 function Activity() {
     return (
         <div>
+            <h1 className="tableTitle text-center">Header </h1>
             <Table striped bordered hover>
                 <thead>
                     <tr>

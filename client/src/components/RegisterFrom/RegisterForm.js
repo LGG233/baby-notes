@@ -82,7 +82,7 @@ class RegisterForm extends Component {
                   className="btn btn-success"
                   onSubmit={this.handleSubmit}
                 >
-                  Submit{" "}
+                  Submit{""}
                 </button>
               </h1>
             </form>
