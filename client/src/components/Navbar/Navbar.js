@@ -20,7 +20,9 @@ const navbar = props => (
                     <li><Link to="/home">Parent Page</Link></li>
                     <li><Link to="/activity">Activity</Link></li>
                     <li><Link to="/child">Child</Link></li>
-                    {/* <li><Link to="/journal">Journal</Link></li> */}
+                    <li><Link to="/journal">Journal</Link></li>
+                    <li><Link to="/signin">Sign In</Link></li>
+                    <li><Link to="/child">Child</Link></li>
                     <li><Link to="/">Log Out</Link></li>
 
                 </ul>
