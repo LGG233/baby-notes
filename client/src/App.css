@@ -11,6 +11,8 @@
 Table {
     max-width: 80%;
     margin: auto;
+<<<<<<< HEAD
+=======
     height: 10rem;
 }
 
@@ -26,4 +28,5 @@ Table {
     padding: 5px;
     font-size: 1.75rem; 
     display: inline-block;
+>>>>>>> a75e914490e61cb68de1edd842bd9f696debe8a7
 }

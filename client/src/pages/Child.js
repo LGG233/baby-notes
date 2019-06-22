@@ -1,23 +1,43 @@
-import React, { Component } from "react";
+import React from "react";
+import Card from "react-bootstrap/Card";
+import CardDeck from 'react-bootstrap/CardDeck';
+import TableRend from "../components/Table/Table";
 
 class Child extends Component {
   render() {
     return (
-      <div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4">
-              <div className="card">
-                <div className="card-title">Child Name</div>
-                <div className="card-body">Child Info</div>
-                <div className="card-footer">
-                  <button className="btn btn-primary">Select</button>
-                </div>
-              </div>
-            </div>
-          </div>
+
+        <div>
+            <CardDeck>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Sleep Schedule</Card.Title>
+                        <TableRend />
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Feeding Schedule</Card.Title>
+                        <TableRend />
+                    </Card.Body>
+                </Card>
+            </CardDeck>
+            <CardDeck>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Changing Schedule</Card.Title>
+                        <TableRend />
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>Journal Entries</Card.Title>
+                        <TableRend />
+                    </Card.Body>
+                </Card>
+            </CardDeck>
         </div>
-      </div>
+
     );
   }
 }
