@@ -19,14 +19,10 @@ const navbar = props => (
                 <ul>
                     <li><Link to="/home">Parent Page</Link></li>
                     <li><Link to="/activity">Activity</Link></li>
-<<<<<<< HEAD
                     <li><Link to="/child">Child</Link></li>
                     <li><Link to="/journal">Journal</Link></li>
                     <li><Link to="/signin">Sign In</Link></li>
-=======
-                    {/* <li><Link to="/child">Child</Link></li>
-                    <li><Link to="/journal">Journal</Link></li> */}
->>>>>>> d977664f94d7819fcbb3f1b46755ec66a39760f7
+                    <li><Link to="/child">Child</Link></li>
                     <li><Link to="/">Log Out</Link></li>
 
                 </ul>
