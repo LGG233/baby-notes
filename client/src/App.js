@@ -4,11 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-<<<<<<< HEAD
 // import RegisterForm from './components/RegisterForm/RegisterForm';
-=======
-import RegisterForm from './components/RegisterForm/RegisterForm';
->>>>>>> 8debc78baec81c5326dbc4e8e7de2119d2c66b2f
 import Activity from './pages/Activity';
 import Landing from './pages/Landing';
 import Journal from './pages/Journal';
@@ -31,15 +27,9 @@ function App() {
           <h1>Baby Notes</h1>
         </div>
         <Switch>
-<<<<<<< HEAD
           <Route exact path="/" component={Landing} />
           {/* <Route exact path="/home" component={RegisterForm} /> */}
           {/* <Route exact path="/" component={SignIn} /> */}
-=======
-          <Route path="/" component={Landing} />
-          <Route exact path="/home" component={RegisterForm} />
-          <Route exact path="/signIn" compenent={SignIn} />
->>>>>>> 8debc78baec81c5326dbc4e8e7de2119d2c66b2f
           <Route exact path="/activity" component={Activity} />
           <Route exact path="/child" component={Child} />
           <Route exact path="/journal" component={Journal} />
