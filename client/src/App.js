@@ -29,10 +29,10 @@ function App() {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/home" component={RegisterForm} />
-          <Route exact path="/journal" component={SignIn} />
+          <Route exact path="/signin" component={SignIn} />
           <Route exact path="/activity" component={Activity} />
           <Route exact path="/child" component={Child} />
-          {/* <Route exact path="/journal" component={Journal} /> */}
+          <Route exact path="/journal" component={Journal} />
           <Route component={NotFound} />
         </Switch>
       </div>
