@@ -6,16 +6,13 @@ class Child extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
-              <div className="card">
-                <div className="card-title">Child Name</div>
-                <div className="card-body">Child Info</div>
-                <div className="card-footer">
-                  <button className="btn btn-primary">Select</button>
-                </div>
-              </div>
+            <div className="col-md-4">Child Name
+                  <button className="btn btn-primary">Edit</button>
             </div>
           </div>
+          <div className="tableElement">
+            Inject activities table component here X 4
+            </div>
         </div>
       </div>
     );

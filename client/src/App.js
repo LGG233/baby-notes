@@ -8,7 +8,7 @@ import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Activity from "./pages/Activity";
 import Landing from "./pages/Landing";
 // import Journal from "./pages/Journal";
-// import Child from "./pages/Child";
+import Child from "./pages/Child";
 import NotFound from "./pages/NotFound";
 import Home from './pages/Home';
 import SignIn from "./components/SignIn/SignIn";
@@ -31,27 +31,28 @@ class App extends Component {
           <br></br> */}
           <div className="loginSwitch">
             <div className="container ">
-
               <NavLink exact to="/register" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Register</NavLink>
               <NavLink exact to="/signin" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Log In</NavLink>
             </div>
           </div>
           {/* <br></br> */}
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <div className="container">
+          <div className="switch">
+            <Switch>
+              {/* <div className="container"> */}
+              <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={RegisterForm} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/signin" component={SignIn} />
               <Route exact path="/activity" component={Activity} />
-              {/* <Route exact path="/child" component={Child} />
-            <Route exact path="/journal" component={Journal} /> */}
+              <Route exact path="/child" component={Child} />
+              {/* <Route exact path="/journal" component={Journal} /> */}
               <Route component={NotFound} />
-            </div>
-          </Switch>
-        </div>
-        <div className="footer">
-          <Footer />
+              {/* </div> */}
+            </Switch>
+          </div>
+          <div className="footer">
+            <Footer />
+          </div>
         </div>
       </Router>
     );
