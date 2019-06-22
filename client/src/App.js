@@ -22,9 +22,13 @@ class App extends Component {
           <div className="navbar">
             <Navbar />
           </div>
+          <div className="jumbotron">
+            <h1>Baby Notes</h1>
+          </div>
+          {/* 
           <br></br>
           <br></br>
-          <br></br>
+          <br></br> */}
           <div className="loginSwitch">
             <div className="container ">
 
@@ -32,9 +36,7 @@ class App extends Component {
               <NavLink exact to="/signin" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Log In</NavLink>
             </div>
           </div>
-
-
-          <br></br>
+          {/* <br></br> */}
           <Switch>
             <Route exact path="/" component={Landing} />
             <div className="container">
@@ -48,9 +50,6 @@ class App extends Component {
             </div>
           </Switch>
         </div>
-
-
-
         <div className="footer">
           <Footer />
         </div>
