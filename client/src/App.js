@@ -25,40 +25,34 @@ class App extends Component {
           <div className="jumbotron">
             <h1>Baby Notes</h1>
           </div>
-          {/* 
+
           <br></br>
           <br></br>
-          <br></br> */}
+          <br></br>
           <div className="loginSwitch">
             <div className="container ">
-
               <NavLink exact to="/register" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Register</NavLink>
               <NavLink exact to="/signin" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Log In</NavLink>
             </div>
           </div>
           {/* <br></br> */}
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <div className="container">
+          <div className="switch">
+            <Switch>
+              {/* <div className="container"> */}
+              <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={RegisterForm} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/signin" component={SignIn} />
               <Route exact path="/activity" component={Activity} />
               <Route exact path="/child" component={Child} />
-            {/* <Route exact path="/journal" component={Journal} /> */}
+              {/* <Route exact path="/journal" component={Journal} /> */}
               <Route component={NotFound} />
-            </div>
-          </Switch>
-          <div className="loginSwitch">
-            <div className="container ">
-
-              <NavLink exact to="/register" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Register</NavLink>
-              <NavLink exact to="/signin" activeClassName="loginSwitcher_item-Active" className="pageSwitcher_item"> Log In</NavLink>
-            </div>
+              {/* </div> */}
+            </Switch>
           </div>
-        </div>
-        <div className="footer">
-          <Footer />
+          <div className="footer">
+            <Footer />
+          </div>
         </div>
       </Router>
     );
