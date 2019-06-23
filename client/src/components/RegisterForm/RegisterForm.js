@@ -66,7 +66,7 @@ class RegisterForm extends Component {
   render() {
     return (
       <div className="container">
-        <div className='row'>
+        <div className="row">
           <div className="col-md-10">
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">

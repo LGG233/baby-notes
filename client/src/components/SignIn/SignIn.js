@@ -35,7 +35,7 @@ class SignIn extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-12">
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
@@ -46,9 +46,8 @@ class SignIn extends Component {
             <label className="FormField__Label" htmlFor="password">Password</label>
             <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
           </div>
-
           <div className="FormField">
-            <button className="FormField__Button mr-20">Sign In</button> <Link to="/signIn" className="FormField__Link">Sign In</Link>
+            <Link>< button className="FormField__Button mr-20">Sign In</button></Link> 
           </div>
         </form>
         </div>
