@@ -19,8 +19,8 @@ var PORT = process.env.PORT || 8080;
 app.use(cors());// Add routes, both API and view
 
 
-const routes = require('./routes');
-app.use(routes);
+// const routes = require('./routes');
+// app.use(routes);
 // Requiring our models for syncing
 var db = require("./models");
 
@@ -42,12 +42,16 @@ if (process.env.NODE_ENV === "production") {
 // Routes
 // =============================================================
 // require("./routes/api/childRoute")(app);
-
+// Routes
+// =============================================================
+require("./routes/api/userRoute")(app);
+// const routes = require('./routes');
+// app.use(routes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({
-  force: true
+  force: false
 }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
