@@ -2,6 +2,7 @@
     color:white;
     background-image: url(./img/hands.jpg);
     background-size: cover;
+    border: 2px solid white;
     background-repeat: no-repeat;
     background-position: center;
     height: 30rem;
@@ -20,22 +21,22 @@ Table {
     color:white;
 }
 .loginSwitch a:hover{
-    color:grey;
+    color:lightgreen;
 }
 .loginSwitch{
-    display: flex;
-    justify-content: flex-end;
+    /* display: flex; */
+    /* justify-content: flex-end; */
     margin-top: 5rem;
     margin-bottom:10px;
-    text-align: left;
-}
+    text-align: center;
+} 
 .loginSwitcher_item-Active  {
-    background-color: rgb(255, 133, 133);
+    background-color: rgb(39, 195, 104);
     color: white;
     padding: 5px;
     font-size: 1.75rem; 
     display: inline-block;
-    box-shadow: 1px 5px 8px rgb(187, 133, 133);
+    box-shadow: 1px 5px 8px rgb(26, 85, 60);
 }
 .App {
     margin: 100px;
