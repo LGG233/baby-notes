@@ -87,7 +87,7 @@ class RegisterForm extends Component {
                   <input type="password" id="password" className="FormField__Input" placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange} />
                 </div>
                 <div className="FormField">
-                  <button className="FormField__Button mr-20">Sign In</button>
+                  <button className="FormField__Button mr-20"><h3>Register</h3></button>
                 </div>
               </form>
             </div>

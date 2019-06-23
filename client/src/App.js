@@ -42,7 +42,7 @@ class App extends Component {
               className="pageSwitcher_item"
             >
               {" "}
-              Register
+             <h3>Register</h3>
             </NavLink>
             <NavLink
               exact
@@ -51,7 +51,7 @@ class App extends Component {
               className="pageSwitcher_item"
             >
               {" "}
-              Log In
+             <h3>Log In</h3>
             </NavLink>
           </div>
           <div className="switch">
