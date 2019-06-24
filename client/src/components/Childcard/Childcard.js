@@ -6,17 +6,17 @@ class Childcard extends Component {
         return (
             <div>
                 <div className="container childCard">
-                        <div className="col-md-12">
-                            <div className="card">
-                                <div className="card-header">
-                                    <h1>Child Name</h1></div>
-                                <div className="card-body"><h3>Child Info</h3></div>
-                                <div className="card-footer">
-                                    <button className="btn btn-success">Select</button>
-                                </div>
+                    <div className="col-md-12">
+                        <div className="card">
+                            <div className="card-header">
+                                <h1>Timmy</h1></div>
+                            <div className="card-body"><h3>Birthday: June 24</h3></div>
+                            <div className="card-footer">
+                                <button className="btn btn-success">Select</button>
                             </div>
                         </div>
                     </div>
+                </div>
                 <br></br>
             </div>
         );

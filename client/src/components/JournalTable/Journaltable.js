@@ -15,7 +15,7 @@ const columns = [{
     header: '',
     id: 'edit',
     accessor: '[row identifier to be passed to button]',
-    Cell: ({ value }) => (<button className="btn btn-danger">Edit</button>),
+    Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
     width: 70
 },
 {

@@ -10,7 +10,7 @@ class Home extends Component {
         <div className="row">
           <div className="col-md-12">
             <h1> Parents Home Page</h1>
-            <h2>Add child here ++</h2>
+            <button className="btn btn-success">New Child</button>
             <Childcard />
             <br></br>
             <Journal />
