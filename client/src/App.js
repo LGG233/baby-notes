@@ -24,12 +24,12 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navbar />
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="jumbotron">
-                  <h1>Baby Notes</h1>
-                </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="jumbotron">
+                <h1>Baby Notes</h1>
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@ class App extends Component {
               className="pageSwitcher_item"
             >
               {" "}
-             <h3>Register</h3>
+              <h3>Register</h3>
             </NavLink>
             <NavLink
               exact
@@ -51,7 +51,7 @@ class App extends Component {
               className="pageSwitcher_item"
             >
               {" "}
-             <h3>Log In</h3>
+              <h3>Log In</h3>
             </NavLink>
           </div>
           <div className="switch">

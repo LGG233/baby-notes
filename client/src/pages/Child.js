@@ -2,7 +2,7 @@ import React from "react";
 // import Card from "react-bootstrap/Card";
 // import CardDeck from 'react-bootstrap/CardDeck';
 import Table from "../components/Table/Table";
-import Childcard from "../components/Childcard/Childcard";
+// import Childcard from "../components/Childcard/Childcard";
 
 function Child() {
   return (

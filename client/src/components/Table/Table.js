@@ -2,7 +2,6 @@ import React from "react";
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
-
 const data = [{
     id: '1',
     start: '10:00 PM',
@@ -34,11 +33,11 @@ const columns = [{
 
 
 
-function Table() {
+function TableRend() {
     return <ReactTable
         data={data}
         columns={columns}
     />
 }
 
-export default Table;
+export default TableRend;

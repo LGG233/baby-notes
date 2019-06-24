@@ -5,12 +5,11 @@
     border: 2px solid white;
     background-repeat: no-repeat;
     background-position: center;
-    height: 45em;
+    height: 12rem;
     width: 100%;
-    padding: 20rem; 
+    padding: 3rem; 
     box-shadow: 0px 7px 15px rgb(3, 54, 50);
     text-align: center;
-    text-shadow: 1px 1px 4px rgb(4, 41, 21);
 }
 Table {
     font-weight: 600;
@@ -32,15 +31,13 @@ Table {
     text-align: center;
 } 
 .loginSwitcher_item-Active  {
-    background-color: #52C4B9;
+    background-color: rgb(39, 195, 104);
     color: white;
-    padding: 10px;
-    border-radius: 25px;
+    padding: 5px;
     font-size: 1.75rem; 
     display: inline-block;
     box-shadow: 1px 5px 8px rgb(26, 85, 60);
 }
 .App {
-    margin: 25px;
-    margin-top:150px;
+    margin: 100px;
 }
