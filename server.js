@@ -25,10 +25,10 @@ app.use(cors());// Add routes, both API and view
 var db = require("./models");
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({
-  extended: true
-}));
-app.use(express.json());
+// app.use(express.urlencoded({
+//   extended: true
+// }));
+// app.use(express.json());
 
 // Static directory
 // app.use(express.static("public"));
@@ -44,9 +44,23 @@ if (process.env.NODE_ENV === "production") {
 // require("./routes/api/childRoute")(app);
 // Routes
 // =============================================================
-require("./routes/api/userRoute")(app);
+// require("./routes/api/userRoute")(app);
 // const routes = require('./routes');
 // app.use(routes);
+
+
+var bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.use(cors())
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+)
+
+var Users = require("./routes/api/userRoute")
+app.use("/users", Users)
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
