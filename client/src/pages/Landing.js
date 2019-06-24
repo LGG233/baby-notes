@@ -7,7 +7,7 @@ import {
 function Landing() {
     return (
         <div>
-             <div className="loginSwitch">
+             {/* <div className="loginSwitch">
             <NavLink
               exact
               to="/register"
@@ -26,7 +26,7 @@ function Landing() {
               {" "}
               Log In
             </NavLink>
-          </div>
+          </div> */}
         </div>
     );
 }
