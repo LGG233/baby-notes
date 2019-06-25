@@ -6,8 +6,7 @@ import Footer from "./components/Footer/Footer";
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  NavLink
+  Switch
 } from "react-router-dom";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Activity from "./pages/Activity";
@@ -17,6 +16,7 @@ import Child from "./pages/Child";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import SignIn from "./components/SignIn/SignIn";
+//import PageSwitch from "./components/PageSwitch/PageSwitch";
 
 class App extends Component {
   render() {
@@ -34,26 +34,6 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="loginSwitch">
-            <NavLink
-              exact
-              to="/register"
-              activeClassName="loginSwitcher_item-Active"
-              className="pageSwitcher_item"
-            >
-              {" "}
-              <h3>Register</h3>
-            </NavLink>
-            <NavLink
-              exact
-              to="/signin"
-              activeClassName="loginSwitcher_item-Active"
-              className="pageSwitcher_item"
-            >
-              {" "}
-              <h3>Log In</h3>
-            </NavLink>
-          </div>
           <div className="switch">
             <Switch>
               <Route exact path="/" component={Landing} />
@@ -65,7 +45,7 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
           </div>
-          <div className="footer">
+          <div className="App">
             <Footer />
           </div>
         </div>

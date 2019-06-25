@@ -7,7 +7,7 @@ import "./home.css";
 class Home extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid new-image">
         <div className="row">
           <div className="col-md-12 page-title">
             <h1>Parents Home Page</h1>
@@ -18,7 +18,10 @@ class Home extends Component {
           <Childcard />
           <Childcard />
           <br></br>
-          <Journal />
+          <div className="white-container">
+            <Journal />
+
+          </div>
         </div>
       </div>
     );

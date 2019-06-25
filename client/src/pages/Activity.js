@@ -1,39 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import TableRend from "../components/Table/Table.js";
+import "./activity.css";
 // import Table from "react-bootstrap/Table";
 
-function Activity() {
-    return <TableRend />
+class Activity extends Component {
+    render() {
+        return (
+            <div className="container-fluid activity-image" >
+                <div className="row">
+                    <div className="col-md-12 page-title">
+                        <h1>Child's Sleep / Feeding / Diaper Schedule</h1>
+                        <button className="btn btn-success">New Activity</button>
+                    </div>
+                </div>
+                <div className="white-container">
+                    <TableRend />
+                </div>
+            </div>
+        )
+    }
 }
-
-
-
-// function Activity() {
-//     return (
-//         <div>
-//             <h1 className="tableTitle text-center">Header </h1>
-//             <Table striped bordered hover>
-//                 <thead>
-//                     <tr>
-//                         <th>Start</th>
-//                         <th>End</th>
-//                         <th>Dates</th>
-//                         <th>Notes</th>
-//                         <th>Edit</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
-//                     <tr>
-//                         <td></td>
-//                         <td></td>
-//                         <td></td>
-//                         <td></td>
-//                         <td></td>
-//                     </tr>
-//                 </tbody>
-//             </Table>
-//         </div>
-//     );
-// }
 
 export default Activity;

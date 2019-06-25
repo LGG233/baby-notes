@@ -1,26 +1,21 @@
 import React from "react";
+import Table from "../components/Table/Table";
+import JournalTable from "../components/JournalTable/Journaltable";
+import "./child.css";
 // import Card from "react-bootstrap/Card";
 // import CardDeck from 'react-bootstrap/CardDeck';
-import Table from "../components/Table/Table";
 // import Childcard from "../components/Childcard/Childcard";
 
 function Child() {
   return (
-    <div>
-      {/* <div className="container-fluid childrenCard">
-        <div className="row">
-          <div className="col-md-4">
-            <Childcard />
-          </div>
-          <div className="col-md-4">
-            <Childcard />
-          </div>
-          <div className="col-md-4">
-            <Childcard />
-          </div>
+    <div className="container-fluid childrenCard" >
+      <div className="row">
+        <div className="col-md-12 page-title">
+          <h1>Child's Page</h1>
+          <button className="btn btn-success">New Activity</button>
         </div>
-      </div> */}
-      <div className="container-fluid">
+      </div>
+      <div className="container-fluid white-container">
         <div className="row">
           <div className="tableElement col-md-12">
             <h3>Sleep</h3>
@@ -29,8 +24,8 @@ function Child() {
             <Table />
             <h3>Diaper Change</h3>
             <Table />
-            <h3>Their Journal</h3>
-            <Table />
+            <h3>My Journal</h3>
+            <JournalTable />
           </div>
         </div>
       </div>
