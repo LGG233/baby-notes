@@ -31,6 +31,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import "./RegisterForm.css"
+import Landing from '../../pages/Landing';
 
 class RegisterForm extends Component {
   constructor() {
@@ -66,6 +67,7 @@ class RegisterForm extends Component {
   render() {
     return (
       <div className="container">
+        <Landing />
         <div className="row">
           <div className="col-md-10">
             <div className="FormCenter">
