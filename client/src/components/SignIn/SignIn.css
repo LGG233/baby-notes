@@ -1,26 +1,15 @@
-.App {
-  height: 100vh;
-  display: flex;
-  color: white;
-}
 
-.App__Aside {
-  width: 50%;
-  background-color: #66DAC7;
-}
-
-.App__Form {
-  width: 50%;
+/* .App__Form {
+  width: 100%;
   background-color: #2E4158;
   padding: 25px 40px;
   overflow: auto;
-}
+} */
 
-.PageSwitcher {
+/* .PageSwitcher {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 10%;
-}
+} */
 
 .PageSwitcher__Item {
   background-color: #4C5D72;
@@ -37,6 +26,7 @@
 .PageSwitcher__Item--Active {
   background-color: #5ED0C0;
   color: white;
+  text-shadow: 1px 1px 3px black;
 }
 
 .PageSwitcher__Item:first-child {
@@ -83,11 +73,11 @@
 .FormField__Label {
   display: block;
   text-transform: uppercase;
-  font-size: .9em;
+  font-size: 1.5em;
   color: white;
 }
 .FormField__Input {
-  width: 85%;
+  width: 100%;
   background-color: transparent;
   border: none;
   color: white;
@@ -110,18 +100,19 @@
   outline: none;
   border-radius: 25px;
   padding: 15px 70px;
-  font-size: .8em;
-  font-weight: 500;
+  font-size: 1em;
+  font-weight: 300;
+  text-shadow: 1px 1px 4px rgb(4, 58, 121);
 }
 
-.FormField__Link {
+/* .FormField__Link {
   color: #66707D;
   text-decoration: none;
   display: inline-block;
   border-bottom: 1.5px solid #225E62;
   padding-bottom: 5px;
-}
-
+} */
+/* 
 .FormField__CheckboxLabel {
   color: #646F7D;
   font-size: .9em;
@@ -139,4 +130,4 @@
   display: inline-block;
   padding-bottom: 2px;
   margin-left: 5px;
-}
+} */

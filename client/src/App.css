@@ -2,28 +2,48 @@
     color:white;
     background-image: url(./img/hands.jpg);
     background-size: cover;
+    border: 2px solid white;
     background-repeat: no-repeat;
     background-position: center;
-    height: 22rem; 
-    box-shadow: 0px 7px 15px rgb(97, 62, 62);
+    height: 12rem;
+    width: 100%;
+    padding: 3rem; 
+    box-shadow: 0px 7px 15px rgb(3, 54, 50);
     text-align: center;
 }
 Table {
+    font-weight: 600;
     max-width: 80%;
     margin: auto;
     height: 10rem;
 }
-
-.loginSwitch{
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom:10%;
-    text-align: right;
+.loginSwitch a{
+    color:white;
+    text-shadow: 1px 1px 2px rgb(5, 37, 73);
 }
-.loginSwitcher_item-Active {
-    background-color: rgb(248, 130, 130);
+.loginSwitch a:hover{
+    color:lightgreen;
+}
+.loginSwitch{
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    margin-top: 5rem;
+    margin-bottom:10px;
+    text-align: center;
+} 
+.loginSwitcher_item-Active  {
+    background-color: rgb(39, 195, 104);
     color: white;
     padding: 5px;
     font-size: 1.75rem; 
+      border-radius: 10px;
     display: inline-block;
+    box-shadow: 1px 5px 8px rgb(26, 85, 60);
+    text-shadow: 1px 1px 3px black;
+}
+.App {
+    margin: 100px;
+}
+.pageSwitcher_item {
+   text-shadow: 1px 1px 2px rgb(5, 37, 73);
 }

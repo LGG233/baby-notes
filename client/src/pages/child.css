@@ -1,0 +1,13 @@
+.childrenCard {
+    background-image: url(../img/bed.jpg);
+    /* background-image: url(../img/family.jpg); */
+}
+
+.white-text {
+    color: white;
+}
+
+.white-container {
+    background: white;
+    /* opacity: 0.50%; */
+}
