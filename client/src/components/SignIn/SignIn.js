@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./SignIn.css";
-import Landing from '../../pages/Landing';
+import Landing from "../../pages/Landing";
 
 class SignIn extends Component {
   constructor() {
