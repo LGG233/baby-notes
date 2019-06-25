@@ -29,6 +29,10 @@ const columns = [
         Header: 'Observations',
         accessor: 'observations',
         width: 700
+    },
+    {
+        Header: '',
+        Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
     }]
 
 
