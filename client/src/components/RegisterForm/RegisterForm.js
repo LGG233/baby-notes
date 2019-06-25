@@ -72,11 +72,11 @@ class RegisterForm extends Component {
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
                   <label className="FormField__Label" htmlFor="firstName">First Name</label>
-                  <input type="text" id="name" className="FormField__Input" placeholder="First Name" name="first name" value={this.state.firstName} onChange={this.handleChange} />
+                  <input type="text" id="firstname" className="FormField__Input" placeholder="First Name" name="firstName" value={this.state.firstName} onChange={this.handleChange} />
                 </div>
                 <div className="FormField">
                   <label className="FormField__Label" htmlFor="Last Name">Last Name</label>
-                  <input type="text" id="name" className="FormField__Input" placeholder="Last Name" name="last name" value={this.state.LastName} onChange={this.handleChange} />
+                  <input type="text" id="lastname" className="FormField__Input" placeholder="Last Name" name="lastName" value={this.state.LastName} onChange={this.handleChange} />
                 </div>
                 <div className="FormField">
                   <label className="FormField__Label" htmlFor="email">E-Mail Address</label>

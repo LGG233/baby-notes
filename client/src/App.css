@@ -37,6 +37,7 @@ Table {
     font-size: 1.75rem; 
     display: inline-block;
     box-shadow: 1px 5px 8px rgb(26, 85, 60);
+    text-shadow: 1px 1px 3px black;
 }
 .App {
     margin: 100px;
