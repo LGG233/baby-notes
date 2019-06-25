@@ -14,13 +14,17 @@ class Home extends Component {
             <button className="btn btn-success">New Child</button>
             <button className="btn btn-success">New Journal Entry</button>
           </div>
-          <Childcard />
-          <Childcard />
-          <Childcard />
-          <br></br>
-          <div className="white-container">
-            <Journal />
+          <div className="row">
+            <div className="col-md-3">
+              <Childcard />
+              <Childcard />
+              <Childcard />
+            </div>
+            {/* <br></br> */}
+            <div className="col-md-8 white-container">
+              <Journal />
 
+            </div>
           </div>
         </div>
       </div>
