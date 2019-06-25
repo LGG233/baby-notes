@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import "./SignIn.css";
+import Landing from '../../pages/Landing';
 
 class SignIn extends Component {
   constructor() {
@@ -34,6 +35,7 @@ class SignIn extends Component {
   render() {
     return (
       <div className="container">
+        <Landing />
         <div className="row">
           <div className="col-md-12">
             <div className="FormCenter">
@@ -42,16 +44,16 @@ class SignIn extends Component {
                   <label className="FormField__Label" htmlFor="email">Email</label>
                   <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
                 </div>
-          <div className="FormField">
-            <label className="FormField__Label" htmlFor="password">Password</label>
-            <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
+                <div className="FormField">
+                  <label className="FormField__Label" htmlFor="password">Password</label>
+                  <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
+                </div>
+                <div className="FormField">
+                  <Link>< button className="FormField__Button mr-20"><h3>Sign In</h3></button></Link>
+                </div>
+              </form>
+            </div>
           </div>
-          <div className="FormField">
-            <Link>< button className="FormField__Button mr-20"><h3>Sign In</h3></button></Link> 
-          </div>
-        </form>
-        </div>
-        </div>
         </div>
       </div>
     );

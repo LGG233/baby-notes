@@ -39,14 +39,11 @@ const columns = [{
 
 }]
 
-
-
 function JournalTable() {
     return <ReactTable
         data={data}
         columns={columns}
     />
-
 }
 
 export default JournalTable;

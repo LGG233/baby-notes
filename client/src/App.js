@@ -34,7 +34,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="loginSwitch">
+          {/* <div className="loginSwitch">
             <NavLink
               exact
               to="/register"
@@ -53,7 +53,7 @@ class App extends Component {
               {" "}
               <h3>Log In</h3>
             </NavLink>
-          </div>
+          </div> */}
           <div className="switch">
             <Switch>
               <Route exact path="/" component={Landing} />
