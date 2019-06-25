@@ -1,24 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Landing = function() {
+const Landing = function () {
 
   return (
-    <div className="loginSwitch">
-      <Link
-        to="/register"
-        className="loginSwitcher_item-Active pageSwitcher_item"
-      >
-        {" "}
-        Register
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="jumbotron">
+            <h1>Baby Notes</h1>
+          </div>
+        </div>
+      </div>
+      <div className="loginSwitch">
+        <Link
+          to="/register"
+          className="loginSwitcher_item-Active pageSwitcher_item"
+        >
+          {" "}
+          Register
       </Link>
-      <Link
-        to="/signin"
-        className="loginSwitcher_item-Active pageSwitcher_item"
-      >
-        {" "}
-        Log In
+        <Link
+          to="/signin"
+          className="loginSwitcher_item-Active pageSwitcher_item"
+        >
+          {" "}
+          Log In
       </Link>
+      </div>
     </div>
   );
 };

@@ -13,21 +13,25 @@ const columns = [
     {
         Header: 'Date',
         accessor: 'date',
+        headerStyle: { textAlign: 'left' },
         width: 93
     },
     {
         Header: 'Start',
         accessor: 'start',
+        headerStyle: { textAlign: 'left' },
         width: 80
     },
     {
         Header: 'End',
         accessor: 'end',
+        headerStyle: { textAlign: 'left' },
         width: 80
     },
     {
         Header: 'Observations',
         accessor: 'observations',
+        headerStyle: { textAlign: 'left' },
         width: 700
     }]
 

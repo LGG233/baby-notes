@@ -25,30 +25,29 @@ class App extends Component {
         <div className="App">
           <Navbar />
         </div>
-        <div className="container-fluid">
+        {/* <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
               <div className="jumbotron">
                 <h1>Baby Notes</h1>
               </div>
             </div>
-          </div>
-
-          <div className="switch">
-            <Switch>
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/register" component={RegisterForm} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/signin" component={SignIn} />
-              <Route exact path="/activity" component={Activity} />
-              <Route exact path="/child" component={Child} />
-              <Route component={NotFound} />
-            </Switch>
-          </div>
-          <div className="App">
-            <Footer />
-          </div>
+          </div> */}
+        <div className="switch">
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={RegisterForm} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/signin" component={SignIn} />
+            <Route exact path="/activity" component={Activity} />
+            <Route exact path="/child" component={Child} />
+            <Route component={NotFound} />
+          </Switch>
         </div>
+        <div className="App">
+          <Footer />
+        </div>
+        {/* </div> */}
       </Router>
     );
   }

@@ -35,7 +35,7 @@ const columns = [{
     accessor: 'notes',
     headerStyle: { textAlign: 'left' },
     style: { 'whiteSpace': 'unset' },
-    width: 50
+    width: 450
 }]
 
 function JournalTable() {

@@ -44,7 +44,7 @@ Table {
     text-shadow: 1px 1px 3px black;
 }
 .App {
-    margin: 100px;
+    margin-top: 100px;
 }
 .pageSwitcher_item {
    text-shadow: 1px 1px 2px rgb(5, 37, 73);
