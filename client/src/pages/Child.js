@@ -2,24 +2,18 @@ import React from "react";
 // import Card from "react-bootstrap/Card";
 // import CardDeck from 'react-bootstrap/CardDeck';
 import Table from "../components/Table/Table";
-// import Childcard from "../components/Childcard/Childcard";
+import Childcard from "../components/Childcard/Childcard";
 
 function Child() {
   return (
     <div>
-      {/* <div className="container-fluid childrenCard">
+      <div className="container-fluid childrenCard">/
         <div className="row">
           <div className="col-md-4">
             <Childcard />
           </div>
-          <div className="col-md-4">
-            <Childcard />
-          </div>
-          <div className="col-md-4">
-            <Childcard />
-          </div>
         </div>
-      </div> */}
+      </div>
       <div className="container-fluid">
         <div className="row">
           <div className="tableElement col-md-12">

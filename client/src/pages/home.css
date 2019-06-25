@@ -6,3 +6,11 @@
     margin: 3px;
     display: inline-block;
 }
+.new-image {
+    background-image: url(../img/family.jpg);
+}
+
+.white-container {
+    background: white;
+    opacity: 50%;
+}
