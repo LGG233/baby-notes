@@ -45,6 +45,7 @@ function JournalTable() {
     return <ReactTable
         data={data}
         columns={columns}
+        defaultPageSize={5}
     />
 
 }
