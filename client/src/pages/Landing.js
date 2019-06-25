@@ -1,34 +1,25 @@
 import React from "react";
-import {
-    BrowserRouter as 
-    NavLink
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Landing() {
-    return (
-        <div>
-             {/* <div className="loginSwitch">
-            <NavLink
-              exact
-              to="/register"
-              activeClassName="loginSwitcher_item-Active"
-              className="pageSwitcher_item"
-            >
-              {" "}
-              Register
-            </NavLink>
-            <NavLink
-              exact
-              to="/signin"
-              activeClassName="loginSwitcher_item-Active"
-              className="pageSwitcher_item"
-            >
-              {" "}
-              Log In
-            </NavLink>
-          </div> */}
-        </div>
-    );
-}
+const Landing = function() {
 
+  return (
+    <div className="loginSwitch">
+      <Link
+        to="/register"
+        className="loginSwitcher_item-Active pageSwitcher_item"
+      >
+        {" "}
+        Register
+      </Link>
+      <Link
+        to="/signin"
+        className="loginSwitcher_item-Active pageSwitcher_item"
+      >
+        {" "}
+        Log In
+      </Link>
+    </div>
+  );
+};
 export default Landing;

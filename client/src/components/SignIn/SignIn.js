@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import "./SignIn.css";
 
 class SignIn extends Component {
@@ -8,14 +8,13 @@ class SignIn extends Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      isValid: localStorage.getItem("user"),
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handleChange =(event)=> {
     let target = event.target;
     let name = target.name;
 
@@ -24,11 +23,22 @@ class SignIn extends Component {
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit =(event)=> {
     event.preventDefault();
 
     console.log("The form was submitted with the following data:");
     console.log(this.state);
+
+    /*
+    ---------Axios call get made here--------
+
+    */
+
+    localStorage.setItem("user", this.state.email)
+
+    this.setState({
+      isValid: true
+    })
   }
 
   render() {
@@ -47,7 +57,8 @@ class SignIn extends Component {
             <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
           </div>
           <div className="FormField">
-            <Link>< button className="FormField__Button mr-20"><h3>Sign In</h3></button></Link> 
+            { this.state.isValid ? <Redirect to="/home" /> : null}
+            < button className="FormField__Button mr-20" onClick={this.submitForm}><h3>Sign In</h3></button> 
           </div>
         </form>
         </div>

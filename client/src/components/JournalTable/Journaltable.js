@@ -34,7 +34,7 @@ const columns = [{
     Header: 'Notes',
     accessor: 'notes',
     headerStyle: { textAlign: 'left' },
-    style: { 'white-space': 'unset' },
+    style: { 'whiteSpace': 'unset' },
     width: 700
 
 }]
