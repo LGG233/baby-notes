@@ -105,9 +105,9 @@ class RegisterForm extends Component {
                   {this.state.isValid ? <Redirect to="/" /> : null}
                   <button
                     className="FormField__Button mr-20"
-                    onClick={this.submitForm}
+                    onClick={this.submitForm} 
                   >
-                    <h3>Register</h3>
+                  <h3>Register  <i className="fa fa-pencil"></i></h3>
                   </button>
                 </div>
               </form>

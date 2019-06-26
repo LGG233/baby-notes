@@ -16,7 +16,7 @@ import Child from "./pages/Child";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import SignIn from "./components/SignIn/SignIn";
-//import PageSwitch from "./components/PageSwitch/PageSwitch";
+
 
 class App extends Component {
   render() {
