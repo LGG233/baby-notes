@@ -34,15 +34,15 @@ const columns = [{
     Header: 'Notes',
     accessor: 'notes',
     headerStyle: { textAlign: 'left' },
-    style: { 'white-space': 'unset' },
-    width: 700
-
+    style: { 'whiteSpace': 'unset' },
+    width: 450
 }]
 
 function JournalTable() {
     return <ReactTable
         data={data}
         columns={columns}
+        defaultPageSize={5}
     />
 }
 

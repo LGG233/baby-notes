@@ -2,7 +2,7 @@
     color:white;
     background-image: url(./img/hands.jpg);
     background-size: cover;
-    border: 2px solid white;
+    border: 2px solid rgb(146, 250, 219);
     background-repeat: no-repeat;
     background-position: center;
     height: 12rem;
@@ -10,6 +10,7 @@
     padding: 3rem; 
     box-shadow: 0px 7px 15px rgb(3, 54, 50);
     text-align: center;
+    text-shadow: 0px 1px 3px rgb(9, 146, 123);
 }
 Table {
     font-weight: 600;
@@ -19,6 +20,7 @@ Table {
 }
 .loginSwitch a{
     color:white;
+    margin:10px;
     text-shadow: 1px 1px 2px rgb(5, 37, 73);
 }
 .loginSwitch a:hover{
@@ -42,7 +44,7 @@ Table {
     text-shadow: 1px 1px 3px black;
 }
 .App {
-    margin: 100px;
+    margin-top: 100px;
 }
 .pageSwitcher_item {
    text-shadow: 1px 1px 2px rgb(5, 37, 73);
