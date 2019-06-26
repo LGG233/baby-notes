@@ -32,11 +32,13 @@ const columns = [
         Header: 'Observations',
         accessor: 'observations',
         headerStyle: { textAlign: 'left' },
-        width: 700
+        width: 960
     },
     {
         Header: '',
         Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
+        width: 80,
+        accessor: 'editButton'
     }]
 
 
