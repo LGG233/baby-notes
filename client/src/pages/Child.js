@@ -1,6 +1,6 @@
 import React from "react";
 import Table from "../components/Table/Table";
-import JournalTable from "../components/JournalTable/Journaltable";
+// import JournalTable from "../components/JournalTable/Journaltable";
 import "./child.css";
 // import Card from "react-bootstrap/Card";
 // import CardDeck from 'react-bootstrap/CardDeck';
@@ -17,15 +17,20 @@ function Child() {
       </div>
       <div className="container-fluid white-container">
         <div className="row">
-          <div className="tableElement col-md-12">
+          <div className="tableElement col-md-5">
             <h3>Sleep</h3>
             <Table />
+          </div>
+          <div className="tableElement col-md-1"></div>
+          <div className="tableElement col-md-5">
             <h3>Eat</h3>
             <Table />
+          </div>
+        </div>
+        <div className="row">
+          <div className="tableElement col-md-5">
             <h3>Diaper Change</h3>
             <Table />
-            <h3>My Journal</h3>
-            <JournalTable />
           </div>
         </div>
       </div>

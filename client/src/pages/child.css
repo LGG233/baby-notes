@@ -1,6 +1,9 @@
 .childrenCard {
     background-image: url(../img/bed.jpg);
-    /* background-image: url(../img/family.jpg); */
+}
+
+h3 {
+    text-align: center;
 }
 
 .white-text {
@@ -8,6 +11,12 @@
 }
 
 .white-container {
-    background: white;
-    /* opacity: 0.50%; */
+    background-color: rgba(255,255,255,0.3) !important;
+    color: white;
+    text-shadow: 0px 0px 2px black;
 }
+
+.tableElement {
+    margin: 15px;
+}
+

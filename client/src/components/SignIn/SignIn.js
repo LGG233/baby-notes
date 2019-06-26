@@ -43,7 +43,7 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <Landing />
         <div className="row">
           <div className="col-md-12">

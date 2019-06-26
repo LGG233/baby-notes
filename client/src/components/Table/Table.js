@@ -6,10 +6,15 @@ const data = [{
     start: '10:00 PM',
     end: '4:00 PM',
     date: '05/22/2019',
-    observations: <p>some notes</p>
+    observations: <p>The day started with an early morning walk to the park.</p>
 }]
 
 const columns = [
+    {
+        Header: '',
+        Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
+        width: 70
+    },
     {
         Header: 'Date',
         accessor: 'date',
@@ -32,6 +37,7 @@ const columns = [
         Header: 'Observations',
         accessor: 'observations',
         headerStyle: { textAlign: 'left' },
+<<<<<<< HEAD
         width: 960
     },
     {
@@ -39,6 +45,10 @@ const columns = [
         Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
         width: 80,
         accessor: 'editButton'
+=======
+        style: { 'whiteSpace': 'unset' },
+        width: 250
+>>>>>>> bbb96b5f41287c1443f43aac9999ba3b74723070
     }]
 
 
