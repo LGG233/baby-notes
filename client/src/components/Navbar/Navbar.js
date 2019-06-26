@@ -9,8 +9,8 @@ const navbar = props => (
             <div className="navbar-logo"><Link to="/">BabyNotes</Link></div>
             <div className="navbar-items">
                 <ul>
-                    <li><Link to="/home">Parent Page</Link></li>
-                    <li><Link to="/activity">Activity</Link></li>
+                    <li><Link to="/home">Parent</Link></li>
+                    {/* <li><Link to="/activity">Activity</Link></li> */}
                     <li><Link to="/child">Child</Link></li>
                     <li><Link to="/">Log Out</Link></li>
 
