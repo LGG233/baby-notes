@@ -1,5 +1,7 @@
 import React from "react";
-import Table from "../components/SleepTable/SleepTable";
+import Sleep from "../components/SleepTable/SleepTable";
+import Feeding from "../components/FeedingTable/FeedingTable";
+import Change from "../components/ChangeTable/ChangeTable";
 // import JournalTable from "../components/JournalTable/Journaltable";
 import "./child.css";
 // import Card from "react-bootstrap/Card";
@@ -19,18 +21,18 @@ function Child() {
         <div className="row">
           <div className="tableElement col-md-5">
             <h3>Sleep</h3>
-            <Table />
+            <Sleep />
           </div>
           <div className="tableElement col-md-1"></div>
           <div className="tableElement col-md-5">
             <h3>Eat</h3>
-            <Table />
+            <Feeding />
           </div>
         </div>
         <div className="row">
           <div className="tableElement col-md-5">
             <h3>Diaper Change</h3>
-            <Table />
+            <Change />
           </div>
         </div>
       </div>

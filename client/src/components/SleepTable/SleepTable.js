@@ -43,7 +43,7 @@ const columns = [
 
 
 
-function TableRend() {
+function Sleep() {
     return <ReactTable
         data={data}
         columns={columns}
@@ -51,4 +51,4 @@ function TableRend() {
     />
 }
 
-export default TableRend;
+export default Sleep;
