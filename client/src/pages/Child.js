@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "../components/Table/Table";
+import Table from "../components/SleepTable/SleepTable";
 // import JournalTable from "../components/JournalTable/Journaltable";
 import "./child.css";
 // import Card from "react-bootstrap/Card";

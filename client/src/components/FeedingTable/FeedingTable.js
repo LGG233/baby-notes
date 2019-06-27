@@ -37,18 +37,8 @@ const columns = [
         Header: 'Observations',
         accessor: 'observations',
         headerStyle: { textAlign: 'left' },
-<<<<<<< HEAD
-        width: 960
-    },
-    {
-        Header: '',
-        Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
-        width: 80,
-        accessor: 'editButton'
-=======
         style: { 'whiteSpace': 'unset' },
         width: 250
->>>>>>> bbb96b5f41287c1443f43aac9999ba3b74723070
     }]
 
 

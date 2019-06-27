@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TableRend from "../components/Table/Table.js";
+import TableRend from "../components/SleepTable/SleepTable.js";
 import "./activity.css";
 // import Table from "react-bootstrap/Table";
 
