@@ -40,9 +40,14 @@ class RegisterForm extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <Landing />
-        <div className="row">
-          <div className="col-md-12">
+      <Landing />
+      <div className="row">
+        <div className="col-md-6">
+          <div className="jumbotron">
+            <h1>Baby Notes</h1>
+          </div>
+        </div>
+          <div className="col-md-6 registerPage">
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
@@ -107,7 +112,7 @@ class RegisterForm extends Component {
                     className="FormField__Button mr-20"
                     onClick={this.submitForm} 
                   >
-                  <h3>Register  <i className="fa fa-pencil"></i></h3>
+                  <h3>Register  <i className="fa fa-user-plus"></i></h3>
                   </button>
                 </div>
               </form>

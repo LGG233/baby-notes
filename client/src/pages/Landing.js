@@ -7,15 +7,8 @@ import { Link } from "react-router-dom";
 const Landing = function () {
 
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-12">
-          <div className="jumbotron">
-            <h1>Baby Notes</h1>
-          </div>
-        </div>
-      </div>
-      <div className="loginSwitch">
+    // <div className="container-fluid">
+      <div className="col-md-6 offset-md-6 loginSwitch">
         <Link
           to="/register"
           className="loginSwitcher_item-Active pageSwitcher_item"
@@ -31,7 +24,8 @@ const Landing = function () {
           Log In
       </Link>
       </div>
-    </div>
+      // </div>
+    // </div>
   );
 };
 export default Landing;

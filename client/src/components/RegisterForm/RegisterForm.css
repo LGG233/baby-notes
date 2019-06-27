@@ -6,68 +6,15 @@
     overflow: auto;
   }
    */
-  .PageSwitcher {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10%;
-  }
-  
-  .PageSwitcher__Item {
-    background-color: #4C5D72;
-    color: #9DA6B1;
-    padding: 10px 25px;
-    cursor: pointer;
-    font-size: .9em;
-    border: none;
-    outline: none;
-    display: inline-block;
-    text-decoration: none;
-  }
-  
-  .PageSwitcher__Item--Active {
-    background-color: #5ED0C0;
-    color: white;
-  }
-  
-  .PageSwitcher__Item:first-child {
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-  }
-  .PageSwitcher__Item:last-child {
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-  }
-  
+
   .FormCenter {
-    margin-bottom: 100px;
-  }
-  
-  .FormTitle {
-    color: #707C8B;
-    font-weight: 300;
     margin-bottom: 50px;
-  }
-  
-  .FormTitle__Link {
-    color: #707C8B;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.7em;
-    margin: 0 10px;
-    padding-bottom: 5px;
-  }
-  
-  .FormTitle__Link:first-child {
-    margin-left: 0;
-  }
-  
-  .FormTitle__Link--Active {
-    color: white;
-    border-bottom: 1px solid #199087;
+    margin-top:45px;
   }
   
   .FormField {
-    margin-bottom: 40px;
+    margin-bottom:40px;
+    text-align: center;
   }
   
   .FormField__Label {
@@ -77,7 +24,7 @@
     text-align: center;
     font-size: 1.5em;
     color: white;
-    border-radius: 20px;
+    border-radius: 15px;
     font-weight: 600;
     text-shadow: 1px 1px 2px rgb(5, 138, 143);
   }
@@ -94,30 +41,24 @@
     margin-top: 10px;
     text-shadow: 0px 0px 1px rgb(255, 255, 255);
   }
-  
+/*   
   .FormField__Input::placeholder {
     color: #616E7F;
-  }
+  } */
   
   .FormField__Button {
     background-color: #52C4B9;
     color: white;
     border: none;
     outline: none;
+    text-shadow: 1px 1px 3px navy;
     border-radius: 25px;
     padding: 15px 70px;
     font-size: .8em;
     font-weight: 500;
-    box-shadow:1px 2px 5px rgb(93, 138, 92);
+    box-shadow:1px 2px 5px rgb(29, 84, 129);
   }
   
-  .FormField__Link {
-    color: #66707D;
-    text-decoration: none;
-    display: inline-block;
-    border-bottom: 1.5px solid #225E62;
-    padding-bottom: 5px;
-  }
   
   
    

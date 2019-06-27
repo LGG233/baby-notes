@@ -3,11 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Activity from "./pages/Activity";
 import Landing from "./pages/Landing";
@@ -17,7 +13,6 @@ import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import SignIn from "./components/SignIn/SignIn";
 
-
 class App extends Component {
   render() {
     return (
@@ -25,15 +20,8 @@ class App extends Component {
         <div className="App">
           <Navbar />
         </div>
-        {/* <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="jumbotron">
-                <h1>Baby Notes</h1>
-              </div>
-            </div>
-          </div> */}
-        <div className="switch">
+        <br />
+        <div className="container-fluid switch">
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={RegisterForm} />
@@ -47,7 +35,6 @@ class App extends Component {
         <div className="App">
           <Footer />
         </div>
-        {/* </div> */}
       </Router>
     );
   }
