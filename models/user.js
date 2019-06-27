@@ -1,5 +1,4 @@
-// EXPRESS SESSIONS CODE
-// var bcrypt = require('bcrypt');
+var bcrypt = require("bcrypt-nodejs");
 
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
@@ -27,19 +26,29 @@ module.exports = function (sequelize, DataTypes) {
             onDelete: "cascade"
         });
     };
-
-    //EXPRESS SESSIONS CODE
-
-    //   User.beforeCreate((user, options) => {
-    //     const salt = bcrypt.genSaltSync();
-    //     user.password = bcrypt.hashSync(user.password, salt);
-    //   });
-    //   User.prototype.validPassword = function (password) {
+    // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
+    // User.prototype.validPassword = function (password) {
     //     return bcrypt.compareSync(password, this.password);
-    //   };
-    //   // create all the defined tables in the specified database.
-    //   sequelize.sync()
-    //     .then(() => console.log('users table has been successfully created, if one doesn\'t exist'))
-    //     .catch(error => console.log('This error occured', error));
+    // };
+    // // Hooks are automatic methods that run during various phases of the User Model lifecycle
+    // // In this case, before a User is created, we will automatically hash their password
+    // User.hook("beforeCreate", function (user) {
+    //     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+    // });
+
+    User.beforeCreate((user, options) => {
+        const salt = bcrypt.genSaltSync();
+        user.password = bcrypt.hashSync(user.password, salt);
+      });
+      User.prototype.validPassword = function (password) {
+        return bcrypt.compareSync(password, this.password);
+      };
+      // create all the defined tables in the specified database.
+      sequelize.sync()
+        .then(() => console.log('users table has been successfully created, if one doesn\'t exist'))
+        .catch(error => console.log('This error occured', error));
       return User;
+
+
+    return User;
 }

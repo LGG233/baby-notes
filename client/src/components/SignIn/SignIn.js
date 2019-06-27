@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../util/API"
 import { Link, Redirect } from "react-router-dom";
 import "./SignIn.css";
 import Landing from "../../pages/Landing";
@@ -23,7 +24,7 @@ class SignIn extends Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
 
     console.log("The form was submitted with the following data:");
@@ -33,6 +34,14 @@ class SignIn extends Component {
     ---------Axios call get made here--------
 
     */
+
+    API.loginUser({
+      email: this.state.email,
+      password: this.state.password
+    }).then(data => console.log(data))
+
+    const data = await API.getAuthId();
+    console.log(data)
 
     localStorage.setItem("user", this.state.email);
 
