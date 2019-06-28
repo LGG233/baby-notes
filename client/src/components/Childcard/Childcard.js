@@ -12,7 +12,7 @@ class Childcard extends Component {
                         <h2>Child Name</h2></div>
                     <div className="card-body"><h4>Birthday: Child BD</h4></div>
                     <div className="card-footer">
-                        <button className="btn btn-success childBtn"><h5>Select</h5></button>
+                        <button className="btn btn-success childBtn"><h5>Select </h5></button>
                     </div>
                 </div>
             </div>
