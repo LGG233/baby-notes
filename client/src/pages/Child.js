@@ -2,11 +2,8 @@ import React from "react";
 import Sleep from "../components/SleepTable/SleepTable";
 import Feeding from "../components/FeedingTable/FeedingTable";
 import Change from "../components/ChangeTable/ChangeTable";
-// import JournalTable from "../components/JournalTable/Journaltable";
 import "./child.css";
-// import Card from "react-bootstrap/Card";
-// import CardDeck from 'react-bootstrap/CardDeck';
-// import Childcard from "../components/Childcard/Childcard";
+import Journal from "./Journal";
 
 function Child() {
   return (
@@ -16,23 +13,33 @@ function Child() {
           <h1>Child's Page</h1>
           <button className="btn btn-success">New Activity</button>
         </div>
+        <div className="row">
+          <div>
+            <button className="btn btn-success">New Child</button>
+          </div>
+        </div>
       </div>
       <div className="container-fluid white-container">
         <div className="row">
           <div className="tableElement col-md-5">
-            <h3>Sleep</h3>
-            <Sleep />
+            <h3>Journal</h3>
+            <Journal />
           </div>
           <div className="tableElement col-md-1"></div>
           <div className="tableElement col-md-5">
-            <h3>Eat</h3>
-            <Feeding />
+            <h3>Sleep</h3>
+            <Sleep />
           </div>
         </div>
         <div className="row">
           <div className="tableElement col-md-5">
             <h3>Diaper Change</h3>
             <Change />
+          </div>
+          <div className="tableElement col-md-1"></div>
+          <div className="tableElement col-md-5">
+            <h3>Eat</h3>
+            <Feeding />
           </div>
         </div>
       </div>

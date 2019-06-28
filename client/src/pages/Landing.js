@@ -8,23 +8,23 @@ const Landing = function () {
 
   return (
     // <div className="container-fluid">
-      <div className="col-md-6 offset-md-6 loginSwitch">
-        <Link
-          to="/register"
-          className="loginSwitcher_item-Active pageSwitcher_item"
-        >
-          {" "}
-          Register
+    <div className="col-md-6 offset-md-6 loginSwitch">
+      <Link
+        to="/register"
+        className="loginSwitcher_item-Active pageSwitcher_item"
+      >
+        {" "}
+        Register
       </Link>
-        <Link
-          to="/signin"
-          className="loginSwitcher_item-Active pageSwitcher_item"
-        >
-          {" "}
-          Log In
+      <Link
+        to="/signin"
+        className="loginSwitcher_item-Active pageSwitcher_item"
+      >
+        {" "}
+        Log In
       </Link>
-      </div>
-      // </div>
+    </div>
+    // </div>
     // </div>
   );
 };
