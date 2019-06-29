@@ -31,8 +31,8 @@ class App extends Component {
           </div>
         </div> */}
         <div className="container-fluid MainPage">
-          <div class="row">
-            <div class="col-md-12">
+          <div className="row">
+            <div className="col-md-12">
               <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/register" component={RegisterForm} />

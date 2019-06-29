@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../util/API";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "./SignIn.css";
 import Landing from "../../pages/Landing";
 
