@@ -12,6 +12,7 @@ const navbar = props => (
                     <li><Link to="/home">Parent</Link></li>
                     {/* <li><Link to="/activity">Activity</Link></li> */}
                     <li><Link to="/child">Child</Link></li>
+                    <li><Link to="/createChild">New Child</Link></li>
                     <li><Link to="/">Log Out</Link></li>
 
                 </ul>
