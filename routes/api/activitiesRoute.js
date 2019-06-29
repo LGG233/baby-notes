@@ -1,7 +1,7 @@
 // const activitiesRouter = require("express").Router();
 // const activitiesController = require("../../controllers/activitiesController");
 
-// activitiesController.route("/activities")
+// activitiesController.routppue("/activities")
 //   .get(activitiesController.findAll)
 //   .post(activitiesController.create)
 //   .put(activitiesController.update);
@@ -16,19 +16,17 @@
 var db = require("../../models");
 module.exports = function (app) {
   // get all specific activity for child
-  app.get("/activities/:id/:act", function (req, res) {
+  app.get("/activities/:child_id", function (req, res) {
     db.Activities.findAll({
       where: {
-        ChildId: req.params.id,
-        actList_Id: req.params.act
+        ChildId: req.params.child_id
       },
-      include: [db.Child]
     }).then(function (dbActivities) {
       res.json(dbActivities);
     });
   });
   // get ALL activities for a child
-  app.get("/activities/:id", function (req, res) {
+  app.get("/activities/:child_id", function (req, res) {
     db.Activities.findAll({
       where: {
         ChildId: req.params.id
@@ -40,7 +38,7 @@ module.exports = function (app) {
   });
 
   // get ONE activity for one child
-  app.get("/activity/:id", function (req, res) {
+  app.get("/activity/:child_id", function (req, res) {
     db.Activities.findOne({
       where: {
         id: req.params.id
@@ -67,7 +65,7 @@ module.exports = function (app) {
   });
 
   // delete one activity for a child
-  app.delete("/activity/:id", function (req, res) {
+  app.delete("/activity/:child_id", function (req, res) {
     db.Activities.destroy({
       where: {
         id: req.params.id
@@ -78,7 +76,7 @@ module.exports = function (app) {
   });
 
   // update one activity for a child
-  app.put("/activity/:id", function (req, res) {
+  app.put("/activity/:child_id", function (req, res) {
     db.Activities.update(
       req.body, {
         where: {

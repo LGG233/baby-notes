@@ -14,15 +14,26 @@ var passport = require("../../config/passport");
 
 module.exports = function (app) {
 
-  app.post("/user/login", passport.authenticate("local"),  (req, res) => {
+  app.get("/user/login", passport.authenticate("local"), (req, res) => {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
 
-    db.User.findOne({ where : { id: req.user.id}})
-      .then(dbData => console.log(dbData))
+    // db.User.findOne({ where : { id: req.user.id}})
+    //   .then(dbData => console.log(dbData))
 
-    res.json("/users");
+    db.User.findOne({
+        where: {
+          id: req.user.id
+        },
+        include: [{
+          model: db.Child
+        }]
+      })
+      .then(function (dbData) {
+        //console.log(dbData);
+        res.json(dbData.Children);
+      })
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -70,7 +81,7 @@ module.exports = function (app) {
   });
 
   // Route for getting some data about our user to be used client side
-  app.get("/user/user_data",  (req, res) => {
+  app.get("/user/user_data", (req, res) => {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
