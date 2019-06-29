@@ -1,11 +1,7 @@
 {
     "development": {
       "username": "root",
-<<<<<<< HEAD
-      "password": "BuildsADam52!",
-=======
       "password": "Awesome1",
->>>>>>> ed9a14ff74a941f92836ba0490d40e0fed796303
       "database": "babyNotesdb",
       "host": "127.0.0.1",
       "dialect": "mysql"
