@@ -19,7 +19,7 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: DataTypes.NOW
         },
         endtime: {
-            type: DataTypes.DATE,
+            type: DataTypes.TIME,
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
