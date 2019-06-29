@@ -6,10 +6,15 @@ const data = [{
     start: '10:00 PM',
     end: '4:00 PM',
     date: '05/22/2019',
-    observations: <p>some notes</p>
+    observations: <p>Jimmy ate a lot more today</p>
 }]
 
 const columns = [
+    {
+        Header: '',
+        Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
+        width: 70
+    },
     {
         Header: 'Date',
         accessor: 'date',
@@ -32,16 +37,13 @@ const columns = [
         Header: 'Observations',
         accessor: 'observations',
         headerStyle: { textAlign: 'left' },
-        width: 700
-    },
-    {
-        Header: '',
-        Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
+        style: { 'whiteSpace': 'unset' },
+        width: 250
     }]
 
 
 
-function TableRend() {
+function Feeding() {
     return <ReactTable
         data={data}
         columns={columns}
@@ -49,4 +51,4 @@ function TableRend() {
     />
 }
 
-export default TableRend;
+export default Feeding;

@@ -12,7 +12,7 @@ class RegisterForm extends Component {
       password: "",
       firstName: "",
       lastName: "",
-      isValid:localStorage.getItem("user")
+      isValid: localStorage.getItem("user")
     };
   }
 
@@ -31,7 +31,7 @@ class RegisterForm extends Component {
     console.log("The form was submitted with the following data:");
     console.log(this.state);
 
-    localStorage.setItem("user",this.state.email);
+    localStorage.setItem("user", this.state.email);
     this.setState({
       inValid: true
     });
@@ -39,10 +39,15 @@ class RegisterForm extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Landing />
-        <div className="row">
-          <div className="col-md-12">
+      <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-6">
+          <div className="jumbotron">
+            <h1>Baby Notes</h1>
+          </div>
+        </div>
+          <div className="col-md-6 registerPage">
+      <Landing />
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
@@ -102,12 +107,12 @@ class RegisterForm extends Component {
                   />
                 </div>
                 <div className="FormField">
-                {this.state.isValid ? <Redirect to="/" /> : null}
+                  {this.state.isValid ? <Redirect to="/" /> : null}
                   <button
                     className="FormField__Button mr-20"
-                    onClick={this.submitForm}
+                    onClick={this.submitForm} 
                   >
-                    <h3>Register</h3>
+                  <h3>Register <i className="fa fa-user-plus"></i></h3>
                   </button>
                 </div>
               </form>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../util/API";
 import { Link, Redirect } from "react-router-dom";
 import "./SignIn.css";
 import Landing from "../../pages/Landing";
@@ -23,7 +24,7 @@ class SignIn extends Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
 
     console.log("The form was submitted with the following data:");
@@ -34,6 +35,14 @@ class SignIn extends Component {
 
     */
 
+    API.loginUser({
+      email: this.state.email,
+      password: this.state.password
+    }).then(data => console.log(data));
+
+    const data = await API.getAuthId();
+    console.log(data);
+
     localStorage.setItem("user", this.state.email);
 
     this.setState({
@@ -43,10 +52,15 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Landing />
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-6">
+            <div className="jumbotron">
+              <h1>Baby Notes</h1>
+            </div>
+          </div>
+          <div className="col-md-6 registerPage">
+        <Landing />
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
@@ -83,7 +97,9 @@ class SignIn extends Component {
                     className="FormField__Button mr-20"
                     onClick={this.submitForm}
                   >
-                    <h3>Sign In</h3>
+                    <h3>
+                      Sign In <i className="fa fa-user-circle" />
+                    </h3>
                   </button>
                 </div>
               </form>
