@@ -8,7 +8,8 @@ import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Activity from "./pages/Activity";
 import Landing from "./pages/Landing";
 // import Journal from "./pages/Journal";
-// import Child from "./pages/Child";
+import Child from "./pages/Child";
+import createChild from "./components/CreateChild/createChild";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import SignIn from "./components/SignIn/SignIn";
@@ -32,20 +33,21 @@ class App extends Component {
         <div className="container-fluid MainPage">
           <div class="row">
             <div class="col-md-12">
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={RegisterForm} />
-            <Route exact path="/signin" component={SignIn} />
-          </Switch>
+              <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/register" component={RegisterForm} />
+                <Route exact path="/signin" component={SignIn} />
+              </Switch>
             </div>
           </div>
           <div className="col-md-12">
-          <Switch>
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/activity" component={Activity} />
-            <Route exact path="/child" component={Child} />
-            <Route component={NotFound} />
-          </Switch>
+            <Switch>
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/activity" component={Activity} />
+              <Route exact path="/child" component={Child} />
+              <Route exact path="/createChild" component={createChild} />
+              <Route component={NotFound} />
+            </Switch>
           </div>
         </div>
         <div className="App">
