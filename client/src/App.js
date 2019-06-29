@@ -13,6 +13,8 @@ import createChild from "./components/CreateChild/createChild";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import SignIn from "./components/SignIn/SignIn";
+import JournalEntry from "./components/JournalEntry/JournalEntry";
+import NewActivity from "./components/NewActivity/NewActivity";
 import "../../node_modules/font-awesome/css/font-awesome.min.css";
 
 class App extends Component {
@@ -46,6 +48,8 @@ class App extends Component {
               <Route exact path="/activity" component={Activity} />
               <Route exact path="/child" component={Child} />
               <Route exact path="/createChild" component={createChild} />
+              <Route exact path="/journalentry" component={JournalEntry} />
+              <Route exact path="/newActivity" component={NewActivity} />
               <Route component={NotFound} />
             </Switch>
           </div>
