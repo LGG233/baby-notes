@@ -41,12 +41,14 @@ module.exports = function (app) {
   // otherwise send back an error
   app.post("/user/register", (req, res) => {
     console.log(req.body);
-    const userData = {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
+    const userData = req.body;
+    
+    /*{
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password
-    }
+    }*/
     db.User.findOne({
         where: {
           email: req.body.email
@@ -76,7 +78,7 @@ module.exports = function (app) {
 
   // Route for logging user out
   app.get("/logout", (req, res) => {
-    req.logout();
+   
     res.redirect("/");
   });
 

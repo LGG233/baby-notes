@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Activity from "./pages/Activity";
 import Landing from "./pages/Landing";
@@ -15,6 +15,11 @@ import SignIn from "./components/SignIn/SignIn";
 import "../../node_modules/font-awesome/css/font-awesome.min.css";
 
 class App extends Component {
+
+componentDidMount = () => {
+  
+}
+
   render() {
     return (
       <Router>
@@ -22,13 +27,6 @@ class App extends Component {
           <Navbar />
         </div>
         <br />
-        {/* <div className="container-fluid">
-          <div className="col-md-12">
-            <div className="jumbotron">
-              <h1>Baby Notes</h1>
-            </div>
-          </div>
-        </div> */}
         <div className="container-fluid MainPage">
           <div class="row">
             <div class="col-md-12">

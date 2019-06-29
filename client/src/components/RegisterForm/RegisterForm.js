@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./RegisterForm.css";
 import Landing from "../../pages/Landing";
+import axios from "axios";
 
 class RegisterForm extends Component {
   constructor() {
@@ -23,18 +24,29 @@ class RegisterForm extends Component {
     this.setState({
       [name]: event.target.value
     });
-  };
-
+  }
+  
   handleSubmit = event => {
     event.preventDefault();
 
-    console.log("The form was submitted with the following data:");
-    console.log(this.state);
-
-    localStorage.setItem("user", this.state.email);
-    this.setState({
-      inValid: true
-    });
+    const user = {
+      email: this.state.email,
+      password: this.state.password,
+      firstname: this.state.firstName,
+      lastname: this.state.lastName
+    };
+      axios.post('/user/register',user)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+    
+    // console.log("The form was submitted with the following data:");
+    // console.log(this.state);
+    // localStorage.setItem("user", this.state.email);
+    // this.setState({
+    //   inValid: true
+    // });
   };
 
   render() {
@@ -56,7 +68,7 @@ class RegisterForm extends Component {
                   </label>
                   <input
                     type="text"
-                    id="firstname"
+                    id="firstName"
                     className="FormField__Input"
                     placeholder="First Name"
                     name="firstName"
@@ -70,7 +82,7 @@ class RegisterForm extends Component {
                   </label>
                   <input
                     type="text"
-                    id="lastname"
+                    id="lastName"
                     className="FormField__Input"
                     placeholder="Last Name"
                     name="lastName"

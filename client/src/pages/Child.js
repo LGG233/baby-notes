@@ -5,7 +5,16 @@ import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
 import Journal from "./Journal";
 
-function Child() {
+class Child extends React.Component {
+  state = {
+
+  }
+  
+  componentDidMount = () => {
+    console.log('!')
+  }
+
+  render() {
   return (
     <div className="container-fluid childrenCard" >
       <div className="row">
@@ -45,6 +54,7 @@ function Child() {
       </div>
     </div>
   );
+  }
 }
 
 export default Child;
