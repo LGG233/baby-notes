@@ -8,18 +8,24 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             len: [1]
         },
-        startdate: {
+        date: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
-        enddate: {
-            type: DataTypes.DATE,
+        starttime: {
+            type: DataTypes.TIME,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+        },
+        endtime: {
+            type: DataTypes.TIME,
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
         title: {
             type: DataTypes.STRING,
+            allowNull: true,
             len: [1],
             max: 50
         },
