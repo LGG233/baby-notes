@@ -15,7 +15,7 @@ const navbar = props => (
                     <li><Link to="/createChild">New Child</Link></li>
                     <li><Link to="/journalEntry">Journal Entry</Link></li>
                     <li><Link to="/newActivity">New Activity</Link></li>
-                    <li><Link to="/">Log Out</Link></li>
+                    <li><Link to="/" onClick={props.handleLogout}>Log Out</Link></li>
 
                 </ul>
             </div>

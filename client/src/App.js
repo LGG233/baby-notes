@@ -16,13 +16,23 @@ import SignIn from "./components/SignIn/SignIn";
 import JournalEntry from "./components/JournalEntry/JournalEntry";
 import NewActivity from "./components/NewActivity/NewActivity";
 import "../../node_modules/font-awesome/css/font-awesome.min.css";
+import API from "./util/API";
 
 class App extends Component {
+
+handleLogout = () =>{
+  API.logOutUser()
+  .then((res) => {
+    console.log("logged out!");
+    localStorage.removeItem("user")
+  })
+}
+
   render() {
     return (
       <Router>
         <div className="App">
-          <Navbar />
+          <Navbar handleLogout = {this.handleLogout}/>
         </div>
         <br />
         {/* <div className="container-fluid">
