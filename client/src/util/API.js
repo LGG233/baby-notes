@@ -6,13 +6,13 @@ export default {
         return axios.get("/user/user_data")
     },
     loginUser: function (data) {
-        return axios.post("/user/login")
+        return axios.post("/user/login", data)
     },
 
     // CHILD ROUTES
     // get all specific activity for a child
-    getAllSingleTypeActivities: function () {
-        return axios.get("/activities/:id/:act")
+    getAllSingleTypeActivities: function (data) {
+        return axios.get("/activities/:id/:act", data)
     },
     // get ALL activities for a child
     getAllActivities: function () {
@@ -23,16 +23,16 @@ export default {
         return axios.get("/activity/:id")
     },
     // create one activity for a child
-    postOneActivity: function () {
-        return axios.post("/activity")
+    postOneActivity: function (data) {
+        return axios.post("/activity", data)
     },
     // delete one activity for a child
     deleteOneActivity: function () {
         return axios.delete("/activity/:id")
     },
     // update one activity for a child
-    putOneActivity: function () {
-        return axios.put("/activity/:id")
+    putOneActivity: function (data) {
+        return axios.put("/activity/:id", data)
     },
 
     // PARENT ROUTES
@@ -45,8 +45,8 @@ export default {
         return axios.get("/child/:id")
     },
     // create one child
-    postOneChild: function () {
-        return axios.post("/child")
+    postOneChild: function (data) {
+        return axios.post("/child", data)
     },
     // delete one child
     deleteOneChild: function () {

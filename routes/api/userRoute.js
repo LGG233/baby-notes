@@ -11,16 +11,21 @@
 // *****************************************************
 var db = require("../../models");
 var passport = require("../../config/passport");
+var auth = require("../../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
 
-  app.get("/user/login", passport.authenticate("local"), (req, res) => {
+  app.post("/user/login", passport.authenticate("local"), (req, res) => {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
 
     // db.User.findOne({ where : { id: req.user.id}})
     //   .then(dbData => console.log(dbData))
+    
+    
+    console.log("hello");
+			
 
     db.User.findOne({
         where: {
@@ -41,12 +46,14 @@ module.exports = function (app) {
   // otherwise send back an error
   app.post("/user/register", (req, res) => {
     console.log(req.body);
-    const userData = {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
+    const userData = req.body;
+    
+    /*{
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password
-    }
+    }*/
     db.User.findOne({
         where: {
           email: req.body.email

@@ -37,13 +37,37 @@ passport.use(new LocalStrategy(
 // In order to help keep authentication state across HTTP requests,
 // Sequelize needs to serialize and deserialize the user
 // Just consider this part boilerplate needed to make it all work
-passport.serializeUser(function(user, cb) {
-  cb(null, user);
-});
+// passport.serializeUser(function(user, cb) {
+//   cb(null, user);
+// });
 
-passport.deserializeUser(function(obj, cb) {
-  cb(null, obj);
-});
+// passport.deserializeUser(function(obj, cb) {
+//   cb(null, obj);
+// });
+
+// called on login, saves the id to session req.session.passport.user = {id:'..'}
+passport.serializeUser((user, done) => {
+	console.log('*** serializeUser called, user: ')
+	console.log("Id: " + user.id + " Email: " + user.email) 
+	console.log('---------')
+	done(null, { id: user.id })
+})
+
+
+// user object attaches to the request as req.user
+passport.deserializeUser((id, done) => {
+	console.log('DeserializeUser called')
+	User.findOne(
+		{ id: id },
+		'username',
+		(err, user) => {
+			console.log('*** Deserialize user, user:')
+			console.log("Id: " + user.id + " Email: " + user.email) 
+			console.log('--------------')
+			done(null, user)
+		}
+	)
+})
 
 // Exporting our configured passport
 module.exports = passport;

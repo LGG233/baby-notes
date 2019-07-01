@@ -1,14 +1,24 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import API from "../../util/API";
 
 class createChild extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             babyName: "",
             birthDate: "",
-        };
-    }
+            id: "1"
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    };
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
 
     handleChange = event => {
         let target = event.target;
@@ -21,8 +31,22 @@ class createChild extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log("New Child created:");
         console.log(this.state);
+        let childData = {
+            name: this.state.babyName,
+            dob: this.state.birthDate,
+            UserId: 1
+        }
+        // let childData = {
+        //     name: this.babyName,
+        //     dob: this.birthDate,
+        //     id: 1
+        // }
+        this.createNewChild(childData);
+    };
+
+    createNewChild = (data) => {
+        API.postOneChild(data);
     };
 
     render() {
@@ -36,23 +60,21 @@ class createChild extends Component {
                     </div>
                     <div className="col-md-6 registerPage">
                         <div className="FormCenter">
-                            <form onSubmit={this.handleSubmit} className="FormFields">
+                            <form onSubmit={this.handleSubmit} className="FormField">
                                 <div className="FormField">
-                                    <label className="FormField__Label" htmlFor="babytName">Name</label>
+                                    <label className="FormField__Label" htmlFor="Babyname">Child Name</label>
                                     <input
                                         type="text"
-                                        id="babyName"
+                                        id="babyname"
                                         className="FormField__Input"
                                         placeholder="Child Name"
-                                        name="babytName"
+                                        name="babyName"
                                         value={this.state.babyName}
                                         onChange={this.handleChange}
                                     />
                                 </div>
                                 <div className="FormField">
-                                    <label className="FormField__Label" htmlFor="Birthdate">
-                                        Birthdate
-                  </label>
+                                    <label className="FormField__Label" htmlFor="Birthdate">Birthdate</label>
                                     <input
                                         type="text"
                                         id="birthdate"
@@ -64,10 +86,10 @@ class createChild extends Component {
                                     />
                                 </div>
                                 <div className="FormField">
-                                    {this.state.isValid ? <Redirect to="/" /> : null}
+                                    {/* {this.state.isValid ? <Redirect to="/" /> : null} */}
                                     <button
                                         className="FormField__Button mr-20"
-                                        onClick={this.submitForm}
+                                        onClick={this.handleSubmit}
                                     >
                                         <h3>Add child <i className="fa fa-user-plus"></i></h3>
                                     </button>

@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Activity from "./pages/Activity";
 import Landing from "./pages/Landing";
@@ -20,12 +20,17 @@ import API from "./util/API";
 
 class App extends Component {
 
+<<<<<<< HEAD
 handleLogout = () =>{
   API.logOutUser()
   .then((res) => {
     console.log("logged out!");
     localStorage.removeItem("user")
   })
+=======
+componentDidMount = () => {
+  
+>>>>>>> 34df2d69d356e21bd74034529ad65050d4edf085
 }
 
   render() {
@@ -35,13 +40,6 @@ handleLogout = () =>{
           <Navbar handleLogout = {this.handleLogout}/>
         </div>
         <br />
-        {/* <div className="container-fluid">
-          <div className="col-md-12">
-            <div className="jumbotron">
-              <h1>Baby Notes</h1>
-            </div>
-          </div>
-        </div> */}
         <div className="container-fluid MainPage">
           <div className="row">
             <div className="col-md-12">

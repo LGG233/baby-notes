@@ -1,6 +1,10 @@
 
 var express = require("express");
 var session = require("express-session");
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var morgan = require('morgan');
+var flash    = require('connect-flash');
 var passport = require("./config/passport");
 var cors = require('cors');
 
@@ -12,10 +16,18 @@ app.use(cors()); // Add routes, both API and view
 // Requiring our models for syncing
 var db = require("./models");
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({
-  extended: true
+// app.use(express.urlencoded({
+//   extended: true
+// }));
+// app.use(express.json());
+
+// set up our express application
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(bodyParser.urlencoded({
+	extended: true
 }));
-app.use(express.json());
+app.use(bodyParser.json());
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
@@ -29,7 +41,8 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
 
 // Routes
 require("./routes/api/userRoute")(app);
