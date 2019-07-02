@@ -47,17 +47,17 @@ passport.use(new LocalStrategy(
 
 // called on login, saves the id to session req.session.passport.user = {id:'..'}
 passport.serializeUser((user, done) => {
-	console.log('*** serializeUser called, user: ')
-	console.log("Id: " + user.id + " Email: " + user.email) 
-	console.log('---------')
-	done(null, { id: user.id })
+	console.log('*** serializeUser called, user: ');
+	console.log("Id: " + user.id + " Email: " + user.email); 
+	console.log('---------');
+	done(null, { id: user.id });
 })
 
 
 // user object attaches to the request as req.user
 passport.deserializeUser((id, done) => {
 	console.log('DeserializeUser called')
-	User.findOne(
+	db.User.findOne(
 		{ id: id },
 		'username',
 		(err, user) => {
