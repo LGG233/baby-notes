@@ -1,21 +1,17 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "./RegisterForm.css";
-import Landing from "../../pages/Landing";
+// import Landing from "../../pages/Landing";
 import axios from "axios";
 
 class RegisterForm extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      email: "",
-      password: "",
-      firstName: "",
-      lastName: "",
-      isValid: localStorage.getItem("user")
-    };
-  }
+  state = {
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: ""
+    // isValid: localStorage.getItem("user")
+  };
 
   handleChange = event => {
     let target = event.target;
@@ -25,7 +21,7 @@ class RegisterForm extends Component {
       [name]: event.target.value
     });
   }
-  
+
   handleSubmit = event => {
     event.preventDefault();
 
@@ -35,12 +31,12 @@ class RegisterForm extends Component {
       firstname: this.state.firstName,
       lastname: this.state.lastName
     };
-      axios.post('/user/register',user)
+    axios.post('/user/register', user)
       .then(res => {
         console.log(res);
         console.log(res.data);
       })
-    
+
     // console.log("The form was submitted with the following data:");
     // console.log(this.state);
     // localStorage.setItem("user", this.state.email);
@@ -52,14 +48,14 @@ class RegisterForm extends Component {
   render() {
     return (
       <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-6">
-          <div className="jumbotron">
-            <h1>Baby Notes</h1>
+        <div className="row">
+          <div className="col-md-6">
+            <div className="jumbotron">
+              <h1>Baby Notes</h1>
+            </div>
           </div>
-        </div>
           <div className="col-md-6 registerPage">
-      <Landing />
+            {/* <Landing /> */}
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
@@ -122,9 +118,9 @@ class RegisterForm extends Component {
                   {this.state.isValid ? <Redirect to="/" /> : null}
                   <button
                     className="FormField__Button mr-20"
-                    onClick={this.submitForm} 
+                    onClick={this.submitForm}
                   >
-                  <h3>Register <i className="fa fa-user-plus"></i></h3>
+                    <h3>Register <i className="fa fa-user-plus"></i></h3>
                   </button>
                 </div>
               </form>
