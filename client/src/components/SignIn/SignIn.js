@@ -28,11 +28,12 @@ class SignIn extends Component {
       email: this.state.email,
       password: this.state.password
     }).then((data) => {
-      console.log(data)
+      console.log("this is the data back -------- ", data.data.user)
       // this.props.setUser(data.data)
       if (!data.data.error) {
-        localStorage.setItem("user-name", data.data.firstname)
-        localStorage.setItem("user-id", data.data.id);
+        console.log('ay')
+        localStorage.setItem("user-name", data.data.user.firstname)
+        localStorage.setItem("user-id", data.data.user.id);
         window.location.replace("/home")
       } else {
         alert("Wrong login")

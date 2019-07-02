@@ -22,22 +22,23 @@ module.exports = function (app) {
 
     // db.User.findOne({ where : { id: req.user.id}})
     //   .then(dbData => console.log(dbData))
-    
-    
+
+
     console.log("hello");
-			
+
 
     db.User.findOne({
-        where: {
-          id: req.user.id
-        },
-        include: [{
-          model: db.Child
-        }]
-      })
+      where: {
+        id: req.user.id
+      },
+      include: [{
+        model: db.Child
+      }]
+    })
       .then(function (dbData) {
         //console.log(dbData);
-        res.json(dbData.Children);
+        res.json({ user: dbData, children: db.Children });
+        // res.json(dbData.Children);
       })
   });
 
@@ -47,7 +48,7 @@ module.exports = function (app) {
   app.post("/user/register", (req, res) => {
     console.log(req.body);
     const userData = req.body;
-    
+
     /*{
       firstname: req.body.firstname,
       lastname: req.body.lastname,
@@ -55,10 +56,10 @@ module.exports = function (app) {
       password: req.body.password
     }*/
     db.User.findOne({
-        where: {
-          email: req.body.email
-        }
-      })
+      where: {
+        email: req.body.email
+      }
+    })
       .then(user => {
         if (!user) {
           db.User.create(userData)
