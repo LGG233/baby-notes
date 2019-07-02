@@ -2,18 +2,14 @@ import React, { Component } from "react";
 import API from "../../util/API";
 import { Redirect } from "react-router-dom";
 import "./SignIn.css";
-import Landing from "../../pages/Landing";
+// import Landing from "../../pages/Landing";
 
 class SignIn extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      email: "",
-      password: "",
-      isValid: localStorage.getItem("user")
-    };
-  }
+  state = {
+    email: "",
+    password: ""
+    // isValid: localStorage.getItem("user")
+  };
 
   handleChange = event => {
     let target = event.target;
@@ -26,24 +22,29 @@ class SignIn extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-
     console.log("The form was submitted with the following data:");
     console.log(this.state);
-
-    /*
-    ---------Axios call get made here--------
-
-    */
-
     API.loginUser({
       email: this.state.email,
       password: this.state.password
-    }).then(data => console.log(data));
+    }).then((data) => {
+      console.log(data)
+      // this.props.setUser(data.data)
+      if (!data.data.error) {
+        localStorage.setItem("user-name", data.data.firstname)
+        localStorage.setItem("user-id", data.data.id);
+        window.location.replace("/home")
+      } else {
+        alert("Wrong login")
+      }
 
-    const data = await API.getAuthId();
-    console.log(data);
+    })
 
-    localStorage.setItem("user", this.state.email);
+
+    // const data = await API.getAuthId();
+    // App.setUserLogin("user", this.state.email);
+    // App.setUserLogin("user", this.state.email);
+
 
     this.setState({
       isValid: true
@@ -60,7 +61,7 @@ class SignIn extends Component {
             </div>
           </div>
           <div className="col-md-6 registerPage">
-        <Landing />
+            {/* <Landing /> */}
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
@@ -95,7 +96,7 @@ class SignIn extends Component {
                   {this.state.isValid ? <Redirect to="/home" /> : null}
                   <button
                     className="FormField__Button mr-20"
-                    onClick={this.submitForm}
+                    onClick={this.handleSubmit}
                   >
                     <h3>
                       Sign In <i className="fa fa-user-circle" />
@@ -104,6 +105,8 @@ class SignIn extends Component {
                 </div>
               </form>
             </div>
+            {/* <SignIn setUser={this.props.setUser} user={this.props.user} history={this.props.history} /> */}
+
           </div>
         </div>
       </div>
