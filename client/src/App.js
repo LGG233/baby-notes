@@ -20,17 +20,8 @@ import API from "./util/API";
 
 class App extends Component {
 
-<<<<<<< HEAD
-handleLogout = () =>{
-  API.logOutUser()
-  .then((res) => {
-    console.log("logged out!");
-    localStorage.removeItem("user")
-  })
-=======
 componentDidMount = () => {
   
->>>>>>> 34df2d69d356e21bd74034529ad65050d4edf085
 }
 
   render() {
