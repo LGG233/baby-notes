@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+// import { Link, Redirect } from "react-router-dom";
 import API from "../../util/API";
+// import Home from "../../pages/Home";
 
 class createChild extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
-            dob: "",
-            UserId: parseInt(localStorage.getItem("userId"))
+            babyName: "",
+            birthDate: "",
+            UserId: parseInt(localStorage.getItem("user-id"))
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     };
@@ -32,17 +33,12 @@ class createChild extends Component {
     handleSubmit = event => {
         event.preventDefault();
         console.log(this.state);
-        // let childData = {
-        //     name: this.state.babyName,
-        //     dob: this.state.birthDate,
-        //     UserId: this.state
-        // }
-        // let childData = {
-        //     name: this.babyName,
-        //     dob: this.birthDate,
-        //     id: 1
-        // }
-        this.createNewChild(this.state);
+        let childData = {
+            name: this.state.babyName,
+            dob: this.state.birthDate,
+            UserId: localStorage.getItem("user-id")
+        }
+        this.createNewChild(childData);
     };
 
     createNewChild = (data) => {

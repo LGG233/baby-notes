@@ -37,15 +37,9 @@ class Home extends Component {
         <div className="row">
           <div className="col-md-12 page-title">
             <h1>Parents Home Page</h1>
-            {/* <p>This should be email {this.props.user.email}</p> */}
-            <button className="btn btn-success" onClick={this.newChild}>
-              <h4>
-                New Child <i className="fa fa-child" />
-              </h4>
-            </button>
-            <button className="btn btn-success">
-              <h4>New Journal Entry</h4>
-            </button>
+            <p>Welcome, {localStorage.getItem("user-name")}</p>
+            {/* add logic under new child button*/}
+            <button className="btn btn-success"><h4>New Child <i className="fa fa-child"></i></h4></button>
           </div>
         </div>
         <div className="row">
