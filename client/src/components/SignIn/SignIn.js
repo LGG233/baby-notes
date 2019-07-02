@@ -1,19 +1,15 @@
 import React, { Component } from "react";
 import API from "../../util/API";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "./SignIn.css";
 import Landing from "../../pages/Landing";
 
 class SignIn extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      email: "",
-      password: "",
-      isValid: localStorage.getItem("user")
-    };
-  }
+  state = {
+    email: "",
+    password: ""
+    // isValid: localStorage.getItem("user")
+  };
 
   handleChange = event => {
     let target = event.target;
@@ -38,15 +34,13 @@ class SignIn extends Component {
     API.loginUser({
       email: this.state.email,
       password: this.state.password
-    }).then(data => console.log(data));
-
-    const data = await API.getAuthId();
-    console.log(data);
-
-    localStorage.setItem("user", this.state.email);
-
-    this.setState({
-      isValid: true
+    }).then(data => {
+      console.log("THEN CONSOLE LOG--------", data);
+      // const data = await API.getAuthId();
+      localStorage.setItem("userId", data.data.id)
+      this.setState({
+        isValid: true
+      });
     });
   };
 
@@ -60,7 +54,7 @@ class SignIn extends Component {
             </div>
           </div>
           <div className="col-md-6 registerPage">
-        <Landing />
+            <Landing />
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">

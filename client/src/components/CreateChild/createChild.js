@@ -6,9 +6,9 @@ class createChild extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            babyName: "",
-            birthDate: "",
-            id: "1"
+            name: "",
+            dob: "",
+            UserId: parseInt(localStorage.getItem("userId"))
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     };
@@ -32,21 +32,23 @@ class createChild extends Component {
     handleSubmit = event => {
         event.preventDefault();
         console.log(this.state);
-        let childData = {
-            name: this.state.babyName,
-            dob: this.state.birthDate,
-            UserId: 1
-        }
+        // let childData = {
+        //     name: this.state.babyName,
+        //     dob: this.state.birthDate,
+        //     UserId: this.state
+        // }
         // let childData = {
         //     name: this.babyName,
         //     dob: this.birthDate,
         //     id: 1
         // }
-        this.createNewChild(childData);
+        this.createNewChild(this.state);
     };
 
     createNewChild = (data) => {
-        API.postOneChild(data);
+        API.postOneChild(data)
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
     };
 
     render() {
@@ -68,8 +70,8 @@ class createChild extends Component {
                                         id="babyname"
                                         className="FormField__Input"
                                         placeholder="Child Name"
-                                        name="babyName"
-                                        value={this.state.babyName}
+                                        name="name"
+                                        value={this.state.name}
                                         onChange={this.handleChange}
                                     />
                                 </div>
@@ -80,8 +82,8 @@ class createChild extends Component {
                                         id="birthdate"
                                         className="FormField__Input"
                                         placeholder="Birthdate"
-                                        name="birthDate"
-                                        value={this.state.birthDate}
+                                        name="dob"
+                                        value={this.state.dob}
                                         onChange={this.handleChange}
                                     />
                                 </div>
