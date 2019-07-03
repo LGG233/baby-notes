@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Childcard.css";
-
-
+import API from "../../util/API";
 
 class Childcard extends Component {
     state = {
@@ -10,7 +9,12 @@ class Childcard extends Component {
         id: ""
     };
 
-
+    async componentDidMount() {
+        API.getChildren(localStorage.getItem("user-id")
+        ).then((res) => {
+                console.log(res.data)
+            })
+        };
 
     render() {
         return (

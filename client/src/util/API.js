@@ -37,8 +37,8 @@ export default {
 
     // PARENT ROUTES
     // get all children for user
-    getChildren: function () {
-        return axios.get("/children/:id")
+    getChildren: function (id) {
+        return axios.get(`/children/${id}`)
     },
     // get one child
     getOneChild: function () {
