@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./Childcard.css";
 import API from "../../util/API";
-
-
+import moment from 'moment';
 
 class Childcard extends Component {
     state = {
@@ -33,7 +32,7 @@ class Childcard extends Component {
                                     {child.name}
                                 </div>
                                 <div className="card-body">
-                                    <h4>Birthday: {child.dob}</h4></div>
+                                    <h4>Birthday: {moment(child.dob).format("MMMM D, YYYY")}</h4></div>
                                 <div className="card-footer">
                                     <button className="btn btn-success childBtn value=3"><h5>Select</h5></button>
                                 </div>
