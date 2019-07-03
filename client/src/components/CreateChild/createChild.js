@@ -9,7 +9,7 @@ class createChild extends Component {
         this.state = {
             name: "",
             dob: "",
-            UserId: parseInt(localStorage.getItem("user-id"))
+            UserId: localStorage.getItem("user-id")
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     };

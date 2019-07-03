@@ -35,6 +35,7 @@ class RegisterForm extends Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
+        window.location.replace("/SignIn")
       })
 
     // console.log("The form was submitted with the following data:");
