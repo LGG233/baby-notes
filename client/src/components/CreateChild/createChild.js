@@ -7,9 +7,9 @@ class createChild extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            babyName: "",
-            birthDate: "",
-            UserId: parseInt(localStorage.getItem("user-id"))
+            name: "",
+            dob: "",
+            UserId: localStorage.getItem("user-id")
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     };
@@ -34,8 +34,8 @@ class createChild extends Component {
         event.preventDefault();
         console.log(this.state);
         let childData = {
-            name: this.state.babyName,
-            dob: this.state.birthDate,
+            name: this.state.name,
+            dob: this.state.dob,
             UserId: localStorage.getItem("user-id")
         }
         this.createNewChild(childData);
