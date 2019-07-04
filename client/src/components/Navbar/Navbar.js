@@ -7,7 +7,7 @@ import Axios from "axios";
 // import SignIn from "../SignIn/SignIn";
 
 const logOut = () => {
-    // Axios.get("/logout").then(data => console.log(data))
+    Axios.post("/logout").then(data => console.log(data))
     localStorage.removeItem("user-name")
     localStorage.removeItem("user-id")
     window.location.replace("/")
