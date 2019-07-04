@@ -7,8 +7,8 @@ import "./JournalTable.css";
 const data = [{
     button: <button className="btn btn-success">Edit</button>,
     date: '05/22/2019',
-    title: <p>Great Day! </p>,
-    notes: <p>The day started with an early morning walk to the park. The sun was still coming up, casting an eerie light on the river making the occasional patch of fog glow. Little Alfred was fascinated by the birds flying overhead - I wonder if he'll grow up to be an ornithologist! </p>
+    title: <p className="notesText">Great Day! </p>,
+    notes: <p className="notesText">The day started with an early morning walk to the park. The sun was still coming up, casting an eerie light on the river making the occasional patch of fog glow. Little Alfred was fascinated by the birds flying overhead - I wonder if he'll grow up to be an ornithologist! </p>
 }]
 
 const columns = [{

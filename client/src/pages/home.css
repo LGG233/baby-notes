@@ -1,25 +1,48 @@
 .page-title {
-    text-align: center;
-    margin-bottom: 20px;
-    }
+  text-align: center;
+  margin-bottom: 0px;
+}
+.MainPage {
+  
+  height: 100%;
+  margin-bottom: 20px;
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+}
 
 .btn {
-    margin: 3px;
-    display: inline-block;
+  margin: 3px;
+  display: inline-block;
 }
 .new-image {
-    background-image: url(../img/family.jpg);
+  background-image: url(../img/bedroom3.jpg);
+  height: 100%;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: initial;
+  width: 100%;
+  float: left;
+  box-shadow: 5px 5px 15px rgb(108, 149, 161);
 }
 
 .white-container {
-    background: rgb(130, 210, 235);
-    opacity: 50%;
+  background: rgb(130, 210, 235);
+  opacity: 50%;
 }
 
-h1 {
-    color: white;
+.parentTitle,
+h3 {
+  color: white;
+  text-shadow: 1px 1px 5px rgb(16, 114, 97);
 }
-
-p {
-    color: white;
+.childCards {
+  float: left;
+  z-index: 20px;
+}
+.childBox {
+   float: left;
 }

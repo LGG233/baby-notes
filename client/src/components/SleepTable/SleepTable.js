@@ -6,7 +6,7 @@ const data = [{
     start: '10:00 PM',
     end: '4:00 PM',
     date: '05/22/2019',
-    observations: <p>The day started with an early morning walk to the park.</p>
+    observations: <p className="notesText">The day started with an early morning walk to the park.</p>
 }]
 
 const columns = [

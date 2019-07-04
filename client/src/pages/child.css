@@ -1,22 +1,38 @@
-.childrenCard {
-    background-image: url(../img/bed.jpg);
-}
-
-h3 {
-    text-align: center;
-}
-
-.white-text {
-    color: white;
+.childPage {
+  background-image: url(../img/kidsPlayroom2.jpg);
+  height: 100%;
+  margin-bottom: 20px;
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
 }
 
 .white-container {
-    background-color: rgba(255,255,255,0.3) !important;
-    color: white;
-    text-shadow: 0px 0px 2px black;
+  background-color: transparent !important;
+  color: white;
+  text-shadow: 0px 0px 2px black;
 }
 
 .tableElement {
-    margin: 15px;
+  margin: 15px;
+  color: white !important;
+  text-shadow: 1px 1px 3px black;
+  box-lines: black;
 }
-
+.ReactTable,
+.rt-tbody .rt-tr {
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  background: rgba(169, 251, 227, 0.5) !important;
+}
+.tableHeader {
+    text-align: center;
+  text-shadow: 1px 1px 7px rgb(5, 56, 65) !important;
+  color:  rgb(163, 245, 231) !important; 
+  font-weight: 700;
+}
+.notesText {
+  color: white;
+  text-shadow: 1px 1px 3px black !important;
+}
