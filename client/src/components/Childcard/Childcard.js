@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Childcard.css";
 import API from "../../util/API";
+import moment from 'moment';
 
 class Childcard extends Component {
   state = {
@@ -41,7 +42,7 @@ class Childcard extends Component {
             <div className="card">
               <div className="card-header"><h3>{child.name}</h3></div>
               <div className="card-body">
-                <h4>Birthday: {child.dob}</h4>
+                <h4>Birthday: {moment(child.dob).format("MMMM D, YYYY")}</h4>
               </div>
               <div className="card-footer">
                 <button className="btn btn-success childBtn" onClick={()=> this.handleClick(child.id)}>

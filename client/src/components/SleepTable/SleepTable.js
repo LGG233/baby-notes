@@ -3,6 +3,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 const data = [{
+    date: '05/22/1992',
     start: '10:00 PM',
     end: '4:00 PM',
     date: '05/22/2019',

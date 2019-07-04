@@ -55,6 +55,9 @@ export default {
     // update one child
     putOneChild: function () {
         return axios.put("/child/:id")
+    },
+    logOutUser: function () {
+        return axios.post("/logout")
     }
     // one axios call is NOT on parent page - getting the journal entries
 }
