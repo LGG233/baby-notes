@@ -4,14 +4,44 @@ import Feeding from "../components/FeedingTable/FeedingTable";
 import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
 import Journal from "./Journal";
+import { Link } from 'react-router-dom';
+import API from "../util/API";
+
 
 class Child extends React.Component {
   state = {};
 
-  componentDidMount = () => {
-    console.log(this.props);
-
-  };
+  componentDidMount() {
+    API.getAllJournalActivities(localStorage.getItem("child-id")).then(res => {
+      this.setState({
+        data: res.data
+      });
+      console.log("this is the Activities data")
+      console.log(res.data);
+      var journalArray = [];
+      var eatingArray = [];
+      var sleepingArray = [];
+      var diaperArray = [];
+      for (var i = 0; i < res.data.length; i++) {
+        if (res.data[i].actList_Id === "1") {
+          journalArray.push(res.data[i]);
+        }
+        else if (res.data[i].actList_Id === "2") {
+          sleepingArray.push(res.data[i]);
+        }
+        else if (res.data[i].actList_Id === "3") {
+          diaperArray.push(res.data[i]);
+        }
+        else {
+          eatingArray.push(res.data[i]);
+        }
+      }
+      console.log("journal ", journalArray)
+      console.log("sleeping ", sleepingArray)
+      console.log("diaper ", diaperArray)
+      console.log("feeding ", eatingArray)
+    })
+  }
 
   render() {
     return (
@@ -19,7 +49,12 @@ class Child extends React.Component {
         <div className="row">
           <div className="col-md-12 page-title">
             <h2>Child's Page </h2>
-            <button className="btn btn-success">New Activity</button>
+            <ul>
+              <li>{localStorage.getItem("user-id") ? <Link to="/newActivity">Post New Activity</Link> : <h5> </h5>}</li>
+              <li>{localStorage.getItem("user-id") ? <Link to="/journalEntry">Create Journal Entry</Link> : <h5> </h5>}</li>
+            </ul>
+
+            {/* <button className="btn btn-success">New Activity</button> */}
           </div>
           {/* <div className="row">
           <div>

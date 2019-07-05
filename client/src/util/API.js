@@ -14,13 +14,16 @@ export default {
     getAllSingleTypeActivities: function (data) {
         return axios.get("/activities/:id/:act", data)
     },
+    getAllJournalActivities: function (id, data) {
+        return axios.get(`/activities/${id}`, data)
+    },
     // get ALL activities for a child
     getAllActivities: function () {
         return axios.get("/activities/:id")
     },
     // get ONE activity for one child
-    getOneActivity: function () {
-        return axios.get("/activity/:id")
+    getOneActivity: function (id) {
+        return axios.get(`/activity/${id}`)
     },
     // create one activity for a child
     postOneActivity: function (data) {
