@@ -3,9 +3,9 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 const data = [{
-    date: '05/22/2019',
-    start: '10:00 PM',
-    end: '4:00 PM',
+    date: '',
+    start: '',
+    end: '',
     observations: <p>Jimmy ate a lot more today</p>
 }]
 
