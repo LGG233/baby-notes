@@ -79,7 +79,7 @@ class createChild extends Component {
                                         type="text"
                                         id="birthdate"
                                         className="FormField__Input"
-                                        placeholder="Birthdate"
+                                        placeholder="MM/DD/YYYY"
                                         name="dob"
                                         value={this.state.dob}
                                         onChange={this.handleChange}
