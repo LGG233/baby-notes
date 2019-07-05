@@ -12,35 +12,51 @@ class Childcard extends Component {
     };
 
     componentDidMount() {
-        API.getChildren(localStorage.getItem("user-id")
-        ).then((res) => {
+        API.getChildren(localStorage.getItem("user-id")).then(res => {
             this.setState({
                 data: res.data
-            })
-            console.log(res.data)
-        })
+            });
+            console.log(res.data);
+        });
+    }
+
+    handleClick = (props) => {
+        // this.setState({
+        //   id: this.state.child.id
+        // })
+        console.log("this Child Button was clicked for child id: ------")
+        console.log(props)
+        localStorage.setItem("child-id", props);
+
+        window.location.replace("/child", this.props)
+
+
+        // this.setState({
+        //   name: this.child.name,
+        //   birthday: this.state.child.dob
+        // })
     }
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div >
-                        {this.state.data.map((child) =>
-                            <div className="card">
-                                <div className="card-header">
-                                    {child.name}
-                                </div>
-                                <div className="card-body">
-                                    <h4>Birthday: {moment(child.dob).format("MMMM D, YYYY")}</h4></div>
-                                <div className="card-footer">
-                                    <button className="btn btn-success childBtn value=3"><h5>Select</h5></button>
-                                </div>
-                            </div>
-                        )}
+            <div>
+                {/* <div className="row"> */}
+                {this.state.data.map(child => (
+                    <div className="card">
+                        <div className="card-header"><h3>{child.name}</h3></div>
+                        <div className="card-body">
+                            <h4>Birthday: {moment(child.dob).format("MMMM D, YYYY")}</h4>
+                        </div>
+                        <div className="card-footer">
+                            <button className="btn btn-success childBtn" onClick={() => this.handleClick(child.id)}>
+                                <h5>Select {child.id}</h5>
+                            </button>
+                        </div>
                     </div>
-                </div>
+                ))}
+
             </div>
+            // </div>
 
             // </div>
             // </div>

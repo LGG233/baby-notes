@@ -55,19 +55,40 @@ passport.serializeUser((user, done) => {
 
 
 // user object attaches to the request as req.user
-passport.deserializeUser((id, done) => {
-	console.log('DeserializeUser called')
-	db.User.findOne(
-		{ id: id },
-		'username',
-		(err, user) => {
-			console.log('*** Deserialize user, user:')
-			console.log("Id: " + user.id + " Email: " + user.email) 
-			console.log('--------------')
-			done(null, user)
-		}
-	)
-})
+passport.deserializeUser((user, done) => {
+  try {
+    console.log('DeserializeUser called')
+    db.User.findOne({
+      where: {
+        id: user.id
+      }
+    }).then(function (user) {
+      console.log("deserialise user: " + user.id);
+      done(null, user);
+    })
+    // , (err, user) => {
+    // //   console.log('*** Deserialize user: user:')
+    // //   console.log("Id: " + user.id + " Email: " + user.email)
+    // //   console.log("user", user);
+    // }
+    // console.log(err)
+  } catch (e) {
+    console.log(e);
+  }
+});
+// passport.deserializeUser((id, done) => {
+// 	console.log('DeserializeUser called')
+// 	db.User.findOne(
+// 		{ id: id },
+// 		'username',
+// 		(err, user) => {
+// 			console.log('*** Deserialize user, user:')
+// 			console.log("Id: " + user.id + " Email: " + user.email) 
+// 			console.log('--------------')
+// 			done(null, user)
+// 		}
+// 	)
+// })
 
 // Exporting our configured passport
 module.exports = passport;

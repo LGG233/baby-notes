@@ -1,5 +1,5 @@
 .childCard {
-    float: left;
+    /* float: left; */
     /* background-color: rgb(93, 192, 171);
     padding: 10px;
     margin:10px; */
@@ -7,24 +7,29 @@
 }
 .card-header, .card-footer {
     font-weight: 600;
-    text-align: center;
     padding:20px;
-    background-color: rgb(93, 192, 171);
+    background-color: rgba(100, 240, 209, 0.6);
     border-radius: 20px !important;
     box-shadow: 0px 0px 3px rgb(3, 6, 7);
 }
 .card {
-     background-color: rgb(52, 85, 129);
+    text-align: center;
+    background-color: rgba(90, 128, 177, .75);
     padding: 30px;
     margin:20px;
     border-radius: 25px;
     color: white;
-    text-shadow: 1px 2px 3px black;
+    text-shadow: 1px 1px 3px black;
 }
 .childBtn {
-    box-shadow: 1px 2px 3px black;
+    box-shadow: 2px 2px 3px rgb(40, 134, 87);
     color: white;
     border-radius: 10px;
     font-weight: 600;
-    text-shadow: 0px 0px 2px rgb(3, 53, 44);
+    text-shadow: 0px 0px 2px rgb(0, 0, 0);
+}
+h2 {
+    color:white;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 3px rgb(40, 134, 87);
 }

@@ -39,6 +39,8 @@ class createChild extends Component {
             UserId: localStorage.getItem("user-id")
         }
         this.createNewChild(childData);
+        window.location.replace("/home")
+
     };
 
     createNewChild = (data) => {
