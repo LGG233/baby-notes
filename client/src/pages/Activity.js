@@ -1,24 +1,56 @@
 import React, { Component } from "react";
-import TableRend from "../components/SleepTable/SleepTable.js";
+// import TableRend from "../components/SleepTable/SleepTable.js";
 import "./activity.css";
+import Modal from "react-modal";
+import NewActivity from "../components/NewActivity/NewActivity";
 // import Table from "react-bootstrap/Table";
 
 class Activity extends Component {
-    render() {
-        return (
-            <div className="container-fluid activity-image" >
-                <div className="row">
-                    <div className="col-md-12 page-title">
-                        <h1>Child's Sleep / Feeding / Diaper Schedule</h1>
-                        <button className="btn btn-success">New Activity</button>
-                    </div>
-                </div>
-                <div className="white-container">
-                    <TableRend />
-                </div>
-            </div>
-        )
-    }
+   constructor() {
+       super ()
+
+   this.state = {
+       modalIsOpen: false,
+   };
+
+   this.openModal = this.openModal.bind(this)
+   this.closeModal = this.closeModal.bind(this)
+}
+
+openModal = () => {
+   this.setState({modalIsOpen: true})
+}
+
+closeModal = () => {
+   this.setState({modalsOpen: false})
+}
+
+
+
+   render() {
+       return (
+           <div className="container-fluid activity-image" >
+               <Modal
+               isOpen = {this.state.modalIsOpen}
+               onRequestClose = {this.closeModal}
+               >
+               <NewActivity
+               click={this.closeModal}
+               />
+               </Modal>
+
+               <div className="row">
+                   <div className="col-md-12 page-title">
+                       <h1>Child's Sleep / Feeding / Diaper Schedule</h1>
+                       <button className="btn btn-success" onClick={this.openModal} >New Activity</button>
+                   </div>
+               </div>
+               <div className="white-container">
+                   {/* <TableRend /> */}
+               </div>
+           </div>
+       )
+   }
 }
 
 export default Activity;

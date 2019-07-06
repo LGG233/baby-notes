@@ -85,9 +85,18 @@ class NewActivity extends Component {
               <div className="FormField">
                 <button
                   className="FormField__Button mr-20"
-                  onClick={this.handleSubmit}
+                  onClick={this.handleSubmit} 
+                
                 >
-                  <h3>Add New Activity</h3></button>
+                  <h3>Add New Activity</h3>
+                  </button>
+                  <button
+                  className="FormField__Button mr-20"
+                  
+                  onClick={this.props.closeModal}
+                >
+                  <h3>Exit: No Save</h3>
+                  </button>
               </div>
             </form>
             {/* </div> */}
