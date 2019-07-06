@@ -41,6 +41,7 @@
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "react-modal": "^3.8.2",
     "sequelize": "^5.8.9"
   }
 }
