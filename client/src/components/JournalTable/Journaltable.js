@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import "./JournalTable.css";
+import moment from 'moment';
 
 const columns = [{
-    header: '',
+    Header: '',
     id: 'edit',
     accessor: 'id',
     Cell: ({ value }) => (<button className="btn btn-success" onClick={(() => console.log("THis IS THE EDIT BUTTON and "))} >Edit</button>),
@@ -12,9 +13,14 @@ const columns = [{
 },
 {
     Header: 'Date',
-    accessor: 'date',
+    id: 'date',
     headerStyle: { textAlign: 'left' },
-    width: 93
+    width: 93,
+    accessor: d => {
+        return moment(d.date)
+            .local()
+            .format("MMMM D, YYYY")
+    }
 },
 {
     Header: 'Title',
@@ -41,14 +47,12 @@ class JournalTable extends Component {
 
     render() {
         return (
-            <div>
-                <ReactTable
-                    data={this.props.journalData}
-                    columns={columns}
-                    defaultPageSize={5}
-                />
+            <div><ReactTable
+                data={this.props.journalData}
+                columns={columns}
+                defaultPageSize={5}
+            />
             </div>
-
         )
     };
 }

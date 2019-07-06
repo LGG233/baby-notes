@@ -42,6 +42,7 @@ class Child extends React.Component {
         }
       }
       console.log("journal ", journalArray)
+      this.setState({ journal: journalArray })
       console.log("sleeping ", sleepingArray)
       console.log("diaper ", diaperArray)
       console.log("feeding ", eatingArray)
