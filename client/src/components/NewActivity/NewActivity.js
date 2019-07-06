@@ -42,7 +42,7 @@ class NewActivity extends Component {
       starttime: this.state.startTime,
       endtime: this.state.endTime,
       description: this.state.observations,
-      ChildId: 1
+      ChildId: localStorage.getItem("child-id")
     }
     this.createNewActivity(activityData);
   };
@@ -69,15 +69,15 @@ class NewActivity extends Component {
               </div>
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="date">Date</label>
-                <input type="text" id="date" className="FormField__Input" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange} />
+                <input type="date" id="date" className="FormField__Input" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange} />
               </div>
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="start">Start</label>
-                <input type="text" id="start" className="FormField__Input" placeholder="Start" name="startTime" value={this.state.startTime} onChange={this.handleChange} />
+                <input type="time" id="start" className="FormField__Input" placeholder="Start" name="startTime" value={this.state.startTime} onChange={this.handleChange} />
               </div>
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="end_time">End Time</label>
-                <input type="text" id="end" className="FormField__Input" placeholder="End" name="endTime" value={this.state.endTime} onChange={this.handleChange} />
+                <input type="time" id="end" className="FormField__Input" placeholder="End" name="endTime" value={this.state.endTime} onChange={this.handleChange} />
               </div>
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="observations">Observations</label>
@@ -86,9 +86,18 @@ class NewActivity extends Component {
               <div className="FormField">
                 <button
                   className="FormField__Button mr-20"
-                  onClick={this.handleSubmit}
+                  onClick={this.handleSubmit} 
+                
                 >
-                  <h3>Add New Activity</h3></button>
+                  <h3>Add New Activity</h3>
+                  </button>
+                  <button
+                  className="FormField__Button mr-20"
+                  
+                  onClick={this.props.closeModal}
+                >
+                  <h3>Exit: No Save</h3>
+                  </button>
               </div>
             </form>
             {/* </div> */}

@@ -1,18 +1,4 @@
-// const activitiesRouter = require("express").Router();
-// const activitiesController = require("../../controllers/activitiesController");
 
-// activitiesController.routppue("/activities")
-//   .get(activitiesController.findAll)
-//   .post(activitiesController.create)
-//   .put(activitiesController.update);
-
-// activitiesController.route("/activities/:id")
-//   .get(activitiesController.findOne)
-//   .delete(activitiesController.delete);
-
-// module.exports = activitiesRouter;
-
-// **********************************
 var db = require("../../models");
 module.exports = function (app) {
   // get all specific activity for child
@@ -54,8 +40,9 @@ module.exports = function (app) {
     db.Activities.create({
         actList_Id: req.body.actList_Id,
         description: req.body.description,
-        startdate: req.body.startdate,
-        enddate: req.body.enddate,
+        date: req.body.date,
+        starttime: req.body.starttime,
+        endtime: req.body.endtime,
         title: req.body.title,
         ChildId: req.body.ChildId
       })
