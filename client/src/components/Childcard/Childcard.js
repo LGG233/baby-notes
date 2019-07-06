@@ -20,10 +20,12 @@ class Childcard extends Component {
         });
     }
 
-    handleClick = (props) => {
+    handleClick = (id, name) => {
         console.log("this Child Button was clicked for child id: ------")
-        console.log(props)
-        localStorage.setItem("child-id", props);
+        // console.log(props)
+        localStorage.setItem("child-id", id);
+        localStorage.setItem("child-name", name);
+
         window.location.replace("/child", this.props)
     }
 
@@ -37,7 +39,7 @@ class Childcard extends Component {
                             <h4>Birthday: {moment(child.dob).format("MMMM D, YYYY")}</h4>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-success childBtn" onClick={() => this.handleClick(child.id)}>
+                            <button className="btn btn-success childBtn" onClick={() => this.handleClick(child.id, child.name)}>
                                 <h5>Select </h5>
                             </button>
                         </div>

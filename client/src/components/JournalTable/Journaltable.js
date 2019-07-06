@@ -7,8 +7,8 @@ import moment from 'moment';
 const columns = [{
     Header: '',
     id: 'edit',
-    accessor: '[row identifier to be passed to button]',
-    Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
+    accessor: 'id',
+    Cell: ({ value }) => (<button className="btn btn-success" onClick={(() => console.log("THis IS THE EDIT BUTTON and "))} >Edit</button>),
     width: 70
 },
 {
@@ -18,8 +18,8 @@ const columns = [{
     width: 93,
     accessor: d => {
         return moment(d.date)
-        .local()
-        .format("MMMM D, YYYY")
+            .local()
+            .format("MMMM D, YYYY")
     }
 },
 {
@@ -31,7 +31,7 @@ const columns = [{
 },
 {
     Header: 'Notes',
-    accessor: 'notes',
+    accessor: 'description',
     headerStyle: { textAlign: 'left' },
     // style: { 'whiteSpace': 'unset' },
     width: 250

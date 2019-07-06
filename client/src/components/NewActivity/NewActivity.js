@@ -44,6 +44,7 @@ class NewActivity extends Component {
       ChildId: localStorage.getItem("child-id")
     }
     this.createNewActivity(activityData);
+    window.location.replace("/child", this.props);
   };
 
   createNewActivity = (data) => {
@@ -85,18 +86,18 @@ class NewActivity extends Component {
               <div className="FormField">
                 <button
                   className="FormField__Button mr-20"
-                  onClick={this.handleSubmit} 
-                
+                  onClick={this.handleSubmit}
+
                 >
                   <h3>Add New Activity</h3>
-                  </button>
-                  <button
+                </button>
+                <button
                   className="FormField__Button mr-20"
-                  
+
                   onClick={this.props.closeModal}
                 >
-                  <h3>Exit: No Save</h3>
-                  </button>
+                  <h3>Cancel</h3>
+                </button>
               </div>
             </form>
             {/* </div> */}

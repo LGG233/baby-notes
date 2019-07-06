@@ -14,6 +14,7 @@ class Home extends Component {
 
   componentDidMount() {
     localStorage.removeItem("child-id");
+    localStorage.removeItem("child-name");
   }
 
 
