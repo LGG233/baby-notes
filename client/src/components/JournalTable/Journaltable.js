@@ -47,50 +47,16 @@ const columns = [{
     width: 250
 }]
 
-function JournalTable() {
+function JournalTable(props) {
     return <ReactTable
-        data={data}
+        data={props.data}
         columns={columns}
         defaultPageSize={5}
     />
 
-    class JournalTable extends Component {
-        constructor(props) {
-            super(props); { }
-            this.state = {
-                data: [{
-                    id: (<button className="btn btn-success">Edit</button>),
-                    date: "05/05/2008",
-                    title: "Big Diaper",
-                    notes: "Man, this was a four-alarm diaper"
-                }]
-            }
-        };
-        render() {
-            const rows = this.state.data.map((rowData) => <Row {...rowData} />);
-            return (
-                < div className="table" >
-                    <div className="header">
-                        <div></div>
-                        <div>Date</div>
-                        <div>Title</div>
-                        <div>Notes</div>
-                    </div>
-                    <div className="body">
-                        {rows}
-                    </div>
-                </div >
+}
 
-                // <ReactTable
-                //     data={data}
-                //     columns={columns}
-                //     defaultPageSize={5}
-                // />
-            )
-        };
-    }
-
-    export default JournalTable;
+export default JournalTable;
 
 // const data1 = [{
 //     button: <button className="btn btn-success">Edit</button>,

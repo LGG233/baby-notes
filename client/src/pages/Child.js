@@ -37,6 +37,7 @@ class Child extends React.Component {
         }
       }
       console.log("journal ", journalArray)
+      this.setState({ journal: journalArray })
       console.log("sleeping ", sleepingArray)
       console.log("diaper ", diaperArray)
       console.log("feeding ", eatingArray)
@@ -66,7 +67,9 @@ class Child extends React.Component {
           <div className="row">
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Journal</h3>
-              <Journal />
+              <Journal 
+                data={this.state.journalArray}
+              />
             </div>
             <div className="tableElement col-md-1" />
             <div className="tableElement col-md-5">
