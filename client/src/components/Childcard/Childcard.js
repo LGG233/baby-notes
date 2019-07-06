@@ -21,26 +21,15 @@ class Childcard extends Component {
     }
 
     handleClick = (props) => {
-        // this.setState({
-        //   id: this.state.child.id
-        // })
         console.log("this Child Button was clicked for child id: ------")
         console.log(props)
         localStorage.setItem("child-id", props);
-
         window.location.replace("/child", this.props)
-
-
-        // this.setState({
-        //   name: this.child.name,
-        //   birthday: this.state.child.dob
-        // })
     }
 
     render() {
         return (
             <div>
-                {/* <div className="row"> */}
                 {this.state.data.map(child => (
                     <div className="card">
                         <div className="card-header"><h3>{child.name}</h3></div>
@@ -49,17 +38,12 @@ class Childcard extends Component {
                         </div>
                         <div className="card-footer">
                             <button className="btn btn-success childBtn" onClick={() => this.handleClick(child.id)}>
-                                <h5>Select {child.id}</h5>
+                                <h5>Select </h5>
                             </button>
                         </div>
                     </div>
                 ))}
-
             </div>
-            // </div>
-
-            // </div>
-            // </div>
         );
     }
 }
