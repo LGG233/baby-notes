@@ -15,6 +15,7 @@ class JournalEntry extends Component {
   };
 
   handleChange = (event) => {
+
     let target = event.target;
     let name = target.name;
 
@@ -41,6 +42,7 @@ class JournalEntry extends Component {
       ChildId: 1
     }
     this.createNewActivity(activityData);
+    window.location.replace("/child", this.props);
   };
 
   createNewActivity = (data) => {
