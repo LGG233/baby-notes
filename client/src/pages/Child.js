@@ -3,13 +3,18 @@ import Sleep from "../components/SleepTable/SleepTable";
 import Feeding from "../components/FeedingTable/FeedingTable";
 import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
-import Journal from "./Journal";
+import JournalTable from "../components/JournalTable/Journaltable";
 import { Link } from 'react-router-dom';
 import API from "../util/API";
 
 
 class Child extends React.Component {
-  state = {};
+  state = {
+    journalData: [],
+    eatingData: [],
+    sleepingData: [],
+    diaperData: []
+  };
 
   componentDidMount() {
     API.getAllJournalActivities(localStorage.getItem("child-id")).then(res => {
@@ -40,6 +45,17 @@ class Child extends React.Component {
       console.log("sleeping ", sleepingArray)
       console.log("diaper ", diaperArray)
       console.log("feeding ", eatingArray)
+
+      this.setState({
+        journalData: journalArray,
+        eatingData: eatingArray,
+        sleepingData: sleepingArray,
+        diaperData: diaperArray
+      }, () => {
+        setTimeout(() => {
+          console.log(this.state)
+        }, 2000)
+      })
     })
   }
 
@@ -53,36 +69,29 @@ class Child extends React.Component {
               <li>{localStorage.getItem("user-id") ? <Link to="/newActivity">Post New Activity</Link> : <h5> </h5>}</li>
               <li>{localStorage.getItem("user-id") ? <Link to="/journalEntry">Create Journal Entry</Link> : <h5> </h5>}</li>
             </ul>
-
-            {/* <button className="btn btn-success">New Activity</button> */}
           </div>
-          {/* <div className="row">
-          <div>
-            <button className="btn btn-success">New Child</button>
-          </div>
-        </div> */}
         </div>
         <div className="container-fluid white-container">
           <div className="row">
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Journal</h3>
-              <Journal />
+              <JournalTable journalData={this.state.journalData} />
             </div>
             <div className="tableElement col-md-1" />
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Sleep</h3>
-              <Sleep />
+              <Sleep sleepingData={this.state.sleepingData} />
             </div>
           </div>
           <div className="row">
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Diaper Change</h3>
-              <Change />
+              <Change diaperData={this.state.diaperData} />
             </div>
             <div className="tableElement col-md-1" />
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Eat</h3>
-              <Feeding />
+              <Feeding eatingData={this.state.eatingData} />
             </div>
           </div>
         </div>
