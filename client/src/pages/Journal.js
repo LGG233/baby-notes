@@ -1,5 +1,5 @@
 import React from "react";
-import JournalTable from "../components/JournalTable/Journaltable";
+import JournalTable from "../components/JournalTable/JournalTable";
 
 function Journal() {
     return (

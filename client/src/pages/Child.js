@@ -3,7 +3,7 @@ import Sleep from "../components/SleepTable/SleepTable";
 import Feeding from "../components/FeedingTable/FeedingTable";
 import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
-import Journal from "./Journal";
+import JournalTable from "../components/JournalTable/JournalTable";
 import { Link } from 'react-router-dom';
 import API from "../util/API";
 
@@ -67,7 +67,7 @@ class Child extends React.Component {
           <div className="row">
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Journal</h3>
-              <Journal 
+              <JournalTable 
                 data={this.state.journalArray}
               />
             </div>
@@ -85,7 +85,8 @@ class Child extends React.Component {
             <div className="tableElement col-md-1" />
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Eat</h3>
-              <Feeding />
+              <Feeding
+              data = {this.state.eatingArray} />
             </div>
           </div>
         </div>

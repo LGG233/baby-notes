@@ -3,7 +3,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 const data = [{
-    date: '05/22/2019',
+    date: '',
     start: '10:00 PM',
     end: '4:00 PM',
     observations: <p className="notesText">Jimmy ate a lot more today</p>
@@ -43,9 +43,9 @@ const columns = [
 
 
 
-function Feeding(props) {
+function Feeding() {
     return <ReactTable
-        data={props.data}
+        data={data}
         columns={columns}
         defaultPageSize={5}
     />
