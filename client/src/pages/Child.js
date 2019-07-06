@@ -3,11 +3,7 @@ import Sleep from "../components/SleepTable/SleepTable";
 import Feeding from "../components/FeedingTable/FeedingTable";
 import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
-<<<<<<< HEAD
-import JournalTable from "../components/JournalTable/JournalTable";
-=======
 import JournalTable from "../components/JournalTable/Journaltable";
->>>>>>> 092019c6ea0446cb2b882f4f42de476db3515633
 import { Link } from 'react-router-dom';
 import API from "../util/API";
 

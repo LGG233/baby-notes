@@ -2,25 +2,10 @@ import React, { Component } from "react";
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import "./JournalTable.css";
-
-const Row = ({ id, date, title, notes }) => (
-    <div className="row">
-        <div>{id}</div>
-        <div>{date}</div>
-        <div>{title}</div>
-        <div>{notes}</div>
-    </div>
-);
-
-const data = [{
-    button: <button className="btn btn-success">Edit</button>,
-    date: '05/22/2019',
-    title: <p className="notesText">Great Day! </p>,
-    notes: <p className="notesText">The day started with an early morning walk to the park. The sun was still coming up, casting an eerie light on the river making the occasional patch of fog glow. Little Alfred was fascinated by the birds flying overhead - I wonder if he'll grow up to be an ornithologist! </p>
-}]
+import moment from 'moment';
 
 const columns = [{
-    header: '',
+    Header: '',
     id: 'edit',
     accessor: '[row identifier to be passed to button]',
     Cell: ({ value }) => (<button className="btn btn-success">Edit</button>),
@@ -28,9 +13,14 @@ const columns = [{
 },
 {
     Header: 'Date',
-    accessor: 'date',
+    id: 'date',
     headerStyle: { textAlign: 'left' },
-    width: 93
+    width: 93,
+    accessor: d => {
+        return moment(d.date)
+        .local()
+        .format("MMMM D, YYYY")
+    }
 },
 {
     Header: 'Title',
@@ -47,13 +37,24 @@ const columns = [{
     width: 250
 }]
 
-function JournalTable(props) {
-    return <ReactTable
-        data={props.data}
-        columns={columns}
-        defaultPageSize={5}
-    />
+class JournalTable extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
 
+        }
+    }
+
+    render() {
+        return (
+            <div><ReactTable
+                data={this.props.journalData}
+                columns={columns}
+                defaultPageSize={5}
+            />
+            </div>
+        )
+    };
 }
 
 export default JournalTable;

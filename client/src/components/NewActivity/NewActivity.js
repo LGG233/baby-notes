@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import "./NewActivity.css";
 import API from "../../util/API";
+import moment from 'moment';
 
 class NewActivity extends Component {
   constructor(props) {
