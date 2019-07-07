@@ -4,7 +4,7 @@ import Feeding from "../components/FeedingTable/FeedingTable";
 import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
 import JournalTable from "../components/JournalTable/Journaltable";
-import ActivityEdit from "../components/editForms/ActivityEdit";
+// import ActivityEdit from "../components/editForms/ActivityEdit";
 import { Link } from 'react-router-dom';
 import API from "../util/API";
 
@@ -22,8 +22,8 @@ class Child extends React.Component {
       this.setState({
         data: res.data
       });
-      console.log("this is the Activities data")
-      console.log(res.data);
+      // console.log("this is the Activities data")
+      // console.log(res.data);
       var journalArray = [];
       var eatingArray = [];
       var sleepingArray = [];
