@@ -19,20 +19,28 @@ const columns = [
         accessor: d => {
             return moment(d.date)
             .local()
-            .format("MMMM D, YYYY")
+            .format("MMM D, YY")
         }
     },
     {
         Header: 'Start',
-        accessor: 'starttime',
+        id: 'starttime',
         headerStyle: { textAlign: 'left' },
-        width: 80
+        width: 80,
+        accessor: t => {
+            return moment(t.starttime, "HH:mm")
+            .format("h:mm a")
+        }
     },
     {
         Header: 'End',
-        accessor: 'endtime',
+        id: 'endtime',
         headerStyle: { textAlign: 'left' },
-        width: 80
+        width: 80,
+        accessor: t => {
+            return moment(t.endtime, "HH:mm")
+            .format("h:mm a")
+        }
     },
     {
         Header: 'Observations',

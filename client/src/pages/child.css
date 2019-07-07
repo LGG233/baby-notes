@@ -9,6 +9,7 @@
   width: 100%;
 }
 
+
 .white-container {
   background-color: transparent !important;
   color: white;
@@ -41,4 +42,8 @@
 .notesText {
   color: white;
   text-shadow: 1px 1px 3px black !important;
+}
+.kidTitle {
+  color: rgb(3, 54, 50) !important;
+  text-shadow: 1px 1px 3px white !important;
 }
