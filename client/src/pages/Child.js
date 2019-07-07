@@ -65,7 +65,7 @@ class Child extends React.Component {
       <div className="container-fluid childPage">
         <div className="row">
           <div className="col-md-12 page-title">
-            <h2>{localStorage.getItem("child-name")}'s Page </h2>
+            <h1 className="kidTitle">{localStorage.getItem("child-name")}'s Page </h1>
             <ul>
               <li>{localStorage.getItem("user-id") ? <Link to="/newActivity">Post New Activity</Link> : <h5> </h5>}</li>
               <li>{localStorage.getItem("user-id") ? <Link to="/journalEntry">Create Journal Entry</Link> : <h5> </h5>}</li>
@@ -76,22 +76,22 @@ class Child extends React.Component {
           <div className="row">
             {/* <div className="tableElement col-md-1" /> */}
             <div className="tableElement col-md-5">
-              <h3 className="tableHeader">Journal</h3>
+              <h2 className="tableHeader">Journal</h2>
               <JournalTable journalData={this.state.journalData} />
             </div>
             <div className="tableElement col-md-5">
-              <h3 className="tableHeader">Sleep</h3>
+              <h2 className="tableHeader">Sleep</h2>
               <Sleep sleepingData={this.state.sleepingData} />
             </div>
           </div>
           <div className="row">
             <div className="tableElement col-md-5">
-              <h3 className="tableHeader">Diaper Change</h3>
+              <h2 className="tableHeader">Diaper Change</h2>
               <Change diaperData={this.state.diaperData} />
             </div>
             {/* <div className="tableElement col-md-1" /> */}
             <div className="tableElement col-md-5">
-              <h3 className="tableHeader">Eat</h3>
+              <h2 className="tableHeader">Eat</h2>
               <Feeding eatingData={this.state.eatingData} />
             </div>
           </div>
