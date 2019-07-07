@@ -1,5 +1,5 @@
-
 var db = require("../../models");
+
 module.exports = function (app) {
   // get all specific activity for child
   app.get("/activities/:child_id", function (req, res) {
@@ -73,5 +73,4 @@ module.exports = function (app) {
       res.json(dbActivities);
     });
   });
-
 }
