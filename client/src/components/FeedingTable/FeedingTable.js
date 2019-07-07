@@ -18,21 +18,29 @@ const columns = [
         width: 93,
         accessor: d => {
             return moment(d.date)
-            .local()
-            .format("MMMM D, YYYY")
+                .local()
+                .format("MMM D, YYYY")
         }
     },
     {
         Header: 'Start',
-        accessor: 'starttime',
+        id: 'starttime',
         headerStyle: { textAlign: 'left' },
         width: 80,
+        accessor: t => {
+            return moment(t.starttime, "HH:mm")
+            .format("h:mm a")
+        }
     },
     {
         Header: 'End',
-        accessor: 'endtime',
+        id: 'endtime',
         headerStyle: { textAlign: 'left' },
-        width: 80
+        width: 80,
+        accessor: t => {
+            return moment(t.endtime, "HH:mm")
+            .format("h:mm a")
+        }
     },
     {
         Header: 'Observations',
@@ -61,4 +69,4 @@ class Feeding extends Component {
         )
     };
 }
-    export default Feeding;
+export default Feeding;

@@ -19,22 +19,8 @@ const columns = [{
     accessor: d => {
         return moment(d.date)
             .local()
-            .format("MMMM D, YYYY")
+            .format("MMM D, YYYY")
     }
-},
-{
-    Header: 'Title',
-    accessor: 'title',
-    headerStyle: { textAlign: 'left' },
-    // style: { 'whiteSpace': 'unset' },
-    width: 100
-},
-{
-    Header: 'Notes',
-    accessor: 'description',
-    headerStyle: { textAlign: 'left' },
-    // style: { 'whiteSpace': 'unset' },
-    width: 250
 }]
 
 class JournalTable extends Component {
