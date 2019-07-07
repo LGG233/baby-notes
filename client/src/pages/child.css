@@ -16,7 +16,8 @@
 }
 
 .tableElement {
-  margin: 15px;
+  margin-left: 6rem;
+  /* padding-left: 8rem; */
   color: white !important;
   text-shadow: 1px 1px 3px black;
   box-lines: black;
@@ -24,13 +25,18 @@
 .ReactTable,
 .rt-tbody .rt-tr {
   border: 1px solid rgba(0, 0, 0, 0.3) !important;
-  background: rgba(169, 251, 227, 0.5) !important;
+  background: rgba(5, 104, 74, 0.9) !important;
 }
 .tableHeader {
-    text-align: center;
-  text-shadow: 1px 1px 7px rgb(5, 56, 65) !important;
-  color:  rgb(163, 245, 231) !important; 
+  text-align: center;
+  text-shadow: none !important;
+  color:  rgb(5, 104, 74) !important; 
   font-weight: 700;
+  box-shadow: -1px -1xp 2px gray;
+  padding-bottom:15px;
+  margin-top: 10px;
+  margin-bottom:-5px;
+  background-color: white;
 }
 .notesText {
   color: white;
