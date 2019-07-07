@@ -1,15 +1,15 @@
 # Baby Notes
 
 ### Overview of Project
-A web application for parents/gurdians to monitor their child or children's sleep, eating and diaper change patterns. In addition, a journal entry option is available to capture those special moments in these young ones' lives.
+A web application for parents/guardians to monitor their child or children's sleep, eating and diaper change patterns. In addition, a journal entry option is available to capture those special moments in these young ones' lives.
 
 ### Demo 
-------need to update when deployed and finished image ----------
-* Interact with completed app [demo](https://sheltered-meadow-21020.herokuapp.com/).
-----front page
----- create child page
----- table page
-![Image](/public/assets/images/mongoScraper.png)
+* ------need to update when deployed and finished image ----------
+    * Interact with completed app [demo](https://sheltered-meadow-21020.herokuapp.com/).
+    * ----front page
+    * ---- create child page
+    * ---- table page
+    * ![Image](/public/assets/images/mongoScraper.png)
 
 ### What this project uses
 This project uses:
