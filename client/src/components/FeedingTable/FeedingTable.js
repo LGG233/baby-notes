@@ -18,15 +18,15 @@ const columns = [
         width: 93,
         accessor: d => {
             return moment(d.date)
-            .local()
-            .format("MMMM D, YYYY")
+                .local()
+                .format("MMMM D, YYYY")
         }
     },
     {
         Header: 'Start',
         accessor: 'starttime',
         headerStyle: { textAlign: 'left' },
-        width: 80,
+        width: 80
     },
     {
         Header: 'End',
@@ -61,4 +61,4 @@ class Feeding extends Component {
         )
     };
 }
-    export default Feeding;
+export default Feeding;
