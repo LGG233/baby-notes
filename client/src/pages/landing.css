@@ -16,6 +16,8 @@
 .welcomeTitle {
     color: white;
     text-shadow: 1px 1px 2px rgb(2, 92, 87);
+    font-family: 'Satisfy', cursive;
+   font-size: 5rem;
 }
 
 p {

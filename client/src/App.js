@@ -16,6 +16,7 @@ import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Activity from "./pages/Activity";
 import Landing from "./pages/Landing";
 import "../../node_modules/font-awesome/css/font-awesome.min.css";
+import ActivityEdit from "./components/editForms/ActivityEdit";
 // import API from "./util/API";
 
 class App extends Component {
@@ -51,6 +52,7 @@ class App extends Component {
                 <Route exact path="/createChild" component={createChild} />
                 <Route exact path="/journalentry" component={JournalEntry} />
                 <Route exact path="/newActivity" component={NewActivity} />
+                <Route exact path="/ActivityEdit" component={ActivityEdit} />
                 <Route component={NotFound} />
               </Switch>
             </div>

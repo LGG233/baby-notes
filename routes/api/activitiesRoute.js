@@ -24,7 +24,7 @@ module.exports = function (app) {
   });
 
   // get ONE activity for one child
-  app.get("/activity/:child_id", function (req, res) {
+  app.get("/activity/:id", function (req, res) {
     db.Activities.findOne({
       where: {
         id: req.params.id
@@ -38,21 +38,21 @@ module.exports = function (app) {
   // create one activity for a child
   app.post("/activity", function (req, res) {
     db.Activities.create({
-        actList_Id: req.body.actList_Id,
-        description: req.body.description,
-        date: req.body.date,
-        starttime: req.body.starttime,
-        endtime: req.body.endtime,
-        title: req.body.title,
-        ChildId: req.body.ChildId
-      })
+      actList_Id: req.body.actList_Id,
+      description: req.body.description,
+      date: req.body.date,
+      starttime: req.body.starttime,
+      endtime: req.body.endtime,
+      title: req.body.title,
+      ChildId: req.body.ChildId
+    })
       .then(function (dbActivities) {
         res.json(dbActivities);
       });
   });
 
   // delete one activity for a child
-  app.delete("/activity/:child_id", function (req, res) {
+  app.delete("/activity/:id", function (req, res) {
     db.Activities.destroy({
       where: {
         id: req.params.id
@@ -63,14 +63,14 @@ module.exports = function (app) {
   });
 
   // update one activity for a child
-  app.put("/activity/:child_id", function (req, res) {
+  app.put("/activity/:id", function (req, res) {
     db.Activities.update(
       req.body, {
         where: {
           id: req.params.id
         }
       }).then(function (dbActivities) {
-      res.json(dbActivities);
-    });
+        res.json(dbActivities);
+      });
   });
 }

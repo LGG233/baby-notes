@@ -4,6 +4,7 @@ import Feeding from "../components/FeedingTable/FeedingTable";
 import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
 import JournalTable from "../components/JournalTable/Journaltable";
+// import ActivityEdit from "../components/editForms/ActivityEdit";
 import { Link } from 'react-router-dom';
 import API from "../util/API";
 
@@ -21,8 +22,8 @@ class Child extends React.Component {
       this.setState({
         data: res.data
       });
-      console.log("this is the Activities data")
-      console.log(res.data);
+      // console.log("this is the Activities data")
+      // console.log(res.data);
       var journalArray = [];
       var eatingArray = [];
       var sleepingArray = [];
@@ -42,7 +43,7 @@ class Child extends React.Component {
         }
       }
       console.log("journal ", journalArray)
-      this.setState({ journal: journalArray })
+      // this.setState({ journal: journalArray })
       console.log("sleeping ", sleepingArray)
       console.log("diaper ", diaperArray)
       console.log("feeding ", eatingArray)
@@ -68,6 +69,7 @@ class Child extends React.Component {
             <h1 className="kidTitle">{localStorage.getItem("child-name")}'s Page </h1>
             <ul>
               <li>{localStorage.getItem("user-id") ? <Link to="/newActivity">Post New Activity</Link> : <h5> </h5>}</li>
+              <li>{localStorage.getItem("user-id") ? <Link to="/ActivityEdit">Edit Activity</Link> : <h5> </h5>}</li>
               <li>{localStorage.getItem("user-id") ? <Link to="/journalEntry">Create Journal Entry</Link> : <h5> </h5>}</li>
             </ul>
           </div>
