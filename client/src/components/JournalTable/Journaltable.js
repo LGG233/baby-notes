@@ -19,7 +19,7 @@ const columns = [{
     accessor: d => {
         return moment(d.date)
             .local()
-            .format("MMMM D, YYYY")
+            .format("MMM D, YYYY")
     }
 },
 {
