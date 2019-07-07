@@ -74,11 +74,11 @@ class Child extends React.Component {
         </div>
         <div className="container-fluid white-container">
           <div className="row">
+            {/* <div className="tableElement col-md-1" /> */}
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Journal</h3>
               <JournalTable journalData={this.state.journalData} />
             </div>
-            <div className="tableElement col-md-1" />
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Sleep</h3>
               <Sleep sleepingData={this.state.sleepingData} />
@@ -89,7 +89,7 @@ class Child extends React.Component {
               <h3 className="tableHeader">Diaper Change</h3>
               <Change diaperData={this.state.diaperData} />
             </div>
-            <div className="tableElement col-md-1" />
+            {/* <div className="tableElement col-md-1" /> */}
             <div className="tableElement col-md-5">
               <h3 className="tableHeader">Eat</h3>
               <Feeding eatingData={this.state.eatingData} />
