@@ -65,7 +65,7 @@ class Child extends React.Component {
       <div className="container-fluid childPage">
         <div className="row">
           <div className="col-md-12 page-title">
-            <h2>{localStorage.getItem("child-name")}'s Page </h2>
+            <h1 className="kidTitle">{localStorage.getItem("child-name")}'s Page </h1>
             <ul>
               <li>{localStorage.getItem("user-id") ? <Link to="/newActivity">Post New Activity</Link> : <h5> </h5>}</li>
               <li>{localStorage.getItem("user-id") ? <Link to="/journalEntry">Create Journal Entry</Link> : <h5> </h5>}</li>

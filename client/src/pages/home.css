@@ -3,7 +3,6 @@
   margin-bottom: 0px;
 }
 .MainPage {
-  
   height: 100%;
   margin-bottom: 20px;
   background-size: 95%;
@@ -41,8 +40,16 @@ h3 {
 }
 .childCards {
   float: left;
+  margin-left: 5rem;
   z-index: 20px;
 }
 .childBox {
-   float: left;
+  float: left;
+}
+
+.parent-space {
+  float: left;
+}
+.card {
+  float: left; 
 }

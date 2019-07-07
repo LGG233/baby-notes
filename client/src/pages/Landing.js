@@ -9,7 +9,7 @@ const Landing = function () {
   return (
     <div className="container-fluid">
       <div className="col-md-12 loginSwitch">
-        <h1>Welcome to Baby Notes</h1>
+        <h1 className="welcomeTitle">Welcome to Baby Notes</h1>
         <p>Talk about what app does</p>
       </div>
     </div>

@@ -61,9 +61,9 @@ class Home extends Component {
             </button> */}
           </div>
         </div>
-        <div className="container">
+        <div className="container-fluid parent-space">
           <div className="row">
-            <div className="col-md-5 childCards">
+            <div className="col-md-12 childCards">
               <Childcard />
             </div>
           </div>
