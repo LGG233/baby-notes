@@ -39,7 +39,7 @@ class JournalEntry extends Component {
       date: this.state.date,
       title: this.state.title,
       description: this.state.notes,
-      ChildId: 1
+      ChildId: localStorage.getItem("child-id")
     }
     this.createNewActivity(activityData);
     window.location.replace("/child", this.props);
