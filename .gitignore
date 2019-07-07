@@ -12,7 +12,7 @@
 /build
 
 # misc
-config/config.json
+/config.json
 package-lock.json
 .DS_Store
 .env.local
