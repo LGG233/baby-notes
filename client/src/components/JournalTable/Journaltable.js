@@ -21,20 +21,6 @@ const columns = [{
             .local()
             .format("MMM D, YYYY")
     }
-},
-{
-    Header: 'Title',
-    accessor: 'title',
-    headerStyle: { textAlign: 'left' },
-    // style: { 'whiteSpace': 'unset' },
-    width: 100
-},
-{
-    Header: 'Notes',
-    accessor: 'description',
-    headerStyle: { textAlign: 'left' },
-    // style: { 'whiteSpace': 'unset' },
-    width: 250
 }]
 
 class JournalTable extends Component {
