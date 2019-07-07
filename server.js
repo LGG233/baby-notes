@@ -4,7 +4,7 @@ var session = require("express-session");
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var flash    = require('connect-flash');
+var flash = require('connect-flash');
 var passport = require("./config/passport");
 var cors = require('cors');
 
@@ -15,17 +15,12 @@ app.use(cors()); // Add routes, both API and view
 
 // Requiring our models for syncing
 var db = require("./models");
-// Sets up the Express app to handle data parsing
-// app.use(express.urlencoded({
-//   extended: true
-// }));
-// app.use(express.json());
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.urlencoded({
-	extended: true
+  extended: true
 }));
 app.use(bodyParser.json());
 
@@ -36,7 +31,7 @@ if (process.env.NODE_ENV === "production") {
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({
-  secret: "keyboard cat",
+  secret: "wesurvivedbootcamp",
   resave: true,
   saveUninitialized: true
 }));
