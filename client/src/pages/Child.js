@@ -4,6 +4,7 @@ import Feeding from "../components/FeedingTable/FeedingTable";
 import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
 import JournalTable from "../components/JournalTable/Journaltable";
+import ActivityEdit from "../components/editForms/ActivityEdit";
 import { Link } from 'react-router-dom';
 import API from "../util/API";
 
@@ -68,6 +69,7 @@ class Child extends React.Component {
             <h2>{localStorage.getItem("child-name")}'s Page </h2>
             <ul>
               <li>{localStorage.getItem("user-id") ? <Link to="/newActivity">Post New Activity</Link> : <h5> </h5>}</li>
+              <li>{localStorage.getItem("user-id") ? <Link to="/ActivityEdit">Edit Activity</Link> : <h5> </h5>}</li>
               <li>{localStorage.getItem("user-id") ? <Link to="/journalEntry">Create Journal Entry</Link> : <h5> </h5>}</li>
             </ul>
           </div>
