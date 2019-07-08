@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <div className="footer">
      
-        <p>&copy; 2019 The Gang</p>
+        <p>&copy; 2019 Group: 404 Not Found</p>
         
-          <a className="" href="https://github.com/">
+          <a className="" href="https://github.com/LGG233/baby-notes">
             <i className="#">Github</i>
           </a>
-          <a className="" href="https://www.heroku.com/home">
+          <a className="" href="https://sleepy-chamber-22147.herokuapp.com/">
             <i className="#"> Heroku</i>
           </a>
         
