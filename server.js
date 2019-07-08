@@ -24,6 +24,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// Routes
+require("./routes/api/userRoute")(app);
+require("./routes/api/childRoute")(app);
+require("./routes/api/activitiesRoute")(app);
+
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -35,7 +40,7 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
  });
- 
+
 // We need to use sessions to keep track of our user's login status
 app.use(session({
   secret: "wesurvivedbootcamp",
@@ -46,10 +51,10 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-// Routes
-require("./routes/api/userRoute")(app);
-require("./routes/api/childRoute")(app);
-require("./routes/api/activitiesRoute")(app);
+// // Routes
+// require("./routes/api/userRoute")(app);
+// require("./routes/api/childRoute")(app);
+// require("./routes/api/activitiesRoute")(app);
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({
