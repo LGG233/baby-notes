@@ -32,7 +32,10 @@ if (process.env.NODE_ENV === "production") {
 // router.use((req, res) =>
 // res.sendFile(path.join(__dirname, "client/build/index.html"))
 // );
-
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+ });
+ 
 // We need to use sessions to keep track of our user's login status
 app.use(session({
   secret: "wesurvivedbootcamp",
