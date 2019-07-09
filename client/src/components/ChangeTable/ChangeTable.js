@@ -8,17 +8,44 @@ class Change extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            editRow: null
+            editRow: null,
+            data: {
+                id: 0,
+                date: "date",
+                starttime: "starttime",
+                endtime: "endtime",
+                description: "description"
+            }
         }
+        this.renderEditable = this.renderEditable.bind(this);
     }
     
     handleEditClick = (index) => {
-        this.setState({editRow: index})
+        this.setState({ editRow: index })
     }
 
-    handleSaveClick=()=>{
-        console.log('Save Function in parent');
-        this.setState({editRow: null})
+    renderEditable(cellInfo) {
+        return (
+            <div
+                style={{ backgroundColor: "#fafafa", color: "#000000" }}
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={e => {
+                    const data = this.props.diaperData;
+                    data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
+                    console.log({data})
+                }}
+                dangerouslySetInnerHTML={{
+                    __html: this.props.diaperData[cellInfo.index][cellInfo.column.id]
+                }}
+                onInput={(e) => console.log(e.target.innerHTML)}
+            />
+        );
+    }
+
+    handleSaveClick = () => {
+        this.setState({ editRow: null, data: this.state.data })
+        console.log(this.state.data)
     }
 
     render() {
@@ -37,6 +64,7 @@ class Change extends Component {
                 id: "date",
                 headerStyle: { textAlign: 'left' },
                 width: 93,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}`,
                 accessor: d => {
                     return moment(d.date)
                         .local()
@@ -48,6 +76,7 @@ class Change extends Component {
                 id: 'starttime',
                 headerStyle: { textAlign: 'left' },
                 width: 80,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.starttime}`,
                 accessor: t => {
                     return moment(t.starttime, "HH:mm")
                         .format("h:mm a")
@@ -58,6 +87,7 @@ class Change extends Component {
                 id: 'endtime',
                 headerStyle: { textAlign: 'left' },
                 width: 80,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.endtime}`,
                 accessor: t => {
                     return moment(t.endtime, "HH:mm")
                         .format("h:mm a")
@@ -68,7 +98,8 @@ class Change extends Component {
                 accessor: 'description',
                 headerStyle: { textAlign: 'left' },
                 style: { 'whiteSpace': 'unset' },
-                width: 250
+                width: 250,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.description}`
             }]
         return (
             <div><ReactTable

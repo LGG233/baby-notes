@@ -24,10 +24,6 @@ class Feeding extends Component {
         this.setState({ editRow: index });
     }
 
-    updateParentState = (updatedArray) => {
-        this.setState({oldArrayName : updatedArray })
-    }
-
     renderEditable(cellInfo) {
         return (
             <div
@@ -35,13 +31,12 @@ class Feeding extends Component {
                 contentEditable
                 suppressContentEditableWarning
                 onBlur={e => {
-                    let data = [this.props.eatingData];
-                    data[cellInfo.index][cellInfo.column.id] = 'e.target.innerHTML';
-                    this.props.updateParentState(data);
+                    const data = this.props.eatingData;
+                    data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
                     console.log({data})
                 }}
                 dangerouslySetInnerHTML={{
-                    __html: this.state.data
+                    __html: this.props.eatingData[cellInfo.index][cellInfo.column.id]
                 }}
                 onInput={(e) => console.log(e.target.innerHTML)}
             />
@@ -55,7 +50,7 @@ class Feeding extends Component {
 
     render() {
         const editRow = this.state.editRow;
-        const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
+        const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable}
         const columns = [
             {
                 Header: '',

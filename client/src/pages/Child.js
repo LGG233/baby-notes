@@ -17,6 +17,10 @@ class Child extends React.Component {
     diaperData: []
   };
 
+  updateParentState = (updatedArray) => {
+    this.setState({oldArrayName : updatedArray })
+}
+
   componentDidMount() {
     API.getAllJournalActivities(localStorage.getItem("child-id")).then(res => {
       this.setState({
@@ -79,22 +83,22 @@ class Child extends React.Component {
             {/* <div className="tableElement col-md-1" /> */}
             <div className="tableElement col-md-5">
               <h2 className="tableHeader">Journal</h2>
-              <JournalTable journalData={this.state.journalData} />
+              <JournalTable journalData={this.state.journalData} updateParentState={this.props.updateParentState} />
             </div>
             <div className="tableElement col-md-5">
               <h2 className="tableHeader">Sleep</h2>
-              <Sleep sleepingData={this.state.sleepingData} />
+              <Sleep sleepingData={this.state.sleepingData} updateParentState={this.props.updateParentState} />
             </div>
           </div>
           <div className="row">
             <div className="tableElement col-md-5">
               <h2 className="tableHeader">Diaper Change</h2>
-              <Change diaperData={this.state.diaperData} />
+              <Change diaperData={this.state.diaperData} updateParentState={this.props.updateParentState}/>
             </div>
             {/* <div className="tableElement col-md-1" /> */}
             <div className="tableElement col-md-5">
               <h2 className="tableHeader">Eat</h2>
-              <Feeding eatingData={this.state.eatingData} />
+              <Feeding eatingData={this.state.eatingData} updateParentState={this.props.updateParentState} />
             </div>
           </div>
         </div>
