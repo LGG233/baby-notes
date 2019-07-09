@@ -1,0 +1,42 @@
+.new-image {
+    background: url("../img/bedroom3.jpg");
+    height: 100%;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: initial;
+    width: 100%;
+    float: left;
+    box-shadow: 5px 5px 15px rgb(108, 149, 161);
+  }
+
+  .activity-image {
+    background-image: url('../img/feeding.jpg');
+}
+
+.childPage {
+    background-image: url("../img/kidsPlayroom2.jpg");
+    height: 100%;
+    margin-bottom: 20px;
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+  }
+
+  .jumbotron {
+    color:white;
+    background-image: url("../img/hands.jpg");
+    background-size: cover;
+    border: 2px solid rgb(146, 250, 219);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 42rem;
+    width: 100%;
+    padding: 3rem; 
+    box-shadow: 0px 7px 15px rgb(3, 54, 50);
+    text-align: center;
+    text-shadow: 0px 1px 3px rgb(9, 146, 123);
+    z-index: 10px;
+}
