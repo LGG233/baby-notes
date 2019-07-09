@@ -23,3 +23,7 @@
 p {
     color: black;
 }
+
+.text-body {
+    text-align: left;
+}

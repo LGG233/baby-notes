@@ -41,8 +41,7 @@ class EditChild extends Component {
             id: localStorage.getItem("child-id")
         }
         this.editOneChild(this.state.id, childData)
-        // setTimeout(function () { console.log(childData) }, 3000);
-        window.location.replace("/home");
+        // setTimeout(function () { window.location.replace("/home") }, 3000);
         // console.log("this is the ID plus the data" + this.state.id, childData)
         // 
 
@@ -50,7 +49,7 @@ class EditChild extends Component {
 
     editOneChild = (id, data) => {
         API.putOneChild(id, data)
-            .then(data => console.log(data))
+            .then(data => window.location.replace("/home"))
             .catch(err => console.log(err))
     };
 
@@ -100,6 +99,9 @@ class EditChild extends Component {
                                 </div>
                             </form>
                         </div>
+                        <button className="btn btn-success" onClick={function () { window.location.replace("/Home") }}> <h3>Cancel</h3>
+                        </button>
+
                     </div>
                 </div>
             </div>
