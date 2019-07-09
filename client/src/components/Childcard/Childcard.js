@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import "./Childcard.css";
 import API from "../../util/API";
 import moment from 'moment';
+import "../EditChild/EditChild"
 
 class Childcard extends Component {
     state = {
         name: "",
-        birthday: "",
+        dob: "",
         id: "",
         data: []
     };
@@ -21,13 +22,31 @@ class Childcard extends Component {
     }
 
     handleClick = (id, name) => {
-        console.log("this Child Button was clicked for child id: ------")
+        // console.log("this Child Button was clicked for child id: ------")
         // console.log(props)
         localStorage.setItem("child-id", id);
         localStorage.setItem("child-name", name);
 
         window.location.replace("/child", this.props)
     }
+
+    handleEditClick = (id, name, dob) => {
+        // console.log("this Child Button was clicked for child id: ------")
+        // console.log(props)
+        localStorage.setItem("child-id", id);
+        localStorage.setItem("child-name", name);
+        localStorage.setItem("child-dob", dob);
+        API.getOneChild(localStorage.getItem("child-id")).then(res => {
+            console.log("here is the data before it goes into state ", res.data)
+            this.setState({
+                childData: res
+            });
+            console.log(res);
+        })
+
+        window.location.replace("/EditChild", this.props)
+    }
+
 
     render() {
         return (
@@ -36,9 +55,12 @@ class Childcard extends Component {
                     <div className="card">
                         <div className="card-header"><h3>{child.name}</h3></div>
                         <div className="card-body">
-                            <h4>Birthday: {moment(child.dob).format("MMMM D, YYYY")}</h4>
+                            <h4>Birthday: {moment(child.dob).format("MMM DD, YYYY")}</h4>
                         </div>
                         <div className="card-footer">
+                            <button className="btn btn-success childBtn" onClick={() => this.handleEditClick(child.id, child.name, child.dob)}>
+                                <h5>Edit</h5>
+                            </button>
                             <button className="btn btn-success childBtn" onClick={() => this.handleClick(child.id, child.name)}>
                                 <h5>Select </h5>
                             </button>

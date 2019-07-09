@@ -17,18 +17,21 @@ class ActivityEdit extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    componentDidMount() {
+    componentDidMount(id) {
+        let description = "";
         console.log("Edit page fired");
-        API.getOneActivity(localStorage.getItem("user-id")).then(res => {
+        API.getOneActivity(35).then(res => {
             this.setState({
                 data: res.data
             })
-        })
-        // API.getAllJournalActivities(localStorage.getItem("child-id")).then(res => {
-        // let result = this.dbActivities
-        // this.setState({ dbActivities })
-        // console.log(dbActivities);
-    }
+            console.log(res.data.description)
+
+            console.log(this.state.data.description)
+            description = this.state.data.description
+        }
+        )
+    };
+
 
     handleChange = event => {
         let target = event.target;
@@ -38,8 +41,8 @@ class ActivityEdit extends Component {
         });
     };
 
-    getActivityData = (data) => {
-        API.getOneActivity(data);
+    getActivityData = (id) => {
+        API.getOneActivity(id);
     };
 
     updateActivityData = (data) => {
@@ -68,6 +71,7 @@ class ActivityEdit extends Component {
         window.location.replace("/child", this.props);
     };
 
+    // console.log("third time", this.state.data.description)
 
     render() {
         return (
@@ -98,7 +102,7 @@ class ActivityEdit extends Component {
                             </div>
                             <div className="FormField">
                                 <label className="FormField__Label" htmlFor="observations">Observations</label>
-                                <input type="text" id="observations" className="FormField__Input" placeholder="Observations" name="observations" value={this.state.observations} onChange={this.handleChange} />
+                                <input type="text" id="observations" className="FormField__Input" placeholder={this.state.description} name="observations" value={this.state.description} onChange={this.handleChange} />
                             </div>
                             <div className="FormField">
                                 <button

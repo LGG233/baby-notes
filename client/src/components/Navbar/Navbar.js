@@ -7,11 +7,20 @@ import Axios from "axios";
 // import SignIn from "../SignIn/SignIn";
 
 const logOut = () => {
-  Axios.post("/logout").then(data => console.log(data));
-  localStorage.removeItem("user-name");
-  localStorage.removeItem("user-id");
-  window.location.replace("/");
-};
+    Axios.post("/logout").then(data => console.log(data))
+    localStorage.removeItem("user-name")
+    localStorage.removeItem("user-id")
+    localStorage.removeItem("child-id")
+    localStorage.removeItem("child-name")
+    window.location.replace("/")
+}
+
+// const signedOut = () => {
+//     [
+//         <Link to="/RegisterForm">Register</Link>,
+//         <Link to="/SignIn">Sign In</Link>
+//     ]
+// }
 
 // import DrawerToggleButton from '../SideDrawer/Drawer/DrawerToggleButton';
 function navbar(props) {
@@ -25,16 +34,12 @@ function navbar(props) {
           <ul>
             <li>
               {localStorage.getItem("user-id") ? (
-                <Link to="/home">Parent</Link>
-              ) : (
-                <Link to="/RegisterForm">Register</Link>
+                 <Link to="/home">Parent</Link> ): ( <Link to="/RegisterForm">Register</Link>
               )}
             </li>
             <li>
               {localStorage.getItem("user-id") ? (
-                <Link to="/child">Child</Link>
-              ) : (
-                <Link to="/SignIn">Sign In</Link>
+               <h5> </h5> ) : ( <Link to="/SignIn">Sign In</Link>
               )}
             </li>
           </ul>
@@ -51,6 +56,22 @@ function navbar(props) {
         </div>
     </header>
   );
-}
+// }
+//     return (
+//         <header className="navbar">
+//             <nav className="navigation">
+//                 <div className="navbar-logo"><Link to="/">BabyNotes</Link></div>
+//                 <div className="navbar-items">
+//                     <ul>
+//                         {/* <li>{!localStorage.getItem("user-id") ? (): <Link to = "/home">Parent</Link>}</li> */}
+//                         <li>{localStorage.getItem("user-id") ? <Link to="/home">Parent</Link> : <Link to="/RegisterForm">Register</Link>}</li>
+//                         <li>{localStorage.getItem("user-id") ? <h5> </h5> : <Link to="/SignIn">Sign In</Link>}</li>
+//                         <li>{localStorage.getItem("user-id") ? <button onClick={logOut}>Log Out</button> : <h5> </h5>}</li>
+//                     </ul>
+//                 </div>
+//             </nav>
+//         </header>
+//     )
+};
 
 export default navbar;
