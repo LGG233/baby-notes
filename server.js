@@ -28,6 +28,10 @@ app.use(bodyParser.json());
 // require("./routes/api/userRoute")(app);
 // require("./routes/api/childRoute")(app);
 // require("./routes/api/activitiesRoute")(app);
+const routes = require("./routes");
+
+// Add routes, both API and view
+app.use(routes);
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
@@ -52,9 +56,10 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // Routes
-require("./routes/api/userRoute")(app);
-require("./routes/api/childRoute")(app);
-require("./routes/api/activitiesRoute")(app);
+// require("./routes/api/userRoute")(app);
+// require("./routes/api/childRoute")(app);
+// require("./routes/api/activitiesRoute")(app);
+
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({
