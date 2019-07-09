@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Journal from "./pages/Journal";
 import Child from "./pages/Child";
 import createChild from "./components/CreateChild/createChild";
+import EditChild from "./components/EditChild/EditChild";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import SignIn from "./components/SignIn/SignIn";
@@ -50,6 +51,7 @@ class App extends Component {
                 <Route exact path="/activity" component={Activity} />
                 <Route exact path="/child" component={Child} />
                 <Route exact path="/createChild" component={createChild} />
+                <Route exact path="/EditChild" component={EditChild} />
                 <Route exact path="/journalentry" component={JournalEntry} />
                 <Route exact path="/newActivity" component={NewActivity} />
                 <Route exact path="/ActivityEdit" component={ActivityEdit} />

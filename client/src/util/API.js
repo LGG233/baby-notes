@@ -44,8 +44,8 @@ export default {
         return axios.get(`/children/${id}`)
     },
     // get one child
-    getOneChild: function () {
-        return axios.get("/child/:id")
+    getOneChild: function (id) {
+        return axios.get(`/child/${id}`)
     },
     // create one child
     postOneChild: function (data) {
@@ -56,8 +56,8 @@ export default {
         return axios.delete("/child/:id")
     },
     // update one child
-    putOneChild: function () {
-        return axios.put("/child/:id")
+    putOneChild: function (id, data) {
+        return axios.put(`/child/${id}`, data)
     },
     logOutUser: function () {
         return axios.post("/logout")

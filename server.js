@@ -24,10 +24,22 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// // Routes
+// require("./routes/api/userRoute")(app);
+// require("./routes/api/childRoute")(app);
+// require("./routes/api/activitiesRoute")(app);
+
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+// If no API routes are hit, send the React app
+// router.use((req, res) =>
+// res.sendFile(path.join(__dirname, "client/build/index.html"))
+// );
+// app.get("*", function(req, res) {
+//   res.sendFile(path.join(__dirname + "/client/build/index.html"));
+//  });
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({

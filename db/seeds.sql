@@ -116,3 +116,22 @@ Pellentesque egestas vehicula elit, sed pretium risus dapibus a. Phasellus non q
 
 INSERT INTO activities (actList_Id, description, starttime, endtime, date, title, ChildId, createdAt, updatedAt) 
 VALUES (1, "Child A.3 journal", now(), now(), now(), "title", 6, now(), now());
+
+
+
+-- for heroku seed data
+
+INSERT INTO Children (name, dob, UserId, createdAt, updatedAt) 
+VALUES ("Baby Fafrak","2019-09-08", 1, now(), now());
+
+INSERT INTO Activities (actList_Id, description, starttime, endtime, date, title, ChildId, createdAt, updatedAt) 
+VALUES (1, "Baby Fafrak journal: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lobortis nisl in tincidunt congue. Sed sed ultricies urna. Suspendisse risus est, ultrices et turpis at, malesuada elementum felis. In hac habitasse platea dictumst. Ut ut eros auctor, finibus orci faucibus, scelerisque nunc. Maecenas urna enim, semper vel risus id, bibendum egestas ex. ", now(), now(), now(), "First Journal", 2, now(), now());
+
+INSERT INTO Activities (actList_Id, description, starttime, endtime, date, title, ChildId, createdAt, updatedAt) 
+VALUES (2, "Baby Fafrak sleep", now(), now(), now(), "First sleep", 2, now(), now());
+
+INSERT INTO Activities (actList_Id, description, starttime, endtime, date, title, ChildId, createdAt, updatedAt) 
+VALUES (3, "Baby Fafrak diaper change", now(), now(), now(), "First Diaper", 2, now(), now());
+
+INSERT INTO Activities (actList_Id, description, starttime, endtime, date, title, ChildId, createdAt, updatedAt) 
+VALUES (4, "Baby Fafrak eat", now(), now(), now(), "First feeding", 2, now(), now());
