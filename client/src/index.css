@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(220, 246, 244) !important;
+  background-color: rgb(233, 250, 248) !important;
+  font-family: 'Julius Sans One', sans-serif;
+  
 }
 
 code {
