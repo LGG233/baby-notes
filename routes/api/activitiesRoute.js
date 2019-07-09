@@ -44,7 +44,7 @@ module.exports = function (app) {
       starttime: req.body.starttime,
       endtime: req.body.endtime,
       title: req.body.title,
-      ChildId: req.body.ChildId
+      ChildId: req.body.ChildId,
     })
       .then(function (dbActivities) {
         res.json(dbActivities);

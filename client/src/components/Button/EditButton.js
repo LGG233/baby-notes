@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-export const EditButton = ({ index, editRow, handleEditClick,handleSaveClick }) => {
+export const EditButton = ({ index, editRow, handleEditClick, handleSaveClick }) => {
     let editText = "edit";
     if (index === editRow) {
-        editText = "save"
+        editText = "save";
     }
     return <button onClick={() => {
         if (editText === "save") { handleSaveClick() }

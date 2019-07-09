@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 // import "./NewActivity.css";
 import API from "../../util/API";
-import moment from 'moment';
 
 class ActivityEdit extends Component {
     constructor(props) {
