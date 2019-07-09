@@ -17,9 +17,41 @@
     color: white;
     text-shadow: 1px 1px 2px rgb(2, 92, 87);
     font-family: 'Satisfy', cursive;
-   font-size: 5rem;
+   font-size: 6rem;
 }
 
-p {
-    color: black;
+.carouselText3 {
+    color:black !important;
+}
+.carouselText {
+    color: white;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: 800;
+}
+.welcomeTitle3 {
+    color:rgb(2, 92, 87);
+    text-shadow: 1px 1px 2px white;
+    font-family: 'Satisfy', cursive;
+   font-size: 10rem;
+}
+.carouselBtn2 {
+    background-color: rgb(4, 86, 97);
+    color:white;
+}
+.carouselBtn1 {
+    background-color: rgb(84, 173, 136);
+}
+.carouselBtn2 :any-link , .carouselBtn1 :any-link {
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-family: 'Satisfy', cursive;
+}
+.d-block {
+   width:100%;
+   background-size: cover;
+   height: 50em; 
+}
+.carousel-caption {
+    margin-bottom: 14em;
 }

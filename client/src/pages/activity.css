@@ -3,9 +3,9 @@
     margin: 3px;
     display: inline-block;
 }
-.activity-image {
-    background-image: url(../img/feeding.jpg);
-}
+/* .activity-image {
+    background-image: url(./img/feeding.jpg);
+} */
 
 .white-container {
     background: white;
