@@ -16,8 +16,8 @@
   margin: 3px;
   display: inline-block;
 }
-.new-image {
-  background-image: url(../img/bedroom3.jpg);
+/* .new-image {
+  background: url("img/bedroom3.jpg");
   height: 100%;
   margin-bottom: 20px;
   background-size: cover;
@@ -26,7 +26,7 @@
   width: 100%;
   float: left;
   box-shadow: 5px 5px 15px rgb(108, 149, 161);
-}
+} */
 
 .white-container {
   background: rgb(130, 210, 235);
