@@ -1,55 +1,38 @@
 .page-title {
   text-align: center;
-  margin-bottom: 0px;
 }
 .MainPage {
   height: 100%;
-  margin-bottom: 20px;
-  background-size: 95%;
+  /* margin-bottom: 5px; */
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   width: 100%;
+  padding-bottom: 0px;
+  margin-top:85px;
 }
-
-.btn {
-  margin: 3px;
-  display: inline-block;
+.childTitle{
+  color: rgb(16, 114, 97);
+  text-shadow: 1px 1px 5px rgb(254, 255, 255);
+  font-family: 'Satisfy', cursive;
+  font-size:3.5em;
 }
-/* .new-image {
-  background: url("img/bedroom3.jpg");
-  height: 100%;
-  margin-bottom: 20px;
-  background-size: cover;
-  background-position: bottom;
-  background-attachment: initial;
-  width: 100%;
-  float: left;
-  box-shadow: 5px 5px 15px rgb(108, 149, 161);
-} */
-
-.white-container {
-  background: rgb(130, 210, 235);
-  opacity: 50%;
-}
-
-.parentTitle,
-h3 {
+.parentTitle {
   color: white;
   text-shadow: 1px 1px 5px rgb(16, 114, 97);
+  font-family: 'Satisfy', cursive;
+  font-size:5em;
 }
 .childCards {
   float: left;
-  margin-left: 5rem;
+  margin-left: 2.5rem;
   z-index: 20px;
 }
-.childBox {
-  float: left;
-}
 
-.parent-space {
-  float: left;
-}
 .card {
   float: left; 
+}
+.btn {
+  margin:3px;
 }

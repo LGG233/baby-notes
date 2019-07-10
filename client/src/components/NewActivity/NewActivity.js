@@ -1,6 +1,5 @@
 // import Button from 'react-bootstrap/Button';
 import React, { Component } from 'react';
-import "./NewActivity.css";
 import API from "../../util/API";
 
 class NewActivity extends Component {

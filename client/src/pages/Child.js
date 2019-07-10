@@ -5,9 +5,8 @@ import Change from "../components/ChangeTable/ChangeTable";
 import "./child.css";
 import JournalTable from "../components/JournalTable/Journaltable";
 // import ActivityEdit from "../components/editForms/ActivityEdit";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import API from "../util/API";
-
 
 class Child extends React.Component {
   state = {
@@ -15,6 +14,10 @@ class Child extends React.Component {
     eatingData: [],
     sleepingData: [],
     diaperData: []
+  };
+
+  updateParentState = updatedArray => {
+    this.setState({ oldArrayName: updatedArray });
   };
 
   componentDidMount() {
@@ -31,34 +34,34 @@ class Child extends React.Component {
       for (var i = 0; i < res.data.length; i++) {
         if (res.data[i].actList_Id === "1") {
           journalArray.push(res.data[i]);
-        }
-        else if (res.data[i].actList_Id === "2") {
+        } else if (res.data[i].actList_Id === "2") {
           sleepingArray.push(res.data[i]);
-        }
-        else if (res.data[i].actList_Id === "3") {
+        } else if (res.data[i].actList_Id === "3") {
           diaperArray.push(res.data[i]);
-        }
-        else {
+        } else {
           eatingArray.push(res.data[i]);
         }
       }
-      console.log("journal ", journalArray)
+      console.log("journal ", journalArray);
       // this.setState({ journal: journalArray })
-      console.log("sleeping ", sleepingArray)
-      console.log("diaper ", diaperArray)
-      console.log("feeding ", eatingArray)
+      console.log("sleeping ", sleepingArray);
+      console.log("diaper ", diaperArray);
+      console.log("feeding ", eatingArray);
 
-      this.setState({
-        journalData: journalArray,
-        eatingData: eatingArray,
-        sleepingData: sleepingArray,
-        diaperData: diaperArray
-      }, () => {
-        setTimeout(() => {
-          console.log(this.state)
-        }, 2000)
-      })
-    })
+      this.setState(
+        {
+          journalData: journalArray,
+          eatingData: eatingArray,
+          sleepingData: sleepingArray,
+          diaperData: diaperArray
+        },
+        () => {
+          setTimeout(() => {
+            console.log(this.state);
+          }, 2000);
+        }
+      );
+    });
   }
 
   render() {
@@ -66,35 +69,74 @@ class Child extends React.Component {
       <div className="container-fluid childPage">
         <div className="row">
           <div className="col-md-12 page-title">
-            <h1 className="kidTitle">{localStorage.getItem("child-name")}'s Page </h1>
-            <ul>
-              <li>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/newActivity") }}>Post new activity</button> : <h5>Please sign in </h5>}</li>
-              {/* <li>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/ActivityEdit") }}>Edit Activity</button> : <h5> </h5>}</li> */}
-              <li>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/journalEntry") }}>Create Journal Entry</button> : <h5> </h5>}</li>
-            </ul>
+            <h1 className="kidTitle">
+              {localStorage.getItem("child-name")}'s Page{" "}
+            </h1>
+
+            <div>
+              {localStorage.getItem("user-id") ? (
+                <button
+                  className="btn btn-success"
+                  onClick={function() {
+                    window.location.replace("/newActivity");
+                  }}
+                >
+                  Post new activity
+                </button>
+              ) : (
+                <h5>Please sign in </h5>
+              )}
+            </div>
+
+            <div>
+              {localStorage.getItem("user-id") ? (
+                <button
+                  className="btn btn-success"
+                  onClick={function() {
+                    window.location.replace("/journalEntry");
+                  }}
+                >
+                  Create Journal Entry
+                </button>
+              ) : (
+                <h5> </h5>
+              )}
+            </div>
           </div>
         </div>
-        <div className="container-fluid white-container">
+        <div className="container-fluid">
           <div className="row">
             {/* <div className="tableElement col-md-1" /> */}
             <div className="tableElement col-md-5">
               <h2 className="tableHeader">Journal</h2>
-              <JournalTable journalData={this.state.journalData} />
+              <JournalTable
+                journalData={this.state.journalData}
+                updateParentState={this.props.updateParentState}
+              />
             </div>
             <div className="tableElement col-md-5">
               <h2 className="tableHeader">Sleep</h2>
-              <Sleep sleepingData={this.state.sleepingData} />
+              <Sleep
+                sleepingData={this.state.sleepingData}
+                updateParentState={this.props.updateParentState}
+              />
             </div>
           </div>
           <div className="row">
             <div className="tableElement col-md-5">
               <h2 className="tableHeader">Diaper Change</h2>
-              <Change diaperData={this.state.diaperData} />
+              <Change
+                diaperData={this.state.diaperData}
+                updateParentState={this.props.updateParentState}
+              />
             </div>
             {/* <div className="tableElement col-md-1" /> */}
             <div className="tableElement col-md-5">
               <h2 className="tableHeader">Eat</h2>
-              <Feeding eatingData={this.state.eatingData} />
+              <Feeding
+                eatingData={this.state.eatingData}
+                updateParentState={this.props.updateParentState}
+              />
             </div>
           </div>
         </div>

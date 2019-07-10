@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import API from "../../util/API";
 import { Redirect } from "react-router-dom";
-import "./SignIn.css";
-// import Landing from "../../pages/Landing";
 
 class SignIn extends Component {
   state = {
@@ -27,25 +25,22 @@ class SignIn extends Component {
     API.loginUser({
       email: this.state.email,
       password: this.state.password
-    }).then((data) => {
-      console.log("this is the data back -------- ", data.data.user)
+    }).then(data => {
+      console.log("this is the data back -------- ", data.data.user);
       // this.props.setUser(data.data)
       if (!data.data.error) {
-        console.log('ay')
-        localStorage.setItem("user-name", data.data.user.firstname)
+        console.log("ay");
+        localStorage.setItem("user-name", data.data.user.firstname);
         localStorage.setItem("user-id", data.data.user.id);
-        window.location.replace("/home")
+        window.location.replace("/home");
       } else {
-        alert("Wrong login")
+        alert("Wrong login");
       }
-
-    })
-
+    });
 
     // const data = await API.getAuthId();
     // App.setUserLogin("user", this.state.email);
     // App.setUserLogin("user", this.state.email);
-
 
     this.setState({
       isValid: true
@@ -62,7 +57,6 @@ class SignIn extends Component {
             </div>
           </div>
           <div className="col-md-6 registerPage">
-            {/* <Landing /> */}
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
@@ -107,7 +101,6 @@ class SignIn extends Component {
               </form>
             </div>
             {/* <SignIn setUser={this.props.setUser} user={this.props.user} history={this.props.history} /> */}
-
           </div>
         </div>
       </div>
