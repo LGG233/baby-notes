@@ -34,8 +34,8 @@ export default {
         return axios.delete("/activity/:id")
     },
     // update one activity for a child
-    putOneActivity: function (data) {
-        return axios.put("/activity/:id", data)
+    putOneActivity: function (id, data) {
+        return axios.put(`/activity/${id}`, data)
     },
 
     // PARENT ROUTES

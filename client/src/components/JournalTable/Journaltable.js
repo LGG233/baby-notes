@@ -4,6 +4,8 @@ import 'react-table/react-table.css';
 import "./JournalTable.css";
 import moment from 'moment';
 import { EditButton } from "../Button/EditButton";
+import '../../util/API';
+import API from "../../util/API";
 
 class JournalTable extends Component {
     constructor(props) {
@@ -11,9 +13,9 @@ class JournalTable extends Component {
         this.state = {
             editRow: null,
             data: {
-                date: "date",
-                title: "title",
-                description: "description"
+                date: "",
+                title: "",
+                description: ""
             }
         }
         this.renderEditable = this.renderEditable.bind(this);
@@ -43,20 +45,23 @@ class JournalTable extends Component {
         );
     }
 
-    handleSaveClick = () => {
-        this.setState({ editRow: null, data: this.state.data })
-        console.log(this.state.data)
+    handleSaveClick = (id) => {
+        console.log('id to save:' + id)
+        const editedItem = this.props.journalData.find((item) => item.id === id);
+        console.log(editedItem)
+        API.putOneActivity(id, editedItem)
+        this.setState({ editRow: null })
     }
 
     render() {
         const editRow = this.state.editRow;
-        const childProps = {editRow:editRow, handleEditClick: this.handleEditClick, handleSaveClick:this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable}
+        const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
         const columns = [
             {
                 Header: '',
                 id: 'edit',
                 accessor: 'id',
-                Cell: ({ index }) => (<EditButton index={index} {...childProps} />),
+                Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
                 width: 70
             },
             {
