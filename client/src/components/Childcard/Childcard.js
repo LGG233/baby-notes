@@ -58,7 +58,7 @@ class Childcard extends Component {
                             <h4>Birthday: {moment(child.dob).format("MMM DD, YYYY")}</h4>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-success childBtn" onClick={() => this.handleEditClick(child.id, child.name, child.dob)}>
+                            <button className="btn btn-primary childBtn" onClick={() => this.handleEditClick(child.id, child.name, child.dob)}>
                                 <h5>Edit</h5>
                             </button>
                             <button className="btn btn-success childBtn" onClick={() => this.handleClick(child.id, child.name)}>

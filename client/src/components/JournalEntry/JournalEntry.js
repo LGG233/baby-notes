@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./JournalEntry.css";
 import API from "../../util/API";
 
 class JournalEntry extends Component {
