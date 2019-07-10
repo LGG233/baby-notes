@@ -95,6 +95,8 @@ class createChild extends Component {
                                     </button>
                                 </div>
                             </form>
+                            <button className="btn btn-success" onClick={function () { window.location.replace("/Home") }}> <h3>Cancel</h3>
+                            </button>
                         </div>
                     </div>
                 </div>
