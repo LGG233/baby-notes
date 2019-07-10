@@ -55,7 +55,6 @@ class JournalEntry extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            {/* <div className="FormCenter"> */}
             <form onSubmit={this.handleSubmit} className="FormFields">
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="date">Date</label>
@@ -73,7 +72,10 @@ class JournalEntry extends Component {
                 <button className="FormField__Button mr-20"><h3>Add Note</h3></button>
               </div>
             </form>
-            {/* </div> */}
+          </div>
+          <div className="container-float centered">
+            <button className="btn btn-success" onClick={function () { window.location.replace("/child") }}> <h3>Cancel</h3>
+            </button>
           </div>
         </div>
       </div>

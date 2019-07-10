@@ -68,9 +68,9 @@ class Child extends React.Component {
           <div className="col-md-12 page-title">
             <h1 className="kidTitle">{localStorage.getItem("child-name")}'s Page </h1>
             <ul>
-              <li>{localStorage.getItem("user-id") ? <Link to="/newActivity">Post New Activity</Link> : <h5> </h5>}</li>
-              <li>{localStorage.getItem("user-id") ? <Link to="/ActivityEdit">Edit Activity</Link> : <h5> </h5>}</li>
-              <li>{localStorage.getItem("user-id") ? <Link to="/journalEntry">Create Journal Entry</Link> : <h5> </h5>}</li>
+              <li>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/newActivity") }}>Post new activity</button> : <h5>Please sign in </h5>}</li>
+              {/* <li>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/ActivityEdit") }}>Edit Activity</button> : <h5> </h5>}</li> */}
+              <li>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/journalEntry") }}>Create Journal Entry</button> : <h5> </h5>}</li>
             </ul>
           </div>
         </div>

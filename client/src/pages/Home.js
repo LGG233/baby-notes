@@ -47,6 +47,7 @@ class Home extends Component {
           <div className="col-md-12 page-title">
             <h1 className="parentTitle">Parents Home Page</h1>
             <h2>Welcome, {localStorage.getItem("user-name")}</h2>
+<<<<<<< HEAD
             <p>{localStorage.getItem("user-id") ? <Link to="/createChild"><i className="fa fa-child" />Add a Child</Link> : <h5> </h5>}</p>
             {/* add logic under new child button*/}
             {/* <button className="btn btn-success" Component={Link} to="/createChild">
@@ -54,6 +55,10 @@ class Home extends Component {
                 New Child <i className="fa fa-child" />
               </h4>
             </button> */}
+=======
+            {/* <p>{localStorage.getItem("user-id") ? <Link to="/createChild">Add a Child</Link> : <h5> </h5>}</p> */}
+            <p>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/createChild") }}>Add a child</button> : <h5>Please sign in </h5>}</p>
+>>>>>>> bc7c2495aab4b953131967b8f809939ec35ed439
           </div>
         </div>
         <div className="container-fluid parent-space">
