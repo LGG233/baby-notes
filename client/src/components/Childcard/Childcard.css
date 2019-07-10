@@ -27,6 +27,9 @@
     margin:5px;
     font-family: 'Julius Sans One', sans-serif;
 }
+.childBtn > :hover {
+    color:green;
+}
 h2 {
     color:white;
     text-transform: capitalize;
