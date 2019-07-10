@@ -22,8 +22,6 @@ class Childcard extends Component {
     }
 
     handleClick = (id, name) => {
-        // console.log("this Child Button was clicked for child id: ------")
-        // console.log(props)
         localStorage.setItem("child-id", id);
         localStorage.setItem("child-name", name);
 
@@ -31,8 +29,6 @@ class Childcard extends Component {
     }
 
     handleEditClick = (id, name, dob) => {
-        // console.log("this Child Button was clicked for child id: ------")
-        // console.log(props)
         localStorage.setItem("child-id", id);
         localStorage.setItem("child-name", name);
         localStorage.setItem("child-dob", dob);
