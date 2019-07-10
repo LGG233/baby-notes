@@ -1,12 +1,13 @@
 .new-image {
-    background: url("../img/bedroom3.jpg");
-    height: 100%;
+    background: url("../img/BabyinAir.jpg");
+    height: 65em;
     margin-bottom: 20px;
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: initial;
+    background-size: 100%;
+    background-position: top;
+    background-attachment: inherit;
     width: 100%;
     float: left;
+    background-repeat: no-repeat;
     box-shadow: 5px 5px 15px rgb(108, 149, 161);
   }
 
@@ -15,7 +16,7 @@
 }
 
 .childPage {
-    background-image: url("../img/kidsPlayroom2.jpg");
+    background-image: url("../img/pencils.jpg");
     height: 100%;
     margin-bottom: 20px;
     background-size: 95%;

@@ -73,10 +73,10 @@ class Child extends React.Component {
               {localStorage.getItem("child-name")}'s Page{" "}
             </h1>
 
-            <div>
+            <div className="kidsBtn">
               {localStorage.getItem("user-id") ? (
                 <button
-                  className="btn btn-success"
+                  className="btn childBtn"
                   onClick={function() {
                     window.location.replace("/newActivity");
                   }}
@@ -88,10 +88,10 @@ class Child extends React.Component {
               )}
             </div>
 
-            <div>
+            <div className="kidsBtn">
               {localStorage.getItem("user-id") ? (
                 <button
-                  className="btn btn-success"
+                  className="btn childBtn"
                   onClick={function() {
                     window.location.replace("/journalEntry");
                   }}
