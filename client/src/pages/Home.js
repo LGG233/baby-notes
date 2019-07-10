@@ -47,7 +47,7 @@ class Home extends Component {
           <div className="col-md-12 page-title">
             <h1 className="parentTitle">Parents Home Page</h1>
             <h2>Welcome, {localStorage.getItem("user-name")}</h2>
-            <p>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/createChild") }}>Add a child</button> : <h5>Please sign in </h5>}</p>
+            <p>{localStorage.getItem("user-id") ? <button className="btn btn-success" onClick={function () { window.location.replace("/createChild") }}>Add a child <i className="fa fa-child" /></button> : <h5>Please sign in </h5>}</p>
           </div>
         </div>
         <div className="container-fluid parent-space">
