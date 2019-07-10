@@ -40,12 +40,6 @@ class Home extends Component {
       .catch(err => console.log(err));
   };
 
-  // newChildForm = () => {
-  //   console.log("new child button clicked");
-  //   this.newChildForm()
-  //   window.open("/createChild");
-  // }
-
   render() {
     return (
       <div className="container-fluid new-image">
@@ -53,7 +47,7 @@ class Home extends Component {
           <div className="col-md-12 page-title">
             <h1 className="parentTitle">Parents Home Page</h1>
             <h2>Welcome, {localStorage.getItem("user-name")}</h2>
-            <p>{localStorage.getItem("user-id") ? <Link to="/createChild">Add a Child</Link> : <h5> </h5>}</p>
+            <p>{localStorage.getItem("user-id") ? <Link to="/createChild"><i className="fa fa-child" />Add a Child</Link> : <h5> </h5>}</p>
             {/* add logic under new child button*/}
             {/* <button className="btn btn-success" Component={Link} to="/createChild">
               <h4>
