@@ -22,8 +22,6 @@ class Childcard extends Component {
     }
 
     handleClick = (id, name) => {
-        // console.log("this Child Button was clicked for child id: ------")
-        // console.log(props)
         localStorage.setItem("child-id", id);
         localStorage.setItem("child-name", name);
 
@@ -31,13 +29,11 @@ class Childcard extends Component {
     }
 
     handleEditClick = (id, name, dob) => {
-        // console.log("this Child Button was clicked for child id: ------")
-        // console.log(props)
         localStorage.setItem("child-id", id);
         localStorage.setItem("child-name", name);
         localStorage.setItem("child-dob", dob);
         API.getOneChild(localStorage.getItem("child-id")).then(res => {
-            console.log("here is the data before it goes into state ", res.data)
+            // console.log("here is the data before it goes into state ", res.data)
             this.setState({
                 childData: res
             });
@@ -55,10 +51,10 @@ class Childcard extends Component {
                     <div className="card">
                         <div className="card-header"><h3>{child.name}</h3></div>
                         <div className="card-body">
-                            <h4>Birthday: {moment(child.dob).format("MMM DD, YYYY")}</h4>
+                            <h4>Birthday: {moment.utc(child.dob).format("ll")}</h4>
                         </div>
                         <div className="card-footer">
-                            <button className="btn btn-success childBtn" onClick={() => this.handleEditClick(child.id, child.name, child.dob)}>
+                            <button className="btn btn-primary childBtn" onClick={() => this.handleEditClick(child.id, child.name, child.dob)}>
                                 <h5>Edit</h5>
                             </button>
                             <button className="btn btn-success childBtn" onClick={() => this.handleClick(child.id, child.name)}>

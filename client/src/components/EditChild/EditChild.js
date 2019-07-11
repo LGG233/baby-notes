@@ -58,8 +58,8 @@ class EditChild extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="jumbotron">
-                            <h1>Baby Notes</h1>
+                        <div className="jumbotron3">
+                            <h1 className="jumboBanner3">Edit</h1>
                         </div>
                     </div>
                     <div className="col-md-6 registerPage">
@@ -80,12 +80,12 @@ class EditChild extends Component {
                                 <div className="FormField">
                                     <label className="FormField__Label" htmlFor="Birthdate">Birthdate</label>
                                     <input
-                                        type="text"
+                                        type="date"
                                         id="birthdate"
                                         className="FormField__Input"
                                         placeholder="MM/DD/YYYY"
                                         name="dob"
-                                        value={moment(this.state.dob).format("MM/DD/YYYY")}
+                                        value={this.state.dob}
                                         onChange={this.handleChange}
                                     />
                                 </div>
@@ -99,7 +99,7 @@ class EditChild extends Component {
                                 </div>
                             </form>
                         </div>
-                        <button className="btn btn-success" onClick={function () { window.location.replace("/Home") }}> <h3>Cancel</h3>
+                        <button className="FormField__Button2Cancel" onClick={function () { window.location.replace("/Home") }}> <h3>Cancel</h3>
                         </button>
 
                     </div>

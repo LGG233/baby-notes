@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import "./JournalEntry.css";
+import React, { Component } from "react";
 import API from "../../util/API";
 
 class JournalEntry extends Component {
@@ -7,22 +6,21 @@ class JournalEntry extends Component {
     super(props);
     this.state = {
       type: 1,
-      date: '',
-      title: '',
-      observations: '',
-    }
+      date: "",
+      title: "",
+      observations: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
-  };
+  }
 
-  handleChange = (event) => {
-
+  handleChange = event => {
     let target = event.target;
     let name = target.name;
 
     this.setState({
       [name]: event.target.value
     });
-  }
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -40,42 +38,82 @@ class JournalEntry extends Component {
       title: this.state.title,
       description: this.state.notes,
       ChildId: localStorage.getItem("child-id")
-    }
+    };
     this.createNewActivity(activityData);
     window.location.replace("/child", this.props);
   };
 
-  createNewActivity = (data) => {
+  createNewActivity = data => {
     API.postOneActivity(data);
   };
 
-
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-6 jumbotron5">
+            <div>
+              <h1 className="jumboBanner5">Journal Entry</h1>
+            </div>
+          </div>
+          <div className="col-md-6 newJournalPage">
             <form onSubmit={this.handleSubmit} className="FormFields">
               <div className="FormField">
-                <label className="FormField__Label" htmlFor="date">Date</label>
-                <input type="text" id="date" className="FormField__Input" placeholder="Date" name="date" value={this.state.date} onChange={this.handleChange} />
+                <label className="FormField__Label" htmlFor="date">
+                  Date
+                </label>
+                <input
+                  type="text"
+                  id="date"
+                  className="FormField__Input"
+                  placeholder="Date"
+                  name="date"
+                  value={this.state.date}
+                  onChange={this.handleChange}
+                />
               </div>
               <div className="FormField">
-                <label className="FormField__Label" htmlFor="title">Title</label>
-                <input type="text" id="title" className="FormField__Input" placeholder="Title" name="title" value={this.state.title} onChange={this.handleChange} />
+                <label className="FormField__Label" htmlFor="title">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  id="title"
+                  className="FormField__Input"
+                  placeholder="Title"
+                  name="title"
+                  value={this.state.title}
+                  onChange={this.handleChange}
+                />
               </div>
               <div className="FormField">
-                <label className="FormField__Label" htmlFor="notes">Notes</label>
-                <input type="text" id="notes" className="FormField__Input" placeholder="Notes" name="notes" value={this.state.notes} onChange={this.handleChange} />
+                <label className="FormField__Label" htmlFor="notes">
+                  Notes
+                </label>
+                <input
+                  type="text"
+                  id="notes"
+                  className="FormField__Input"
+                  placeholder="Notes"
+                  name="notes"
+                  value={this.state.notes}
+                  onChange={this.handleChange}
+                />
               </div>
               <div className="FormField">
-                <button className="FormField__Button mr-20"><h3>Add Note</h3></button>
+                <button className="FormField__Button2">
+                  <h3>Add Note</h3>
+                </button>
+          <button
+            className="FormField__Button2Cancel"
+            onClick={function() {
+              window.location.replace("/child");
+            }}
+          >
+            <h3>Cancel</h3>
+          </button>
               </div>
             </form>
-          </div>
-          <div className="container-float centered">
-            <button className="btn btn-success" onClick={function () { window.location.replace("/child") }}> <h3>Cancel</h3>
-            </button>
           </div>
         </div>
       </div>

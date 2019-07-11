@@ -4,10 +4,11 @@
   top: 0;
   left: 0;
   position: absolute;
-  background: rgb(78, 167, 122);
+  background: rgb(69, 180, 147);
   height: 5em;
   padding: 5px;
-  /* padding-bottom: 4em; */
+  /* margin-bottom: 0em; */
+  margin-bottom: 80px;
   float: left;
   color: white;
   flex: 1;

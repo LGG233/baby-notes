@@ -54,8 +54,8 @@ class createChild extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="jumbotron">
-                            <h1>Baby Notes</h1>
+                        <div className="jumbotron2">
+                            <h1 className="jumboBanner2">Create A Child</h1>
                         </div>
                     </div>
                     <div className="col-md-6 registerPage">
@@ -76,7 +76,7 @@ class createChild extends Component {
                                 <div className="FormField">
                                     <label className="FormField__Label" htmlFor="Birthdate">Birthdate</label>
                                     <input
-                                        type="text"
+                                        type="date"
                                         id="birthdate"
                                         className="FormField__Input"
                                         placeholder="MM/DD/YYYY"
@@ -88,14 +88,14 @@ class createChild extends Component {
                                 <div className="FormField">
                                     {/* {this.state.isValid ? <Redirect to="/" /> : null} */}
                                     <button
-                                        className="FormField__Button mr-20"
+                                        className="FormField__Button"
                                         onClick={this.handleSubmit}
                                     >
                                         <h3>Add child <i className="fa fa-user-plus"></i></h3>
                                     </button>
                                 </div>
                             </form>
-                            <button className="btn btn-success" onClick={function () { window.location.replace("/Home") }}> <h3>Cancel</h3>
+                            <button className="FormField__Button2Cancel" onClick={function () { window.location.replace("/Home") }}> <h3>Cancel</h3>
                             </button>
                         </div>
                     </div>
