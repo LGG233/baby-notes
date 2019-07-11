@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import "./JournalTable.css";
 import Moment from 'moment';
 import { EditButton } from "../Button/EditButton";
 import '../../util/API';

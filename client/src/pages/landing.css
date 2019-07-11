@@ -45,9 +45,9 @@
 .d-block {
    width:100%;
    background-size: cover;
-   height: 50em; 
+   height: 44em; 
 }
 /* Carousel Space banner */
 .carousel-caption {
-    margin-bottom: 14em;
+    margin-bottom: 5em;
 }
