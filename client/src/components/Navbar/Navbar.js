@@ -17,9 +17,6 @@ function navbar(props) {
   return (
     <header className="navbar">
       <nav className="navigation">
-        <div className="navbar-logo">
-          <Link to="/">BabyNotes</Link>
-        </div>
         <div className="navbar-items">
           <ul>
             <li>
@@ -35,6 +32,9 @@ function navbar(props) {
           </ul>
         </div>
       </nav>
+        <div className="navbar-logo">
+          <Link to="/">BabyNotes</Link>
+        </div>
         <div className="logoutBtn">
           {localStorage.getItem("user-id") ? (
             <button className="btn carouselBtn2" onClick={logOut}>
