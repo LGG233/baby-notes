@@ -76,7 +76,7 @@ class createChild extends Component {
                                 <div className="FormField">
                                     <label className="FormField__Label" htmlFor="Birthdate">Birthdate</label>
                                     <input
-                                        type="text"
+                                        type="date"
                                         id="birthdate"
                                         className="FormField__Input"
                                         placeholder="MM/DD/YYYY"
