@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import moment from 'moment';
+import Moment from 'moment';
 import { EditButton } from "../Button/EditButton";
 import '../../util/API';
 import API from "../../util/API";
@@ -57,46 +57,33 @@ class Sleeping extends Component {
         const editRow = this.state.editRow;
         const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
         const columns = [
-            {
-                Header: '',
-                id: 'edit',
-                accessor: '[row identifier to be passed to button]',
-                Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
-                width: 70
-            },
+            // {
+            //     Header: '',
+            //     id: 'edit',
+            //     accessor: '[row identifier to be passed to button]',
+            //     Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
+            //     width: 70
+            // },
             {
                 Header: 'Date',
                 id: "date",
                 headerStyle: { textAlign: 'left' },
                 width: 93,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}`,
-                accessor: d => {
-                    return moment(d.date)
-                        .local()
-                        .format("MMM D, YY")
-                }
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YYYY")
             },
             {
                 Header: 'Start',
                 id: 'starttime',
                 headerStyle: { textAlign: 'left' },
                 width: 80,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.starttime}`,
-                accessor: t => {
-                    return moment(t.starttime, "HH:mm")
-                        .format("h:mm a")
-                }
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.starttime}` && Moment(row.original.starttime, "HH:mm:ss").format("h:mm a")
             },
             {
                 Header: 'End',
                 id: 'endtime',
                 headerStyle: { textAlign: 'left' },
                 width: 80,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.endtime}`,
-                accessor: t => {
-                    return moment(t.endtime, "HH:mm")
-                        .format("h:mm a")
-                }
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.endtime}` && Moment(row.original.endtime, "HH:mm:ss").format("h:mm a")
             },
             {
                 Header: 'Observations',
