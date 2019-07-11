@@ -57,7 +57,7 @@ class Childcard extends Component {
                             <button className="btn btn-primary childBtn" onClick={() => this.handleEditClick(child.id, child.name, child.dob)}>
                                 <h5>Edit</h5>
                             </button>
-                            <button className="btn btn-success childBtn" onClick={() => this.handleClick(child.id, child.name)}>
+                            <button className="btn btn-warning childBtn" onClick={() => this.handleClick(child.id, child.name)}>
                                 <h5>Select </h5>
                             </button>
                         </div>
