@@ -66,9 +66,12 @@
 .logoutBtn {
   /* background-color: rgb(4, 86, 97); */
   color: white;
-  font-family: "Satisfy", cursive !important;
-  font-size: 1.4rem;
+  font-family: "Julius Sans One", sans-serif !important;
+  /* font-size: 1.4rem; */
   margin-top: 5px;
   padding:10px;
   float: right;
+}
+.fa-power-off {
+  margin:5px;
 }

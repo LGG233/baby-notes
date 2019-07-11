@@ -1,10 +1,10 @@
 .new-image {
     background: url("../img/BabyinAir.jpg");
-    height: 65em, auto;
+    height: 65em, 100%;
     margin-bottom: 20px;
     background-size: 100%;
     background-position: top;
-    background-attachment: inherit;
+    background-attachment: scroll;
     width: 100%;
     float: left;
     background-repeat: no-repeat;
@@ -36,6 +36,7 @@
     height: 42rem;
     width: 100%;
     padding: 3rem; 
+    background-attachment:contain;
     box-shadow: 0px 7px 15px rgb(3, 54, 50);
     /* text-align: center; */
     text-shadow: 0px 1px 3px rgb(9, 146, 123);
@@ -68,6 +69,7 @@
     height: 42rem;
     width: 100%;
     padding: 3rem; 
+    background-attachment:contain;
     box-shadow: 0px 7px 15px rgb(3, 54, 50);
     text-align: center;
     text-shadow: 0px 1px 3px rgb(9, 146, 123);
@@ -84,6 +86,7 @@
     height: 42rem;
     width: 100%;
     padding: 3rem; 
+    background-attachment:contain;
     box-shadow: 0px 7px 15px rgb(3, 54, 50);
     text-align: center;
     text-shadow: 0px 1px 3px rgb(9, 146, 123);
