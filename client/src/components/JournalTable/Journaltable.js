@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import "./JournalTable.css";
-import moment from 'moment';
+import Moment from 'moment';
 import { EditButton } from "../Button/EditButton";
 import '../../util/API';
 import API from "../../util/API";
@@ -57,24 +57,19 @@ class JournalTable extends Component {
         const editRow = this.state.editRow;
         const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
         const columns = [
-            {
-                Header: '',
-                id: 'edit',
-                accessor: 'id',
-                Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
-                width: 70
-            },
+            // {
+            //     Header: '',
+            //     id: 'edit',
+            //     accessor: 'id',
+            //     Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
+            //     width: 70
+            // },
             {
                 Header: 'Date',
                 id: 'date',
                 headerStyle: { textAlign: 'left' },
                 width: 93,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}`,
-                accessor: d => {
-                    return moment(d.date)
-                        .local()
-                        .format("MMM D, YY")
-                }
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YYYY")
             },
             {
                 Header: 'Title',
