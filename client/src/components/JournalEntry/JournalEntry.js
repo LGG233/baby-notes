@@ -63,7 +63,7 @@ class JournalEntry extends Component {
                   Date
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   id="date"
                   className="FormField__Input"
                   placeholder="Date"
@@ -104,14 +104,14 @@ class JournalEntry extends Component {
                 <button className="FormField__Button">
                   <h3>Add Note</h3>
                 </button>
-          <button
-            className="FormField__Button2Cancel"
-            onClick={function() {
-              window.location.replace("/child");
-            }}
-          >
-            <h3>Cancel</h3>
-          </button>
+                <button
+                  className="FormField__Button2Cancel"
+                  onClick={function () {
+                    window.location.replace("/child");
+                  }}
+                >
+                  <h3>Cancel</h3>
+                </button>
               </div>
             </form>
           </div>
