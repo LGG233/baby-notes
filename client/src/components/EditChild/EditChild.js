@@ -80,12 +80,12 @@ class EditChild extends Component {
                                 <div className="FormField">
                                     <label className="FormField__Label" htmlFor="Birthdate">Birthdate</label>
                                     <input
-                                        type="text"
+                                        type="date"
                                         id="birthdate"
                                         className="FormField__Input"
                                         placeholder="MM/DD/YYYY"
                                         name="dob"
-                                        value={moment(this.state.dob).format("MM/DD/YYYY")}
+                                        value={this.state.dob}
                                         onChange={this.handleChange}
                                     />
                                 </div>
