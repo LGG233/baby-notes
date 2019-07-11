@@ -50,7 +50,7 @@ Table {
 }
 .jumboBanner4 {
     margin-top:350px;
-    margin-left:555px;
+    margin-left:500px;
     font-size: 50px;
     position: static;
     color:rgb(255, 242, 56);
@@ -58,7 +58,7 @@ Table {
 }
 .jumboBanner5 {
     margin-top:375px;
-    margin-left:450px;
+    margin-left:350px;
     font-size: 80px;
     position: sticky;
     color:rgb(3, 70, 64);
