@@ -45,7 +45,6 @@ class Home extends Component {
         <div className="row">
           <div className="col-md-12 page-title">
             <h1 className="parentTitle">Welcome, {localStorage.getItem("user-name")}</h1>
-            {/* <h2 className="childTitle"></h2> */}
             <div className="addChildBtn">{localStorage.getItem("user-id") ? <button className="btn childBtn" onClick={function () { window.location.replace("/createChild") }}>Add a child <i className="fa fa-child" /></button> : <h5>Please sign in </h5>}</div>
           </div>
         </div>

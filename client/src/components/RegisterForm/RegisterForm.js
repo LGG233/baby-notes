@@ -52,7 +52,7 @@ class RegisterForm extends Component {
         <div className="row">
           <div className="col-md-6">
             <div className="jumbotron">
-              <h1>Baby Notes</h1>
+              <h1 className="jumboBanner">Sign Up</h1>
             </div>
           </div>
           <div className="col-md-6 registerPage">
@@ -118,7 +118,7 @@ class RegisterForm extends Component {
                 <div className="FormField">
                   {this.state.isValid ? <Redirect to="/" /> : null}
                   <button
-                    className="FormField__Button mr-20"
+                    className="FormField__Button"
                     onClick={this.submitForm}
                   >
                     <h3>Register <i className="fa fa-user-plus"></i></h3>

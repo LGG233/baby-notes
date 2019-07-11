@@ -53,7 +53,7 @@ class SignIn extends Component {
         <div className="row">
           <div className="col-md-6">
             <div className="jumbotron">
-              <h1>Baby Notes</h1>
+              <h1 className="jumboBanner">Sign In</h1>
             </div>
           </div>
           <div className="col-md-6 registerPage">

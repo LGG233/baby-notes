@@ -58,8 +58,8 @@ class EditChild extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="jumbotron">
-                            <h1>Baby Notes</h1>
+                        <div className="jumbotron3">
+                            <h1 className="jumboBanner3">Edit</h1>
                         </div>
                     </div>
                     <div className="col-md-6 registerPage">
@@ -99,7 +99,7 @@ class EditChild extends Component {
                                 </div>
                             </form>
                         </div>
-                        <button className="btn btn-success" onClick={function () { window.location.replace("/Home") }}> <h3>Cancel</h3>
+                        <button className="FormField__Button2Cancel" onClick={function () { window.location.replace("/Home") }}> <h3>Cancel</h3>
                         </button>
 
                     </div>
