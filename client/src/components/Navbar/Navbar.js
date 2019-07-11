@@ -24,7 +24,7 @@ function navbar(props) {
           <ul>
             <li>
               {localStorage.getItem("user-id") ? (
-                 <Link to="/home">Parent</Link> ): ( <Link to="/RegisterForm">Register</Link>
+                 <Link to="/home">Home</Link> ): ( <Link to="/RegisterForm">Register</Link>
               )}
             </li>
             <li>

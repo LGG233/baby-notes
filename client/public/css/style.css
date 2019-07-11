@@ -1,6 +1,6 @@
 .new-image {
     background: url("../img/BabyinAir.jpg");
-    height: 65em;
+    height: 65em, auto;
     margin-bottom: 20px;
     background-size: 100%;
     background-position: top;
