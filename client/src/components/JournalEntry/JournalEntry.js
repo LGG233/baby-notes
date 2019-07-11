@@ -101,7 +101,7 @@ class JournalEntry extends Component {
                 />
               </div>
               <div className="FormField">
-                <button className="FormField__Button2">
+                <button className="FormField__Button">
                   <h3>Add Note</h3>
                 </button>
           <button

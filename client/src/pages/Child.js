@@ -70,7 +70,7 @@ class Child extends React.Component {
         <div className="row">
           <div className="col-md-12 page-title">
             <h1 className="kidTitle">
-              {localStorage.getItem("child-name")}'s Page{" "}
+              {localStorage.getItem("child-name")}'s Notes{" "}
             </h1>
 
             <div className="kidsBtn">
@@ -96,7 +96,7 @@ class Child extends React.Component {
                     window.location.replace("/journalEntry");
                   }}
                 >
-                  Create Journal Entry
+                  Create Journal Entry{" "}
                 </button>
               ) : (
                 <h5> </h5>
