@@ -69,7 +69,7 @@ class Sleeping extends Component {
                 id: "date",
                 headerStyle: { textAlign: 'left' },
                 width: 93,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YYYY")
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YY")
             },
             {
                 Header: 'Start',
