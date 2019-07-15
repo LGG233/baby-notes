@@ -57,32 +57,32 @@ class Feeding extends Component {
         const editRow = this.state.editRow;
         const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable };
         const columns = [
-            // {
-            //     Header: '',
-            //     id: 'edit',
-            //     accessor: 'id',
-            //     Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
-            //     width: 70
-            // },
+            {
+                Header: '',
+                id: 'edit',
+                accessor: 'id',
+                Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
+                width: 100
+            },
             {
                 Header: 'Date',
                 id: 'date',
                 headerStyle: { textAlign: 'left' },
-                width: 93,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YY")
+                width: 150,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YYYY")
             },
             {
                 Header: 'Start',
                 id: 'starttime',
                 headerStyle: { textAlign: 'left' },
-                width: 80,
+                width: 150,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.starttime}` && Moment(row.original.starttime, "HH:mm:ss").format("h:mm a")
             },
             {
                 Header: 'End',
                 id: 'endtime',
                 headerStyle: { textAlign: 'left' },
-                width: 80,
+                width: 150,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.endtime}` && Moment(row.original.endtime, "HH:mm:ss").format("h:mm a")
             },
             {
@@ -90,7 +90,7 @@ class Feeding extends Component {
                 accessor: 'description',
                 headerStyle: { textAlign: 'left' },
                 style: { 'whiteSpace': 'unset' },
-                width: 250,
+                width: 700,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.description}`
             }]
         return (

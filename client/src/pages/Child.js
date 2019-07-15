@@ -77,44 +77,36 @@ class Child extends React.Component {
               {localStorage.getItem("user-id") ? (
                 <button
                   className="btn childBtn"
-                  onClick={function() {
+                  onClick={function () {
                     window.location.replace("/newActivity");
                   }}
                 >
                   Post new activity
                 </button>
               ) : (
-                <h5>Please sign in </h5>
-              )}
+                  <h5>Please sign in </h5>
+                )}
             </div>
 
             <div className="kidsBtn">
               {localStorage.getItem("user-id") ? (
                 <button
                   className="btn childBtn"
-                  onClick={function() {
+                  onClick={function () {
                     window.location.replace("/journalEntry");
                   }}
                 >
                   Create Journal Entry{" "}
                 </button>
               ) : (
-                <h5> </h5>
-              )}
+                  <h5> </h5>
+                )}
             </div>
           </div>
         </div>
         <div className="container-fluid">
           <div className="row">
-            {/* <div className="tableElement col-md-1" /> */}
-            <div className="tableElement col-md-5">
-              <h2 className="tableHeader">Journal</h2>
-              <JournalTable
-                journalData={this.state.journalData}
-                updateParentState={this.props.updateParentState}
-              />
-            </div>
-            <div className="tableElement col-md-5">
+            <div className="tableElement col-md-11">
               <h2 className="tableHeader">Sleep</h2>
               <Sleep
                 sleepingData={this.state.sleepingData}
@@ -123,18 +115,28 @@ class Child extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="tableElement col-md-5">
+            <div className="tableElement col-md-11">
               <h2 className="tableHeader">Diaper Change</h2>
               <Change
                 diaperData={this.state.diaperData}
                 updateParentState={this.props.updateParentState}
               />
             </div>
-            {/* <div className="tableElement col-md-1" /> */}
-            <div className="tableElement col-md-5">
+          </div>
+          <div className="row">
+            <div className="tableElement col-md-11">
               <h2 className="tableHeader">Eat</h2>
               <Feeding
                 eatingData={this.state.eatingData}
+                updateParentState={this.props.updateParentState}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="tableElement col-md-11">
+              <h2 className="tableHeader">Journal</h2>
+              <JournalTable
+                journalData={this.state.journalData}
                 updateParentState={this.props.updateParentState}
               />
             </div>

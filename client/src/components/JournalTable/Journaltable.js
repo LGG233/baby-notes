@@ -34,7 +34,7 @@ class JournalTable extends Component {
                 onBlur={e => {
                     const data = this.props.journalData;
                     data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
-                    console.log({data})
+                    console.log({ data })
                 }}
                 dangerouslySetInnerHTML={{
                     __html: this.props.journalData[cellInfo.index][cellInfo.column.id]
@@ -56,34 +56,34 @@ class JournalTable extends Component {
         const editRow = this.state.editRow;
         const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
         const columns = [
-            // {
-            //     Header: '',
-            //     id: 'edit',
-            //     accessor: 'id',
-            //     Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
-            //     width: 70
-            // },
+            {
+                Header: '',
+                id: 'edit',
+                accessor: 'id',
+                Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
+                width: 100
+            },
             {
                 Header: 'Date',
                 id: 'date',
                 headerStyle: { textAlign: 'left' },
-                width: 93,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YY")
+                width: 150,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YYYY")
             },
             {
                 Header: 'Title',
                 accessor: 'title',
                 headerStyle: { textAlign: 'left' },
-                // style: { 'whiteSpace': 'unset' },
-                width: 100,
+                style: { 'whiteSpace': 'unset' },
+                width: 250,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.title}`
             },
             {
                 Header: 'Notes',
                 accessor: 'description',
                 headerStyle: { textAlign: 'left' },
-                // style: { 'whiteSpace': 'unset' },
-                width: 250,
+                style: { 'whiteSpace': 'unset' },
+                width: 650,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.description}`,
             }
         ]

@@ -21,7 +21,7 @@ class Change extends Component {
         }
         this.renderEditable = this.renderEditable.bind(this);
     }
-    
+
     handleEditClick = (index) => {
         this.setState({ editRow: index })
     }
@@ -35,7 +35,7 @@ class Change extends Component {
                 onBlur={e => {
                     const data = this.props.diaperData;
                     data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
-                    console.log({data})
+                    console.log({ data })
                 }}
                 dangerouslySetInnerHTML={{
                     __html: this.props.diaperData[cellInfo.index][cellInfo.column.id]
@@ -50,39 +50,39 @@ class Change extends Component {
         const editedItem = this.props.diaperData.find((item) => item.id === id);
         console.log(editedItem)
         API.putOneActivity(id, editedItem)
-        this.setState({editRow: null})
+        this.setState({ editRow: null })
     }
 
     render() {
         const editRow = this.state.editRow;
-        const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable}
+        const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
         const columns = [
-            // {
-            //     Header: '',
-            //     id: 'edit',
-            //     accessor: '[row identifier to be passed to button]',
-            //     Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
-            //     width: 70
-            // },
+            {
+                Header: '',
+                id: 'edit',
+                accessor: '[row identifier to be passed to button]',
+                Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
+                width: 100
+            },
             {
                 Header: 'Date',
                 id: "date",
                 headerStyle: { textAlign: 'left' },
-                width: 93,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YY")
+                width: 150,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YYYY")
             },
             {
                 Header: 'Start',
                 id: 'starttime',
                 headerStyle: { textAlign: 'left' },
-                width: 80,
+                width: 150,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.starttime}` && Moment(row.original.starttime, "HH:mm:ss").format("h:mm a")
             },
             {
                 Header: 'End',
                 id: 'endtime',
                 headerStyle: { textAlign: 'left' },
-                width: 80,
+                width: 150,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.endtime}` && Moment(row.original.endtime, "HH:mm:ss").format("h:mm a")
             },
             {
@@ -90,7 +90,7 @@ class Change extends Component {
                 accessor: 'description',
                 headerStyle: { textAlign: 'left' },
                 style: { 'whiteSpace': 'unset' },
-                width: 250,
+                width: 700,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.description}`
             }]
         return (
@@ -98,7 +98,7 @@ class Change extends Component {
                 data={this.props.diaperData}
                 columns={columns}
                 defaultPageSize={5}
-                />
+            />
             </div>
         )
     };
