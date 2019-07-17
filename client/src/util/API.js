@@ -30,8 +30,8 @@ export default {
         return axios.post("/activity", data)
     },
     // delete one activity for a child
-    deleteOneActivity: function () {
-        return axios.delete("/activity/:id")
+    deleteOneActivity: function (id) {
+        return axios.delete(`/activity/${id}`)
     },
     // update one activity for a child
     putOneActivity: function (id, data) {

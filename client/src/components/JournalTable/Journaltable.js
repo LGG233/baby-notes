@@ -52,6 +52,17 @@ class JournalTable extends Component {
         this.setState({ editRow: null })
     }
 
+    deleteRow(id) {
+        console.log("id: " + id);
+        this.deleteOneRow(id);
+    }
+
+    deleteOneRow = (id) => {
+        API.deleteOneActivity(id)
+            .then(window.location.replace("/child"))
+            .catch(err => console.log(err))
+    }
+
     render() {
         const editRow = this.state.editRow;
         const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
@@ -61,7 +72,8 @@ class JournalTable extends Component {
                 id: 'edit',
                 accessor: 'id',
                 Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
-                width: 100
+                width: 80,
+                sortable: false
             },
             {
                 Header: 'Date',
@@ -76,15 +88,33 @@ class JournalTable extends Component {
                 headerStyle: { textAlign: 'left' },
                 style: { 'whiteSpace': 'unset' },
                 width: 250,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.title}`
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.title}`,
+                sortable: false
             },
             {
                 Header: 'Notes',
                 accessor: 'description',
                 headerStyle: { textAlign: 'left' },
                 style: { 'whiteSpace': 'unset' },
-                width: 650,
+                width: 700,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.description}`,
+                sortable: false
+            },
+            {
+                Header: '',
+                id: 'delete',
+                accessor: '[row identifier to be passed to button]',
+                Cell: props => {
+                    return (
+                        <button style={{ backgroundColor: "#000000", color: "#fafafa" }}
+                            onClick={() => {
+                                this.deleteRow(props.original.id);
+                                // console.log("ID of this activity:" + props.original.id)
+                            }}
+                        >Delete</button>
+                    )
+                },
+                sortable: false
             }
         ]
         return (
