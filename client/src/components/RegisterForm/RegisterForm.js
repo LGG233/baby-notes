@@ -154,7 +154,7 @@ handleSubmit = event => {
                     className="FormField__Input"
                     placeholder="Last Name"
                     name="lastName"
-                    value={this.state.LastName}
+                    value={this.state.lastName}
                     onChange={this.handleChange}
                   />
                 </div>
