@@ -5,7 +5,8 @@ import { Redirect } from "react-router-dom";
 class SignIn extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    errorMessage: ""
     // isValid: localStorage.getItem("user")
   };
 
@@ -20,31 +21,46 @@ class SignIn extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
+    this.setState({
+      errorMessage: ""
+    });
     console.log("The form was submitted with the following data:");
     console.log(this.state);
     API.loginUser({
       email: this.state.email,
       password: this.state.password
     }).then(data => {
-      console.log("this is the data back -------- ", data.data.user);
-      // this.props.setUser(data.data)
-      if (!data.data.error) {
-        console.log("ay");
+      if (data.status === 200) {
         localStorage.setItem("user-name", data.data.user.firstname);
         localStorage.setItem("user-id", data.data.user.id);
         window.location.replace("/home");
-      } else {
-        alert("Wrong login");
       }
+    }).catch(error => {
+      console.log(error);
+      this.setState({
+        errorMessage: "Login error. Please try again."
+      })
     });
+    // ********************************
+    // console.log("this is the data back -------- ", data.data.user);
+    // // this.props.setUser(data.data)
+    // if (!data.data.error) {
+    //   console.log("ay");
+    //   localStorage.setItem("user-name", data.data.user.firstname);
+    //   localStorage.setItem("user-id", data.data.user.id);
+    //   window.location.replace("/home");
+    // } else {
+    //   alert("Wrong login");
+    // }
+
 
     // const data = await API.getAuthId();
     // App.setUserLogin("user", this.state.email);
     // App.setUserLogin("user", this.state.email);
 
-    this.setState({
-      isValid: true
-    });
+    // this.setState({
+    //   isValid: true
+    // });
   };
 
   render() {
@@ -57,6 +73,7 @@ class SignIn extends Component {
             </div>
           </div>
           <div className="col-md-6 registerPage">
+          <div className="alert-danger" >{this.state.errorMessage} </div>
             <div className="FormCenter">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
@@ -88,7 +105,8 @@ class SignIn extends Component {
                   />
                 </div>
                 <div className="FormField">
-                  {this.state.isValid ? <Redirect to="/home" /> : null}
+                  {/* {this.state.isValid ? <Redirect to="/home" /> : null} */}
+                 
                   <button
                     className="FormField__Button mr-20"
                     onClick={this.handleSubmit}
