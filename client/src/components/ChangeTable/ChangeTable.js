@@ -69,26 +69,26 @@ class Change extends Component {
         const editRow = this.state.editRow;
         const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
         const columns = [
-            {
-                Header: '',
-                id: 'edit',
-                accessor: '[row identifier to be passed to button]',
-                Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
-                width: 80,
-                sortable: false
-            },
+            // {
+            //     Header: '',
+            //     id: 'edit',
+            //     accessor: '[row identifier to be passed to button]',
+            //     Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
+            //     width: 80,
+            //     sortable: false
+            // },
             {
                 Header: 'Date',
                 id: "date",
                 headerStyle: { textAlign: 'left' },
-                width: 150,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MM/DD/YYYY")
+                width: 125,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment.utc(row.original.date).format("MM/DD/YYYY")
             },
             {
                 Header: 'Start',
                 id: 'starttime',
                 headerStyle: { textAlign: 'left' },
-                width: 150,
+                width: 125,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.starttime}` && Moment(row.original.starttime, "HH:mm:ss").format("h:mm a"),
                 sortable: false
             },
@@ -96,7 +96,7 @@ class Change extends Component {
                 Header: 'End',
                 id: 'endtime',
                 headerStyle: { textAlign: 'left' },
-                width: 150,
+                width: 125,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.endtime}` && Moment(row.original.endtime, "HH:mm:ss").format("h:mm a"),
                 sortable: false
             },
@@ -105,22 +105,23 @@ class Change extends Component {
                 accessor: 'description',
                 headerStyle: { textAlign: 'left' },
                 style: { 'whiteSpace': 'unset' },
-                width: 650,
+                width: 850,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.description}`,
                 sortable: false
             },
             {
                 Header: '',
                 id: 'delete',
+                width: 50,
                 accessor: '[row identifier to be passed to button]',
                 Cell: props => {
                     return (
-                        <button style={{ backgroundColor: "#000000", color: "#fafafa" }}
+                        <button className="btn btn-danger deleteBtn"
                             onClick={() => {
                                 this.deleteRow(props.original.id);
                                 // console.log("ID of this activity:" + props.original.id)
                             }}
-                        >Delete</button>
+                        ><i className="fa fa-trash"></i></button>
                     )
                 },
                 sortable: false

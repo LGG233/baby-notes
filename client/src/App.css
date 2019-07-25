@@ -76,3 +76,6 @@ Table {
     font-family: 'Satisfy', cursive;
     font-weight: 600;
 }
+.deleteBtn {
+    box-shadow: 0px 0px 3px rgb(240, 14, 14);
+}
