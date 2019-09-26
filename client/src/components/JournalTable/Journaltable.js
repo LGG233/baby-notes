@@ -67,27 +67,27 @@ class JournalTable extends Component {
         const editRow = this.state.editRow;
         const childProps = { editRow: editRow, handleEditClick: this.handleEditClick, handleSaveClick: this.handleSaveClick, contentEditable: this.contentEditable, renderEditable: this.renderEditable }
         const columns = [
-            {
-                Header: '',
-                id: 'edit',
-                accessor: 'id',
-                Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
-                width: 80,
-                sortable: false
-            },
+            // {
+            //     Header: '',
+            //     id: 'edit',
+            //     accessor: 'id',
+            //     Cell: (row) => <EditButton myId={row.original.id} index={row.index} {...childProps} />,
+            //     width: 80,
+            //     sortable: false
+            // },
             {
                 Header: 'Date',
                 id: 'date',
                 headerStyle: { textAlign: 'left' },
-                width: 150,
-                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment(row.original.date).format("MMM D, YYYY")
+                width: 125,
+                Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.date}` && Moment.utc(row.original.date).format("MM/DD/YYYY")
             },
             {
                 Header: 'Title',
                 accessor: 'title',
                 headerStyle: { textAlign: 'left' },
                 style: { 'whiteSpace': 'unset' },
-                width: 250,
+                width: 300,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.title}`,
                 sortable: false
             },
@@ -96,22 +96,23 @@ class JournalTable extends Component {
                 accessor: 'description',
                 headerStyle: { textAlign: 'left' },
                 style: { 'whiteSpace': 'unset' },
-                width: 700,
+                width: 800,
                 Cell: row => row.index === this.state.editRow ? this.renderEditable(row) : `${row.original.description}`,
                 sortable: false
             },
             {
                 Header: '',
                 id: 'delete',
+                width: 50,
                 accessor: '[row identifier to be passed to button]',
                 Cell: props => {
                     return (
-                        <button style={{ backgroundColor: "#000000", color: "#fafafa" }}
+                        <button className="btn btn-danger deleteBtn"
                             onClick={() => {
                                 this.deleteRow(props.original.id);
                                 // console.log("ID of this activity:" + props.original.id)
                             }}
-                        >Delete</button>
+                        ><i className="fa fa-trash"></i></button>
                     )
                 },
                 sortable: false

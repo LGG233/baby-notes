@@ -49,7 +49,7 @@ Table {
     margin-top:1em;
 }
 .jumboBanner4 {
-    margin-top:250px;
+    margin-top:100px;
     margin-left:425px;
     font-size: 50px;
     position: static;
@@ -75,4 +75,7 @@ Table {
     text-shadow: 1px 1px 2px rgb(48, 71, 69);
     font-family: 'Satisfy', cursive;
     font-weight: 600;
+}
+.deleteBtn {
+    box-shadow: 0px 0px 3px rgb(240, 14, 14);
 }
